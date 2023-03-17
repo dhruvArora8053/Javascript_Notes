@@ -1,3 +1,5 @@
+"use strict";
+
 //Remember it's impossible to mutate strings because they are primitives
 
 const airline = "TAP Air Portugal";
