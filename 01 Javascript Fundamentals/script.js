@@ -80,3 +80,17 @@ console.log(n); //10
 
 console.log(2 + 3 + 4 + "5"); //95
 console.log("10" - "4" - "3" - 2 + "5"); //15
+
+////////Falsy values:-
+//1. 0
+//2. ''
+//3. undefined
+//4. null
+//5. NaN
+
+console.log(Boolean()); //false
+console.log(Boolean(0)); //false
+console.log(Boolean(undefined)); //false
+console.log(Boolean({})); //true
+console.log(Boolean("")); //false
+console.log(Boolean("jonas")); //true
