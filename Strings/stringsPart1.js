@@ -52,7 +52,7 @@ console.log(new String("jonas"));
 console.log(typeof new String("jonas")); //otput: object
 //and so now you'll see that this string here looks a little bit more like an object
 
-//and so this conversion here is what javascript does behing the scenes whenever we call a method on a string and then when the operation is done the object is converted back to a regular string primitive.
+//and so this conversion here is what javascript does behind the scenes whenever we call a method on a string and then when the operation is done the object is converted back to a regular string primitive.
 
 //and infact all string methods return primitives even if called on string object:
 console.log(typeof new String("jonas").slice(1));
