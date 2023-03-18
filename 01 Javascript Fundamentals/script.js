@@ -128,3 +128,13 @@ switch (day) {
   default:
     console.log("not a valid day");
 }
+
+/////Statements and Expressions:-
+//3+5 : expression
+
+if (23 > 10) console.log("23 is bigger"); //statement
+
+//expression produce values
+//statements are like full sentences that translate our actions
+
+/////The Conditional Ternary Operator:-
