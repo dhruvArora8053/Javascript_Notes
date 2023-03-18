@@ -50,5 +50,33 @@ const firstName = "jonas";
 const lastName = "schmedtmann";
 console.log(firstName + " " + lastName); //output: jonas schmedtmann
 
+///////Strings and template literals(``):-
 
+//////////Type conversion and type coercion:-
+//Type conversion:- type conversio is when we manually convert from one type to another
+const inputYear = "1991";
+console.log(inputYear + 19); //199119, converted to string
+console.log(Number(inputYear) + 19); //2010
 
+console.log(Number("Jonas")); //NaN
+
+console.log(String(23));
+
+//Type coercion: when javascript automatically converts types behind the scenes for us.
+console.log("I am " + 23 + " years old");
+console.log("23" + "10" + 3); //23103
+//string + number = string
+
+console.log("23" - "10" - 3); //10
+//string - number = number
+
+console.log("23" * "2"); //46
+//string * string = number
+//same for division
+
+let n = 1 + "1";
+n = n - 1;
+console.log(n); //10
+
+console.log(2 + 3 + 4 + "5"); //95
+console.log("10" - "4" - "3" - 2 + "5"); //15
