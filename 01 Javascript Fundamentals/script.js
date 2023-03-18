@@ -94,3 +94,37 @@ console.log(Boolean(undefined)); //false
 console.log(Boolean({})); //true
 console.log(Boolean("")); //false
 console.log(Boolean("jonas")); //true
+
+/////Equality Operators ==VS=== :-
+//===: strict equality operator
+//     no type coercion
+
+//==: loose equality operator
+//    can do type coercion
+
+//////Switch statement:-
+//alternative of if-else
+const day = "wednesday";
+
+switch (day) {
+  case "monday":
+    console.log("1");
+    break;
+  case "tuesday":
+    console.log("2");
+    break;
+  case "wednesday":
+    console.log("3");
+  case "friday":
+    console.log("4");
+    break;
+  case "saturday":
+    console.log("5");
+    break;
+  case "sunday":
+    console.log("6");
+    break;
+
+  default:
+    console.log("not a valid day");
+}
