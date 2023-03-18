@@ -21,3 +21,10 @@ if (hasDriversLicense) console.log("I can drive");
 //const interface = "Audio"; //output: unexpected strict mode reserved word
 //const private = 534; //output: unexpected strict mode reserved word
 //const if= 23 //output: unexpected toke 'if'
+
+///////Function Declaration Vs Expression:
+//dec: function age(par1, par2){}
+//can call a function declaration before defining it
+
+//exp: const age= function(par1, par2){}
+//cannot call a function declaration before defining it
