@@ -35,15 +35,20 @@ console.log(typeof null); //output: object
 //////////let, const and var:-
 //let: mutation possible
 
-//const: mutation not possible 
+//const: mutation not possible
 //       need to assign value while declaring
-//       try to always use const 
+//       try to always use const
 
 //var: mutation possible
 
-firstName = 'schmedtmann' //totally legal but not a good idea
-console.log(firstName);
-//but javscript will create a property on the global object.
+// firstName = "schmedtmann"; //not legal
 
 ////////Basic Operators:
-console.log(2**3);
+console.log(2 ** 3); //output: 8
+
+const firstName = "jonas";
+const lastName = "schmedtmann";
+console.log(firstName + " " + lastName); //output: jonas schmedtmann
+
+
+
