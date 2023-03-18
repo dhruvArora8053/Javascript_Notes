@@ -28,3 +28,16 @@ if (hasDriversLicense) console.log("I can drive");
 
 //exp: const age= function(par1, par2){}
 //cannot call a function declaration before defining it
+
+////////Arrow Functions:-
+//const age= birthYear => 2037-birthYear;
+
+//////Arrays:- 
+//arrays are mutable so even with const you will still be able to manipulate elements but whi const you cannot change an entire array that would be illegal
+
+//////Arrays Vs Object:-
+//in arrays we can access element just through by order of elements 
+//but in objects you can have different types of data in one strucutre like firsName, lastName, job, friends, sports and etc. with key value pairs.
+
+//dot notation vs bracket notation:
+//through bracket notation you can evaluate some expression inside brackets and eventually can come up with some value and can access element through it
