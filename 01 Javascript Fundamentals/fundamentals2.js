@@ -61,3 +61,7 @@ if (hasDriversLicense) console.log("I can drive");
 
 //////Arrays:- 
 //arrays are mutable so even with const you will still be able to manipulate elements but whi const you cannot change an entire array that would be illegal
+
+//////Arrays Vs Object:-
+//in arrays we can access element just through by order of elements 
+//but in objects you can have different types of data in one strucutre like firsName, lastName, job, friends, sports and etc. with key value pairs.
