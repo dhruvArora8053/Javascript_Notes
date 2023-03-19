@@ -55,6 +55,3 @@ if (hasDriversLicense) console.log("I can drive");
 
 //exp: const age= function(par1, par2){}
 //cannot call a function declaration before defining it
-
-////////Arrow Functions:-
-//const age= birthYear => 2037-birthYear;
