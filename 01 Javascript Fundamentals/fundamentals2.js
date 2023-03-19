@@ -58,7 +58,3 @@ if (hasDriversLicense) console.log("I can drive");
 
 ////////Arrow Functions:-
 //const age= birthYear => 2037-birthYear;
-
-//////Arrays:- 
-//arrays are mutable so even with const you will still be able to manipulate elements but whi const you cannot change an entire array that would be illegal
-
