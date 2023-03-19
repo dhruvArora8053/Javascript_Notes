@@ -48,3 +48,13 @@ if (hasDriversLicense) console.log("I can drive");
 
 //dot notation vs bracket notation:
 //through bracket notation you can evaluate some expression inside brackets and eventually can come up with some value and can access element through it
+
+///////Function Declaration Vs Expression:
+//dec: function age(par1, par2){}
+//can call a function declaration before defining it
+
+//exp: const age= function(par1, par2){}
+//cannot call a function declaration before defining it
+
+////////Arrow Functions:-
+//const age= birthYear => 2037-birthYear;
