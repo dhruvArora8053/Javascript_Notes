@@ -65,6 +65,3 @@ if (hasDriversLicense) console.log("I can drive");
 //////Arrays Vs Object:-
 //in arrays we can access element just through by order of elements 
 //but in objects you can have different types of data in one strucutre like firsName, lastName, job, friends, sports and etc. with key value pairs.
-
-/dot notation vs bracket notation:
-//through bracket notation you can evaluate some expression inside brackets and eventually can come up with some value and can access element through it
