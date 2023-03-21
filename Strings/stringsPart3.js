@@ -18,8 +18,14 @@ console.log(newName);
 
 //Example: how to capitalize a name:
 const capitalizeName = function (name) {
-    
+  const names = name.split(" ");
+  const arr = [];
+
+  for (const n of names) {
+    arr.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(arr.join(" "));
 };
 
 capitalizeName("jessica ann smith davis");
-capitalizeName('jonas schmedtmann')
+capitalizeName("jonas schmedtmann");
