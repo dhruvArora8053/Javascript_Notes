@@ -64,3 +64,21 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(10);
+
+//All string methods that we learned:
+//1. indexOf
+//2. slice()
+//3. toLowerCase()
+//4. toUpperCase()
+//5. trim()
+//6. trimStart() and trimEnd()
+//7. replace()
+//8. replaceAll()
+//9. includes()
+//10. startsWith()
+//11. endsWith()
+//12. split()
+//13. join()
+//14. padStart()
+//15. padEnd()
+//16. repeat()
