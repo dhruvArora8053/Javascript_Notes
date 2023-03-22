@@ -42,7 +42,7 @@ const restaurant = {
 //to destructure objects we use curly braces {}, then all we have to do is to provide the vairable names that exactly match the property names that we want to retrieve from the object.
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
-//this now create three brand new variables based on this restaurant object
+//this now will create three brand new variables based on this restaurant object
 
 //this is an extremely useful addition to language especially when we deal with the result of an API call which basically means to get data from another web application like weather data or data about movies or something like that and this data usually comes in the form of objecs basically and then destructuring is a life saver, it allows us to write a lot less code.
 
@@ -71,7 +71,6 @@ const obj = { a: 23, b: 7, c: 14 };
 //and the reason for that is that when we start a line with a curly brace like this then javascript expects a code block and since we cannot assign anything to a code block like we did here with equal sign then we get this error 'unexpected token with the equal there', so to solve this here the trick is to wrap all of this into a parenthesis:
 ({ a, b } = obj);
 console.log(a, b);
-//so basically we did override above two initial variables but in order to do it we had to wrap this destructuring assignment into parenthesis
 
 //Destructring in nested objects:
 const {
