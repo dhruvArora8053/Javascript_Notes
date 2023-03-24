@@ -47,6 +47,7 @@ console.log(name, openingHours, categories);
 //Why this is very useful addition to language?
 //this is an extremely useful addition to language especially when we deal with the result of an API call which basically means to get data from another web application like weather data or data about movies or something like that and this data usually comes in the form of objecs basically and then destructuring is a life saver, it allows us to write a lot less code.
 
+//Different Name:
 //what if we wanted the variable names to be different from the property names?
 const {
   name: restaurantName,
@@ -56,6 +57,7 @@ const {
 
 console.log(restaurantName, hours, tags);
 
+//Default values:
 //it can be really useful to have default values for the case that we're trying to read a property that does not exist on the object so usually then we get undefined for example if we were trying to say 'restaurant.menu' this would be undefined because there is no property called menu:
 
 //Default Values
