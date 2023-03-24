@@ -101,3 +101,5 @@ restaurant.orderPizza("mushroom", "onion", "olives", "spinach");
 
 restaurant.orderPizza("mushroom");
 //here remaining arguments will be put in an empty array because ofcourse there are none and so there is nothing to collect into the array but we still get an empty array that we can work with if we want
+
+
