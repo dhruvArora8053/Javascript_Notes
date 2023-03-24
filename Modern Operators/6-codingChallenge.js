@@ -80,3 +80,8 @@ console.log(players1, players2);
 // field players
 const [gk, ...fieldPlayers] = players1;
 console.log(gk, fieldPlayers);
+
+// 3. Create an array 'allPlayers' containing all players of both teams (22
+// players)
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
