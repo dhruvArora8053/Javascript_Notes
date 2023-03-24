@@ -112,3 +112,5 @@ printGoals(game.score, ...game.scored);
 // 7. The team with the lower odd is more likely to win. Print to the console which
 // team is more likely to win, without using an if/else statement or the ternary
 // operator.
+team1 < team2 && console.log("team1 is more likely to win");
+team2 < team1 && console.log("team2 is more likely to win");
