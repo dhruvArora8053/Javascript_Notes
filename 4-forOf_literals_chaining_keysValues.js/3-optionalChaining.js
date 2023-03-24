@@ -79,3 +79,4 @@ console.log(restaurant.openingHours.mon?.open); //output: undefined
 console.log(restaurant.openingHours?.mon?.open);
 //and now if the restaurant.openingHours does not even exist well then the 'mon' property will not even be read and so therefore we don't get that error
 
+
