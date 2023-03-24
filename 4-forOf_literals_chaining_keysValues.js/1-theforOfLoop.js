@@ -50,3 +50,19 @@ const restaurant = {
   },
 };
 
+//for-of loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) {
+  console.log(item);
+}
+
+//Note: in for-of loop we can still use the break and continue keywords and this is important because in the next section you will learn other ways of looping arrays and in those one you will not be able to continue or to break
+
+//what if we also wanted the current index
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+//item is now an array with item index and item and we destructured further into i and el
+
+console.log([...menu.entries()]);
