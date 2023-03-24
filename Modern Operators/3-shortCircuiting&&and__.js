@@ -51,7 +51,7 @@ const restaurant = {
 };
 
 //Properties of logical operator:
-//1. They can use and datatype
+//1. They can use any datatype
 //2. They can return any datatype
 //3. They do short-circuiting/short-ciruit evaluation
 
@@ -85,11 +85,11 @@ console.log(guests2); //output: 23
 //this won't work when the number of guests is zero
 restaurant.numGuests = 0;
 const guests3 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests3); //output: 23
+console.log(guests3); //output: 10
 
 //with short-circuiting OR operator
 const guests4 = restaurant.numGuests || 10;
-console.log(guests4); //output: 23
+console.log(guests4); //output: 10
 
 //but given what we already know it makes sense, becuse restaurant.numGuest is zero so it's a falsy value and therefore the second one here will be the result. However zero is the real number of guests and so that's the value that we actually would guests to have but instead it's set the default value of 10 so that's obviously not what we want and we will explore the solution in the next lecture of "The Nullish Coalescing Operator"
 

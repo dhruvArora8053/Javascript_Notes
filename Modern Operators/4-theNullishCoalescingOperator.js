@@ -49,3 +49,20 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests); //output: 10
+//here 0 is a falsy value then we go to the second operand but the 0 is actual number of guests so to fix this:
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect); //output: 0
+//now indeed we get the 0 so we get the real value of numGuests and now if we take it off only then we get 10 which is the default value.
+
+//Why does this work?
+//it is because the nullish coalescing operator works with the idea or with the concept of nullish values instead of falsy values.
+
+//Nullish values: null and undefined
+//not include: 0 or ''
+
+//so basically for the nullish coalescing operator it is as if the zero and the empty string were not falsy values and were instead truthy values as well.
