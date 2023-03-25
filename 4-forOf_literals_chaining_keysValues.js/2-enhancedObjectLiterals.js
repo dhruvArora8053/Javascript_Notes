@@ -72,3 +72,4 @@ const restaurant = {
 //and finally the third enhancement is that we can now actually compute property names instead of having write them out manually
 //look above weekdays
 
+
