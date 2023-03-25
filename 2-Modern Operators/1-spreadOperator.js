@@ -115,3 +115,4 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = "Ristorante Roma";
 console.log(restaurantCopy.name); //output: Ristorante Roma
 console.log(restaurant.name); //output: Classico Italiano
+
