@@ -79,4 +79,10 @@ console.log(restaurant.openingHours.mon?.open); //output: undefined
 console.log(restaurant.openingHours?.mon?.open);
 //and now if the restaurant.openingHours does not even exist well then the 'mon' property will not even be read and so therefore we don't get that error
 
+//Practical Example:
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+//what we want to do is to loop over this array and then log to the console whether the restaurant is open or closed on each of the days
 
+for(const day of days){
+    console.log(day);
+}
