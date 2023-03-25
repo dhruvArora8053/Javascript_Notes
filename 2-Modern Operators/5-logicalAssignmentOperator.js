@@ -129,3 +129,4 @@ console.log(rest6);
 //so if you ever need to assing a value to a variable that is already defined so that has a value that is currently truthy then you can use this AND assignment operator.
 
 //and if you ever need to assing a value to a variable that is not already defined so that has a no value that is currently falsy then you can use OR assignment operator.
+
