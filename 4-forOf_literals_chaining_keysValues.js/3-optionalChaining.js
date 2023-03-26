@@ -73,7 +73,7 @@ if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 //ES2020 optional chaining:
 //it is a feature if a certain property doesn't exist then undefined is returned immediatedly and so that the avoid that kind of error that we saw earlier
 console.log(restaurant.openingHours.mon?.open); //output: undefined
-//so only if 'mon' exists then this open property will be read from there but if not then immediately undefine will be returned 
+//so only if 'mon' exists then this open property will be read from there but if not then immediately undefine will be returned
 //and exists here actually means the nullish cocept that we already talked before so a property exists if it's not null and not undefined so if it's 0 or the empty string then it still exists ofcourse.
 
 console.log(restaurant.openingHours?.mon?.open);
@@ -83,6 +83,22 @@ console.log(restaurant.openingHours?.mon?.open);
 const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 //what we want to do is to loop over this array and then log to the console whether the restaurant is open or closed on each of the days
 
-for(const day of days){
-    console.log(day);
+for (const day of days) {
+  // console.log(day);
+  // restaurant.openingHours.day
+  //we cannot use .day notation because this is not an actual property name of the object so rember if we want to use a variable name as the property name then we would need to use the brackets notation:
+  const open = restaurant.openingHours[day]?.open ?? "closed";
+  console.log(`On ${day}, we open at ${open}`);
 }
+
+//Optional chaining on methods:
+console.log(restaurant.order?.(0, 1) ?? "Method does not exist"); //output:['Focaccia', 'Pasta']
+
+console.log(restaurant.orderRisotto?.(0, 1) ?? "Method does not exist"); //output: method does not exist
+//and so just like before this optional chaining operator will check if orderRisotto actually exists and if it doesn't well then it immediately return undefined
+
+//Optional chaining on Arrays:
+const users = [{ name: "Jonas", email: "hello@jona.io" }];
+
+console.log(users[0]?.name ?? "User array empty"); //output: Jonas 
+console.log(users[2]?.name ?? "User array empty"); //output: "User arry empty"
