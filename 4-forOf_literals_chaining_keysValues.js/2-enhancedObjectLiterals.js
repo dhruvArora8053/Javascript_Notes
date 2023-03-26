@@ -60,7 +60,7 @@ const restaurant = {
 
 //1.
 //first off let's say that we have an object that is outside of the restaurant object say openingHours but now still we want to have the openingHours object inside of the restaurant object
-//before ES6: look above in object
+//before ES6: look above in object 
 //ES6 enhanced object literal: look above
 
 //2.
