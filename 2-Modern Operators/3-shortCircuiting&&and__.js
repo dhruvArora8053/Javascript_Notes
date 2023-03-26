@@ -111,3 +111,4 @@ if (restaurant.orderPizza) {
 restaurant.orderPizza && restaurant.orderPizza("mushroom", "spinach");
 //if restaurant.orderPizza does not exist so it's undefined it will then short circuit the evaluation and nothing else will happen but if it does exist so if it's a truthy value then the second part here will be evaluated and so here in this second operand we can then call the function
 
+
