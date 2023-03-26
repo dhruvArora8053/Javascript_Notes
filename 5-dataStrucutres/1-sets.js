@@ -54,33 +54,3 @@ const restaurant = {
   },
 };
 
-//so we learned about the for of loop to loop over arrays which remember is an iterable but we can also loop over objects which are not iterable but in an indirect way
-
-//PROPERTY NAMES
-const properties = Object.keys(openingHours);
-console.log(properties); //array of keys
-
-let openStr = `We are open on ${properties.length} days: `;
-
-for (const day of Object.keys(openingHours)) {
-  //   console.log(day);
-  //so indeed we get thu,fri and sat which are the exactly the three key names of the object
-}
-for (const day of properties) {
-  openStr += `${day}, `;
-}
-
-console.log(openStr);
-
-//PROPERTY VALUES
-const values = Object.values(openingHours);
-console.log(values);
-
-//PROPERTY NAMES+VALUES: ENTIRE OBJECT
-const entries = Object.entries(openingHours);
-console.log(entries);
-
-for (const [key, { open, close }] of entries) {
-  //   console.log(entry);
-  console.log(`On ${key} we open at ${open} and close at ${close}`);
-}
