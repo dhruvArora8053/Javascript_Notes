@@ -84,5 +84,32 @@ console.log(ordersSet);
 console.log(new Set("Jonas")); //because strings are also iterables
 
 console.log(ordersSet.size); //output: 3
+console.log(ordersSet.has("Pizza")); //output: true
+console.log(ordersSet.has("Bread")); //output: false
 
+ordersSet.add("Garlic Bread");
+ordersSet.add("Garlic Bread");
+ordersSet.delete("Risotto");
+// ordersSet.clear();
+console.log(ordersSet);
 
+//In sets their are actually no indexes and infact there is no way of getting values out of a set and if we think about it then it makes sense so there's really no need for getting data out of a set that's because if all values are unique and if their order does not matter then there is no point of retrieving values out of a set. All we need to know to know is whether a certain value is in the set or not and that's why we have the 'has' method.
+//If your goal is to actually store values in order and then retrieve it then the best use case, is to just use an array You wouldn't use a set for that and so again there's no need for getting values out of a set because if you need it then you will just use an array.
+
+//Sets are also iterables:
+for (const order of ordersSet) console.log(order);
+
+//Practical Example:
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+
+const staffUnique = new Set(staff); //because array is an iterable
+console.log(staffUnique);
+
+const staffUniqueArr = [...new Set(staff)];
+console.log(staffUniqueArr);
+
+console.log(
+  new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size
+); //Output: 3
+
+console.log(new Set("jonasschmedtmann").size); //otuput: 11
