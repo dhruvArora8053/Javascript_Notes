@@ -105,3 +105,15 @@ for (const [i, val] of Object.entries(odd)) {
 //  Lewandowski: 2
 // }
 // GOOD LUCK
+
+// scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+
+// BONUS
+// So the solution is to loop over the array, and add the array elements as object properties, and then increase the count as we encounter a new occurence of a certain element
+const scorers = {};
+for (const player of game.scored) {
+  console.log(scorers[player]);
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+
+console.log(scorers);
