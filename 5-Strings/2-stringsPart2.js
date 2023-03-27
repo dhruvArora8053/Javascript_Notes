@@ -28,7 +28,9 @@ console.log(normalisedEmail);
 //here toLowerCase will return string and on that string we immediately can call another method
 console.log(email === normalisedEmail);
 
-//another two methods trimStart(trim from the start) and trimEnd(trim from the end)
+//another two methods 
+//trimStart(trim from the start) and 
+//trimEnd(trim from the end)
 
 //Replacing:
 const priceGB = "288,97€";
@@ -82,3 +84,4 @@ const checkBaggage = function (items) {
 checkBaggage("I have a laptop, some Food and a pocket Knife");
 checkBaggage("Socks and Camera");
 checkBaggage("Got some snacks and a gun for protection");
+
