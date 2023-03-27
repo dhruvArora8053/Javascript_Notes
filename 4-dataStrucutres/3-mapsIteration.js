@@ -54,4 +54,41 @@ const restaurant = {
   },
 };
 
+//Another way to populate a map other than set method:
+const question = new Map([
+  ["question", "What is the best programming language in the world?"],
+  [1, "C"],
+  [2, "Java"],
+  [3, "Javascript"],
+  ["correct", 3],
+  [true, "Correct"],
+  [false, "Try Again"],
+]);
+console.log(question);
 
+console.log(Object.entries(openingHours));
+//similar structure as object.entries() and so what this means is that there is an easy way to convert from objects to maps:
+
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+console.log(question.get("question"));
+//Maps are also iterables:
+for (const [key, value] of question) {
+  if (typeof key === "number") {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+// const answer = Number(prompt("Your Answer"));
+// console.log(answer);
+
+// answer === 3 && console.log(question.get(true));
+// answer === 3 || console.log(question.get(false));
+
+// console.log(question.get(question.get("correct") === answer));
+
+//Converting Map to Array:
+console.log([...question]);
+console.log(question.entries());
+console.log(question.keys());
+console.log(question.values());
