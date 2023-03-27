@@ -70,3 +70,13 @@ const game = {
 for (const [i, val] of game.scored.entries()) {
   console.log(`Goal ${i + 1}: ${val}`);
 }
+
+const odd = game.odds;
+let sum = 0;
+const newOdd = Object.values(odd);
+for (const val of newOdd) {
+  console.log(val);
+  sum += val;
+}
+const average = sum / newOdd.length;
+console.log(average);
