@@ -21,3 +21,4 @@ for (const flight of flights.split("+")) {
 
   console.log(output);
 }
+
