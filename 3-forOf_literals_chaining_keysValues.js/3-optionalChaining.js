@@ -102,3 +102,4 @@ const users = [{ name: "Jonas", email: "hello@jona.io" }];
 
 console.log(users[0]?.name ?? "User array empty"); //output: Jonas 
 console.log(users[2]?.name ?? "User array empty"); //output: "User arry empty"
+
