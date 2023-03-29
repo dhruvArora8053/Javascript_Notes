@@ -73,3 +73,16 @@ function deleteShoppingCart() {
 //3. use let if you really need to change that variable later
 //4. also inorder to write clean code you should declare your variables at the top of each scope
 //5. and finally always declare all your functions first and use them only after declaration the even applies for function declarations.
+
+//Another difference between var and let or const:
+var x = 1;
+let y = 2;
+const z = 3;
+
+console.log(window); //window is the global object of javascript in the browser
+//var: is the property of window object
+//let or const: not a property of window object
+
+console.log(x===window.x); //output: true
+console.log(y===window.y); //output: false
+console.log(z===window.z); //output: false
