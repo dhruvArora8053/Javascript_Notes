@@ -54,5 +54,22 @@ var addExpr1 = function (a, b) {
 //arrow function:
 var addArrow1 = (a, b) => a + b;
 
-//Pitfall of Hoisting 
+//Pitfall of Hoisting
 //example:
+console.log(numProducts);
+if (!numProducts) deleteShoppingCart();
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log("All products deleted!");
+}
+//here we get all products deleted even though numProducts is actually 10 so why did that happen?
+//well it's because of hoisting, at above on if statement the value of numProduct is undefined and '!' this makes it true so our function got executed
+
+//Best Practices:
+//1. just don't use var to declare variables
+//2. use const variable most of the time
+//3. use let if you really need to change that variable later
+//4. also inorder to write clean code you should declare your variables at the top of each scope
+//5. and finally always declare all your functions first and use them only after declaration the even applies for function declarations.
