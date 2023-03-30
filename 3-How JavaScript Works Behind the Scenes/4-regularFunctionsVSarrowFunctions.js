@@ -29,8 +29,17 @@ const jonas1 = {
     console.log(2037 - this.year);
   },
 
-  greet: () => console.log(`Hey ${this.firstName}`),
+  greet: () => {
+    console.log(this);
+    console.log(this.firstName);
+    console.log(`Hey ${this.firstName}`);
+  },
 };
 
+jonas1.greet(); //output: Hey Matilda
+//now we are getting 'Hey Matilda' as an output, why is that?
+//so again it is because inside of greet function the this keyword is window even though this arrow function was called by the jonas1 object but that rule does not apply here because it's an arrow fucntion
 
+//Note:= big takeaway from the above example is that as a best practice you should never ever use an arrow function as a method
 
+//Another pitfall of this keyword:-
