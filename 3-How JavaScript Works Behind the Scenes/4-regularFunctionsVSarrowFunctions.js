@@ -42,4 +42,29 @@ jonas1.greet(); //output: Hey Matilda
 
 //Note:= big takeaway from the above example is that as a best practice you should never ever use an arrow function as a method
 
-//Another pitfall of this keyword:-
+//Another pitfall of this keyword:- is when we have a function inside of a method:
+const jonas2 = {
+  firstName: "Jonas",
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+
+    const isMillenial = function () {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+
+  greet: () => {
+    console.log(this);
+    console.log(this.firstName);
+    console.log(`Hey ${this.firstName}`);
+  },
+};
+
+// jonas2.greet();
+// jonas2.calcAge(); //output: error, cannot read properties of undefined
+//why we got this error?
+//well if we really think then isMillenial() is just a regular function call even though it happens inside of a method and the rule says inside a regular function call which this clearly is that this keyword must be undefined and so this is just as if this function was outside of this method
