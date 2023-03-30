@@ -45,3 +45,9 @@ console.log(matilda);
 
 matilda.calcAge();
 //here now the this keyword is pointing to matilda so this proves the fact that the this keyword always points to the object that is calling the method
+
+//Taking the function out of the jonas object:
+const f = jonas.calcAge;
+console.log(f);
+f();
+//now the this keyword here is undefined and therefore we also got the error 'cannot read property of undefined' because this keyword in now undefined so this.year does not exist so this happens because this f function here in now just a regular function, it is not attached to any object there is no owner of this f function anymore here at this point and therefore it is just a regular function call
