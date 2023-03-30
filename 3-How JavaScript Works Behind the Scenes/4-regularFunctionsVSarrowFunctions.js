@@ -50,10 +50,24 @@ const jonas2 = {
     console.log(this);
     console.log(2037 - this.year);
 
-    const isMillenial = function () {
+    //Solutin 1: use variable
+    // const self = this; //self or that
+    // const isMillenial = function () {
+    //   console.log(this);
+    //   console.log(self);
+    //   //   console.log(this.year >= 1981 && this.year <= 1996);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+
+    //Solution 2: use arrow function
+    const isMillenial = () => {
       console.log(this);
+
+      //   console.log(this.year >= 1981 && this.year <= 1996);
       console.log(this.year >= 1981 && this.year <= 1996);
     };
+    //this works because this function uses the this keyword of it's parent scope
+
     isMillenial();
   },
 
@@ -65,6 +79,26 @@ const jonas2 = {
 };
 
 // jonas2.greet();
-// jonas2.calcAge(); //output: error, cannot read properties of undefined
+jonas2.calcAge(); //output: error, cannot read properties of undefined
 //why we got this error?
 //well if we really think then isMillenial() is just a regular function call even though it happens inside of a method and the rule says inside a regular function call which this clearly is that this keyword must be undefined and so this is just as if this function was outside of this method
+//and solution to this problem is just simply declare a variable what we usually call 'self' outside of a function set to this keyword and then use that variable inside of your function
+
+//arguments keyword:
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+
+addExpr(2, 5);
+
+addExpr(2, 5, 8, 5);
+//up until this point we only passed same number of arguments as parameters but it is completely legal to add more arguments, they will not have a name so we didn't name them but the exist and we can see them here in the arguments array and so they do appear and we can use them therefore in the functions for ex: we could use loop and then loop over this array and add all the numbers together
+
+const addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+
+addArrow(2, 5, 8);
+//but arrow functions does not get 'arguments' keyword
