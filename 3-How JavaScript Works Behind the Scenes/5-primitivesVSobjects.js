@@ -34,3 +34,36 @@ console.log("After Marriage:", marriedJessica);
 //So as a conclusion, completely changing the object so assigning a new object to it is completely different than simply chaning a property as we did above.
 
 //What if we actually really wanted to copy the object so that we could then change one of them without changning the other:
+const jessica1 = {
+  firstName: "Jessica",
+  lastName: "Williams",
+  age: 27,
+};
+
+//to do this we could use a function called object.assign and what this function does is to essentially merge two objects and then return a new one:
+const jessicaCopy = Object.assign({}, jessica1);
+//now this will create a completely new object where all the properties are really copied
+
+jessicaCopy.lastName = "Davis";
+console.log("Before Marriage:", jessica1);
+console.log("After Marriage:", jessicaCopy);
+//and so now indeed we can preserve the original lastname 'Williams' after we change the lastname on the other object jessicaCopy and what this means now is that jessicaCopy object is indeed a real copy of the original jessica1 copy
+//so behind the scenes what this means is that a new object was infact created in the heap and jessicaCopy is now pointing to that object
+
+//However, ther is still a problem with object.assign because this technique only works on the first level or in other words if we have an object inside the object then this inner object will actually still be the same so it will still point to the same place in memory and that's why we say that object.assign only creates a shallow copy and not a deep clone which is what would like to have. So again a shallow copy will only copy the properties in the first level while a deep clone would copy everything:
+const jessica2 = {
+  firstName: "Jessica",
+  lastName: "Williams",
+  age: 27,
+  family: ["Alice", "Bob"], //array is also an object behind the scenes
+};
+
+const jessicaCopy2 = Object.assign({}, jessica2);
+
+jessicaCopy2.lastName = "Davis";
+jessicaCopy2.family.push("Mary");
+jessicaCopy2.family.push("John");
+
+console.log("Before Marriage:", jessica2);
+console.log("After Marriage:", jessicaCopy2);
+//now here we see both the objects now have a family of four members and the lastname ofcourse as we already saw is preserved because lastName is on the first level and object.assign above took care of copying that property however, the family object is a deeply nested object and so therefore object.assign did not really behing the scenes copy it to the new object so in essence both the objects jessica2 and jessica2Copy have a property called family which points at the same object in the memory heap and that object is ofcoure above array.
