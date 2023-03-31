@@ -16,6 +16,7 @@ let job = "teacher";
 const year = 1991;
 
 //Hoisting with Functions:-
+//functions declared with let or const:
 console.log(addDecl(5, 5)); //output: 10
 
 // console.log(addExpr(5, 5)); //output: error( Cannot access 'addExpr' before initialization)
@@ -37,6 +38,7 @@ const addExpr = function (a, b) {
 //arrow function:
 const addArrow = (a, b) => a + b;
 
+//functions declared with var:
 // console.log(addExpr1(5, 5)); //output: error( addExpr1 is not a function)
 
 // console.log(addArrow1(5,5)); //output: error( addArrow1 is not a function)
@@ -72,7 +74,7 @@ function deleteShoppingCart() {
 //2. use const variable most of the time
 //3. use let if you really need to change that variable later
 //4. also inorder to write clean code you should declare your variables at the top of each scope
-//5. and finally always declare all your functions first and use them only after declaration the even applies for function declarations.
+//5. and finally always declare all your functions first and use them only after declaration this even applies for function declarations.
 
 //Another difference between var and let or const:
 var x = 1;
