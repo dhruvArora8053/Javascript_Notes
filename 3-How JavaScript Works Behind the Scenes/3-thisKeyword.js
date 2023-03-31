@@ -34,7 +34,7 @@ const jonas = {
 jonas.calcAge();
 //so when we have a method call, the this keyword inside of a method will be the object that is calling the method and in this case that's the jonas object so jonas here basically the owner of the method and therfore inside of a calcAge this keyword is a jonas object.
 
-//Note:- The this keyword will point to the object that is calling the method, right? And that means that the this keyword will not simply point at the object in which we wrote the method so here above we wrote the calcAge method inside of the jonas object and so we might think that is the reason why the this keyword point to jonas but that is not true, the reason that the this keyword will point to jonas in this case is because jonas was the object calling that method and that's a subtle but very important difference:
+//Note:- The this keyword will point to the object that is calling the method, right? And that means that the this keyword will not simply point at the object in which we wrote the method so here above we wrote the calcAge method inside of the jonas object and so we might think that is the reason why the this keyword point to jonas but that is not true, the reason that the this keyword will point to jonas in this case is because jonas was the object calling calcAge() method and that's a subtle but very important difference:
 
 const matilda = {
   year: 2017,
