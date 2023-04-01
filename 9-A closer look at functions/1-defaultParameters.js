@@ -22,7 +22,7 @@ const createBooking = function (
 };
 
 createBooking("LH123");
-//her numPassengers and price are undefined
+//here numPassengers and price are undefined
 
 createBooking("LH123", 2, 800);
 //this will overwrite the default values
@@ -34,3 +34,4 @@ createBooking("Lh123", 5);
 //if we want to leave some argument empty:
 createBooking("LH123", undefined, 1000);
 //this works because setting the parameter to undefined is the same thing as not even setting it
+
