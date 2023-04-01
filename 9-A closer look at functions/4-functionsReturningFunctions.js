@@ -18,9 +18,7 @@ greet("Hello")("Jonas");
 //What's the point of having functions returning other functions?
 //Well this will actually become extremely useful in some situations and especially if we're using a really important programming paradigm called functional programming
 
-//Writing above example with arro function:
-
+//Writing above example with arrow function notation:
 const greetArrow = (greeting) => (name) => console.log(`${greeting} ${name}`);
 
 greetArrow("Hello")("Jonas");
- 
