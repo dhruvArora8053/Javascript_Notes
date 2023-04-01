@@ -58,7 +58,7 @@ const restaurant = {
 console.log(restaurant.openingHours.mon); //output: undefined
 //because mon property doesn't exist
 
-//let's pretend that we don not known whether this restaurant opens on Monday or not and that could be the case for example if this data came from a real web service/API and in their service there could be multiple restaurants and not all of them would open on Monday and so we had no way of knowing if this particular restaurant would open on monday or not
+//let's pretend that we don not know whether this restaurant opens on Monday or not and that could be the case for example if this data came from a real web service/API and in their service there could be multiple restaurants and not all of them would open on Monday and so we had no way of knowing if this particular restaurant would open on monday or not
 
 //let's go even further because we actually want to know exactly the hour on which the restaurant opens on monday:
 // console.log(restaurant.openingHours.mon.open); //output: error 'cannot read property of undefined'
@@ -71,7 +71,7 @@ if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 // if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
 
 //ES2020 optional chaining:
-//it is a feature if a certain property doesn't exist then undefined is returned immediatedly and so that the avoid that kind of error that we saw earlier
+//it is a feature if a certain property doesn't exist then undefined is returned immediatedly and so that to avoid that kind of error that we saw earlier
 console.log(restaurant.openingHours.mon?.open); //output: undefined
 //so only if 'mon' exists then this open property will be read from there but if not then immediately undefine will be returned
 //and exists here actually means the nullish cocept that we already talked before so a property exists if it's not null and not undefined so if it's 0 or the empty string then it still exists ofcourse.
@@ -102,3 +102,4 @@ const users = [{ name: "Jonas", email: "hello@jona.io" }];
 
 console.log(users[0]?.name ?? "User array empty"); //output: Jonas
 console.log(users[2]?.name ?? "User array empty"); //output: "User arry empty"
+
