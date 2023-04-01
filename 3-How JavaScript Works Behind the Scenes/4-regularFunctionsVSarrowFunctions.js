@@ -49,7 +49,7 @@ const jonas2 = {
     console.log(this);
     console.log(2037 - this.year);
 
-    //Solutin 1: use variable
+    //Solution 1: use variable
     // const self = this; //self or that
     // const isMillenial = function () {
     //   console.log(this);
