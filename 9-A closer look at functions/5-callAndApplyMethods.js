@@ -64,3 +64,5 @@ console.log(swiss);
 //apply method is not used anymore in modern javascript because now we actually have a better way of doing the exact same thing:
 
 book.call(swiss, ...flightData);
+
+
