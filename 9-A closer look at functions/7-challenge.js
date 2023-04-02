@@ -43,4 +43,42 @@ const poll = {
   options: ["0: JavaScript", "1: Python", "2: Rust", "3: C++"],
   // This generates [0, 0, 0, 0]. More in the next section!
   answers: new Array(4).fill(0),
+
+  displayResults(type) {
+    if (typeof type === "string") {
+      console.log(`Poll results are `, ...this.answers);
+    } else console.log(this.answers);
+  },
+
+  registerNewAnswer() {
+    const check = Number(
+      prompt(`What is your favourite programming language?
+    0: JavaScript
+    1: Python
+    2: Rust
+    3: C++
+    (Write option number)`)
+    );
+
+    if (check === 0) {
+      this.answers[0] += 1;
+    } else if (check === 1) {
+      this.answers[1] += 1;
+    } else if (check === 2) {
+      this.answers[2] += 1;
+    } else if (check === 3) {
+      this.answers[3] += 1;
+    } else console.log("Wrong Input!");
+
+    this.displayResults(String(this.answers));
+  },
 };
+
+var answers = [5, 2, 3];
+var an = [1, 5, 3, 9, 6, 1];
+
+poll.displayResults.call(window, );
+
+document
+  .querySelector(".poll")
+  .addEventListener("click", poll.registerNewAnswer.bind(poll));
