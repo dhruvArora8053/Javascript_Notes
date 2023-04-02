@@ -42,4 +42,19 @@ console.log(eurowings);
 //so in the call method we can pass multiple arguments beside the this keyword and so in the bind method we can actually do the same and then all of these arguments will also be basically set in stone, so they will be defined and the function will then always be called with these same arguments for ex: we could use bind to create a function for one specific airline and a specific flight number:
 const bookEW23 = book.bind(eurowings, 23);
 //and if we look at our bind function now, remember that it needs the flight number and the name but now in our bookEW23 is as if this first argument was already set and so all remaining function now only need the name
-bookEW23("Dhruv Arora");
+bookEW23("Jonas Schmedtmann");
+bookEW23("Martha Cooper");
+//basically specifying parts of the arguments beforehand is actually a common pattern called partial application so essentially partial application means that a part of the arguments of the original function are already applied so which means already set and so that's exactly what the bookEW23 function is, it's essentially the book function but with 23 already predefined
+
+//Bind method with Event Listeners:
+lufthansa.planes = 300;
+//eventually what we want to do is whenever we click the button 'Buy new plane' a new plane gets added
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+lufthansa.buyPlane();
+
+document.querySelector(".buy").addEventListener("click", lufthansa.buyPlane);
+//now we are getting output of this.plane: NaN and the reason for that is that this keyword is the button element it is because as we learned that in an event handler function this keyword always points to the element on which the handler is attached to, so here lufthansa.buyPlane is a handler function and so it is attached to 'buy' element and therefore inside of the handler function this keyword will point to the button element

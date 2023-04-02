@@ -1,5 +1,5 @@
 "use strict";
-
+//Scoping:-
 //hierarchy of scoping
 //1. Global scope
 //2. Function scope
