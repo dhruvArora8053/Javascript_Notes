@@ -16,9 +16,11 @@ greet("Hello")("Jonas");
 //here greet("Hello") returned a function and that function we immdediately called by passing the argument 'Jonas'.
 
 //What's the point of having functions returning other functions?
-//Well this will actually become extremely useful in some situations and especially if we're using a really important programming paradigm called functional programming
+//Well this will actually become extremely useful in some situations and especially if we're using a really important programming paradigm called functional programming we'll talk about that later on
 
 //Writing above example with arrow function notation:
 const greetArrow = (greeting) => (name) => console.log(`${greeting} ${name}`);
 
 greetArrow("Hello")("Jonas");
+
+
