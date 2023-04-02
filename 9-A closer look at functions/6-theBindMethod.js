@@ -57,4 +57,4 @@ lufthansa.buyPlane = function () {
 lufthansa.buyPlane();
 
 document.querySelector(".buy").addEventListener("click", lufthansa.buyPlane);
-//now we are getting output of this.plane: NaN and the reason for that is that this keyword is the button element it is because as we learned that in an event handler function this keyword always points to the element on which the handler is attached to, so here lufthansa.buyPlane is a handler function and so it is attached to 'buy' element and therefore inside of the handler function this keyword will point to the button element
+//now we are getting output of this.plane: NaN and the reason for that is that this keyword is the button element it is because as we learned that in an event handler function this keyword always points to the element on which the handler is attached to, so here lufthansa.buyPlane is a handler function and it is attached to 'buy' element and therefore inside of the handler function this keyword will point to the button element
