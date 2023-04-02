@@ -29,7 +29,7 @@ const book = lufthansa.book;
 // book(23,'Sarah Williams') //output: error, cannot read properties of undefined
 //it is because this keword points to undefined in a regular function
 //now how to actually fix this problem: so in other words how do we tell javascript that we want to create a booking on the new Eurowings airline or even how do we tell it that we want to book on lufthansa airline?
-//Well basically we need to tell javascript explicitly what the this keyword her should be like so if we want to book a lufthansa flight, the this keyword should point to lufthansa but if we want to book a Eurowings flight then the this keyword should point to eurowings so how do we do that?
+//Well basically we need to tell javascript explicitly what the this keyword here should be like so if we want to book a lufthansa flight, the this keyword should point to lufthansa but if we want to book a Eurowings flight then the this keyword should point to eurowings so how do we do that?
 //Well there are three function methods to do that:
 //1. call method
 //2. apply method
