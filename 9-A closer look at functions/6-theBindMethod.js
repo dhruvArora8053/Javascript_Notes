@@ -56,5 +56,24 @@ lufthansa.buyPlane = function () {
 };
 lufthansa.buyPlane();
 
-document.querySelector(".buy").addEventListener("click", lufthansa.buyPlane);
-//now we are getting output of this.plane: NaN and the reason for that is that this keyword is the button element it is because as we learned that in an event handler function this keyword always points to the element on which the handler is attached to, so here lufthansa.buyPlane is a handler function and it is attached to 'buy' element and therefore inside of the handler function this keyword will point to the button element
+// document.querySelector(".buy").addEventListener("click", lufthansa.buyPlane);
+//now we are getting output of this.plane: NaN and the reason for that is that this keyword is the button element it is because as we learned that in an event handler function this keyword always points to the element on which the handler is attached to, so here lufthansa.buyPlane is a handler function and it is attached to 'buy' element and therefore inside of the handler function this keyword will point to the button element, to solve this: should we use call method or bind method?
+//well we need to pass in a function here and not to call it and so we already know that the call method calls the function and so that's not what we need and so therefore we use bind: because we already know bind method is going to return a new function
+document
+  .querySelector(".buy")
+  .addEventListener("click", lufthansa.buyPlane.bind(lufthansa));
+
+//Partial Application:
+//it means that we can preset parameters
+
+//example:
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+//using bind function to stone the tax value
+const addVAT = addTax.bind(null, 0.23);
+//here we don't need this value, we need only rate in stone
+console.log(addVAT(100));
+console.log(addVAT(23));
+//just keep in mind whenever you want to stone a value the order of the arguments then is important, if you want to preset the rate then it has to be the first argument in the function otherwise it won't work
+//now you could argue that what we just did above here could easily have been done with default parameters but this is actually different because this here is creating a brand new more specific function based on a more general function which is the addTax function
