@@ -30,3 +30,21 @@ console.dir(f);
 //this proves that the closure can change as the variable is reassigned
 
 //Example 2:
+const boardPassengers = function (passangers, wait) {
+  const perGroup = passangers / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${passangers} passengers`);
+    console.log(`There are 3 groups each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+boardPassengers(180, 3);
+//here boardPassengers function has already been executed but still setTimeout was able to use perGroup and n variable because of closure
+
+//setTimeout() is a function which will execute the callback function after given milli seconds:
+// setTimeout(() => {
+//   console.log("Timer");
+// }, 1000);
