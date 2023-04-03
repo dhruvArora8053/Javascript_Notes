@@ -77,10 +77,8 @@ const poll = {
 var answers = [5, 2, 3];
 var an = [1, 5, 3, 9, 6, 1];
 
-poll.displayResults.call(window, );
+poll.displayResults.call(window);
 
 document
   .querySelector(".poll")
   .addEventListener("click", poll.registerNewAnswer.bind(poll));
-
-  
