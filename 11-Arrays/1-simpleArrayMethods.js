@@ -1,17 +1,5 @@
 "use strict";
 
-/////////////////////////////////////////////////
-// LECTURES
-
-const currencies = new Map([
-  ["USD", "United States dollar"],
-  ["EUR", "Euro"],
-  ["GBP", "Pound sterling"],
-]);
-
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-/////////////////////////////////////////////////
 //Why arrays do actually have methods?
 //Well, methods are simply functions that we can call on objects so basically they are functions attached to objects so if we have array methods that means arrays themselves are also objects so these array methods are simply functions that are attached to all arrays that we create in javascript.
 
@@ -54,4 +42,4 @@ console.log([...arr, ...arr2]);
 //Join: does not mutate the original array
 console.log(letters.join("-"));
 
-//already known methods: push, unshift, pop, shift, indexof and includes. 
+//already known methods: push, unshift, pop, shift, indexof and includes.
