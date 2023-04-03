@@ -33,3 +33,6 @@ console.log(arr.slice(-1)[0]); //64
 //at method
 console.log(arr.at(-1)); //64
 console.log(arr.at(-2)); //11
+
+//When we should use at method?
+//well as always it depends: so if you want to get the last element of an array or basically start counting from the end of an array then you should probably start using the 'at' method and also if you want to do 'method chaining' then the at method is also perfect for that.
