@@ -61,6 +61,36 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+//Now we could simply start writing our code out here in the global context however, that is not a good practice so wheneve we do something like creating a feature, it's always best to create a function:
+const displayMovements = function (movements) {
+  containerMovements.innerHTML = '';
+  //.textContent=0
+  //it will remove the inner html of the element, and innerHTML is a bit simlilar to textContent but now the difference is that textContent simply returns the text itself while HTML returns everything including the HTML so all the html tags will be included
+
+  movements.forEach(function (mov, i) {
+    //now we have to essentially create an HTML that looks like movement row in the DOM:
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+
+    const html = `
+    <div class="movements__row">
+     <div class="movements__type movements__type--${type}">${
+      i + 1
+    } ${type}</div>
+     <div class="movements__value">${Math.abs(mov)}</div>
+  </div>
+  `;
+    //now we need to attach above html somehow into the movements container in our webpage: to do that we will use a method called insertAdjacentHTML:
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+    //1. beforebegin
+    //2. afterbegin: last in first out
+    //3. beforeend:  last in last out
+    //4. afterend
+  });
+};
+
+displayMovements(account1.movements);
+// console.log(containerMovements.innerHTML);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
