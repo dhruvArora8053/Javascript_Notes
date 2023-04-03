@@ -91,6 +91,19 @@ const displayMovements = function (movements) {
 displayMovements(account1.movements);
 // console.log(containerMovements.innerHTML);
 
+//Computing Usernames:
+const createUsernames = function (user) {
+  const username = user
+    .toLowerCase()
+    .split(' ')
+    .map(name => name[0])
+    .join('');
+  //now the whole result is an array and on that array now we can call the join method
+
+  return username;
+};
+
+console.log(createUsernames('Steven Thomas Williams'));
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -104,4 +117,3 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-
