@@ -53,3 +53,5 @@ console.log([...arr, ...arr2]);
 
 //Join: does not mutate the original array
 console.log(letters.join("-"));
+
+//already known methods: push, unshift, pop, shift, indexof and includes. 

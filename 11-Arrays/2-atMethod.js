@@ -12,7 +12,6 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-
 const arr = [23, 11, 64];
 
 //traditional
@@ -36,3 +35,7 @@ console.log(arr.at(-2)); //11
 
 //When we should use at method?
 //well as always it depends: so if you want to get the last element of an array or basically start counting from the end of an array then you should probably start using the 'at' method and also if you want to do 'method chaining' then the at method is also perfect for that.
+
+//at method on string:
+console.log("jonas".at(0));
+console.log("jonas".at(-1));
