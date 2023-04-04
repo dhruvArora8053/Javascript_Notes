@@ -61,7 +61,7 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-//Now we could simply start writing our code out here in the global context however, that is not a good practice so wheneve we do something like creating a feature, it's always best to create a function:
+//Now we could simply start writing our code out here in the global context however, that is not a good practice so whenever we do something like creating a feature, it's always best to create a function:
 const displayMovements = function (movements) {
   containerMovements.innerHTML = '';
   //.textContent=0
