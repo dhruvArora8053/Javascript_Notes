@@ -25,3 +25,6 @@ const totalDepositUsd1 = movements
 console.log(totalDepositUsd1);
 
 //Half part: calculating all the statistics in footer of bankist website
+
+//Note:- 1. we should not go overboard with chaining methods, use as minimum methods as you can while chaining.
+//2. it is a bad practice in javascript to chain methods that mutate the underlying original array and an example of that is the splice or reverse method.
