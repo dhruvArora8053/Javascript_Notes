@@ -88,7 +88,6 @@ const displayMovements = function (movements) {
   });
 };
 
-displayMovements(account1.movements);
 // console.log(containerMovements.innerHTML);
 
 //using reduce method to get the sum of movements:
@@ -96,26 +95,26 @@ const calcDisplayBalance = function (movements) {
   const balance = movements.reduce((acc, m) => acc + m, 0);
   labelBalance.textContent = `${balance}€`;
 };
-calcDisplayBalance(account1.movements);
 
-const calcDisplaySummary = function (movements) {
-  const incomes = movements
+const calcDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov);
   labelSumIn.textContent = `${incomes}€`;
 
-  const out = movements.filter(mov => mov < 0).reduce((acc, mov) => acc + mov);
+  const out = acc.movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov);
   labelSumOut.textContent = `${Math.abs(out)}€`;
 
   //in each deposit bank gives 1.2% interest fo the deposited amount: and note bank only pays the interest if the interest amount is atleast one euro:
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0)
-    .map(mov => (mov * 1.2) / 100)
+    .map(mov => (mov * acc.interestRate) / 100)
     .filter(mov => mov >= 1)
     .reduce((acc, mov) => acc + mov);
   labelSumInterest.textContent = `${interest}€`;
 };
-calcDisplaySummary(account1.movements);
 
 //Computing Usernames:
 const createUsernames = function (accs) {
@@ -131,6 +130,44 @@ const createUsernames = function (accs) {
 };
 
 createUsernames(accounts);
+
+//Implementing login:
+let currentAccount;
+//Event Handler
+btnLogin.addEventListener('click', function (e) {
+  console.log('login');
+  //so what happened as we clicked the login button the whole page got refreshed and that's because this is the button in a form element and so in html the default behavior when we click the submit button if for the page to reload so we need to stop that from happening and for that we need give the callback function the even parameter:
+  e.preventDefault();
+  //this will now prevent this form from submitting
+  //another thing that is great about forms when we click enter after filling the information in a field it automatically triggers the callback function
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    //Display UI and Welcome message
+    labelWelcome.textContent = `Welcome Back! ${
+      currentAccount.owner.split(' ')[0]
+    }`;
+    containerApp.style.opacity = 100;
+
+    //Clear input fields
+    inputLoginUsername.value = inputLoginPin.value = '';
+
+    //Clear cursor
+    inputLoginPin.blur();
+
+    //Display Movements
+    displayMovements(currentAccount.movements);
+
+    //Display Balance
+    calcDisplayBalance(currentAccount.movements);
+
+    //Display Summary
+    calcDisplaySummary(currentAccount);
+  }
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -150,4 +187,4 @@ console.log(accounts);
 //let's find object of jonas and save it into a jonas variable:
 const jonas = accounts.find(account => account.owner === 'Jonas Schmedtmann');
 console.log(jonas);
-//basically we use find method to find one element with it's unique property 
+//basically we use find method to find one element with it's unique property
