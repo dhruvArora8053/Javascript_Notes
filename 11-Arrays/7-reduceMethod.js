@@ -17,3 +17,20 @@ console.log(globalBalance);
 //and 0 is the second parameter of reduce mehtod representing initial value of the accumulator
 
 //Half part: go to bankist app use reduce method to display the sum of all movements
+
+//More examples:
+//max value of movements
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  //in reduce method we always have to somehow return the accumulator to the next iteration
+  else return mov;
+  //here we want to return the current movement as an accumulator for the next iteration
+}, movements[0]);
+console.log(max);
+
+//using arrow:
+const max1 = movements.reduce(
+  (acc, mov) => (acc < mov ? mov : acc),
+  movements[0]
+);
+console.log(max1);

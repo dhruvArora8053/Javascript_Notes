@@ -91,6 +91,13 @@ const displayMovements = function (movements) {
 displayMovements(account1.movements);
 // console.log(containerMovements.innerHTML);
 
+//using reduce method to get the sum of movements:
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, m) => acc + m, 0);
+  labelBalance.textContent = `${balance}€`;
+};
+calcDisplayBalance(account1.movements);
+
 //Computing Usernames:
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
