@@ -57,7 +57,7 @@ lufthansa.buyPlane = function () {
 lufthansa.buyPlane();
 
 // document.querySelector(".buy").addEventListener("click", lufthansa.buyPlane);
-//now we are getting output of this.plane: NaN and the reason for that is that this keyword is the button element it is because as we learned that in an event handler function this keyword always points to the element on which the handler is attached to, so here lufthansa.buyPlane is a handler function and it is attached to 'buy' element and therefore inside of the handler function this keyword will point to the button element, to solve this: should we use call method or bind method?
+//now we are getting output of this.plane: NaN and the reason for that is that this keyword is the button element it is because as we learned that in an event handler function this keyword always points to the element on which the handler is attached to, so here lufthansa.buyPlane is a handler function and it is attached to 'buy' element and therefore inside of the handler function this keyword will point to the button element, to solve this: should we use a call method or bind method?
 //well we need to pass in a function here and not to call it and so we already know that the call method calls the function and so that's not what we need and so therefore we use bind: because we already know bind method is going to return a new function
 document
   .querySelector(".buy")
