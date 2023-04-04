@@ -150,3 +150,4 @@ console.log(accounts);
 //let's find object of jonas and save it into a jonas variable:
 const jonas = accounts.find(account => account.owner === 'Jonas Schmedtmann');
 console.log(jonas);
+//basically we use find method to find one element with it's unique property 
