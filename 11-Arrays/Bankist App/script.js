@@ -145,3 +145,8 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+//find:-
+console.log(accounts);
+//let's find object of jonas and save it into a jonas variable:
+const jonas = accounts.find(account => account.owner === 'Jonas Schmedtmann');
+console.log(jonas);
