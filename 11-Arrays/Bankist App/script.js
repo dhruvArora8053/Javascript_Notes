@@ -92,18 +92,20 @@ displayMovements(account1.movements);
 // console.log(containerMovements.innerHTML);
 
 //Computing Usernames:
-const createUsernames = function (user) {
-  const username = user
-    .toLowerCase()
-    .split(' ')
-    .map(name => name[0])
-    .join('');
-  //now the whole result is an array and on that array now we can call the join method
-
-  return username;
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    //we used here forEach because we do not want to return anything and save it on array instead we want to have some manipulation inside of these objects which you can also called side effects using forEach
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+    //now the whole result is an array and on that array now we can call the join method
+  });
 };
 
-console.log(createUsernames('Steven Thomas Williams'));
+createUsernames(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
