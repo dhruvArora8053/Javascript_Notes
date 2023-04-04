@@ -105,7 +105,7 @@ console.log(rest);
 
 //do you think it will retrieve rest:
 console.log(rest.get([1, 2])); //output: undefined
-//no it did not and the reason for that is that these two arrays are actually not the same object even though we wrote them in the same way and so they have the same elements but they are not the same object in the heap, above set key is exactly that object in memory not the below get one and so this cannot work. Inorder to make it work we would have to do:
+//no it did not and the reason for that is that these two arrays are actually not the same object even though we wrote them in the same way and so they have the same elements but they are not the same object in the heap, above set key is exactly that object in memory not the below 'get' one and so this cannot work. Inorder to make it work we would have to do:
 const arr = [1, 2];
 rest.set(arr, "Test");
 console.log(rest.get(arr)); //output: Test
@@ -115,3 +115,4 @@ console.log(rest);
 
 //With DOM elements: dom elements also are special type of objects
 rest.set(document.querySelector("h1"), "Heading"); //result of this is going to be the object
+
