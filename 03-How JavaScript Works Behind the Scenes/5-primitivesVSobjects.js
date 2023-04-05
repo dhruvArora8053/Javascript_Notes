@@ -29,9 +29,9 @@ console.log("After Marriage:", marriedJessica);
 
 // marriedJessica = {}; //output: error(assignment to constant variable)
 
-//because this new object will be stored at a different position in memory and therfore the reference to that position in memory will have to change here in the marriedJessica variable and therfore that does not work because that is in the stack and so since it is a constant we cannot change the value in the stack so we cannot change a value to new memory address and therefore this does not work.
+//because this new object will be stored at a different position in memory and therfore the reference to that position in memory will have to change here in the marriedJessica variable and therefore that does not work because that is in the stack and so since it is a constant we cannot change the value in the stack so we cannot change a value to new memory address and therefore this does not work.
 //if it was a let here then we would be able to change it to a new object but since it's a constanst so it's not allowed.
-//So as a conclusion, completely changing the object so assigning a new object to it is completely different than simply chaning a property as we did above.
+//So as a conclusion, completely changing the object so assigning a new object to it is completely different than simply changing a property as we did above.
 
 //What if we actually really wanted to copy the object so that we could then change one of them without changning the other:
 const jessica1 = {
