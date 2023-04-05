@@ -91,9 +91,9 @@ const displayMovements = function (movements) {
 // console.log(containerMovements.innerHTML);
 
 //using reduce method to get the sum of movements:
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, m) => acc + m, 0);
-  labelBalance.textContent = `${balance}€`;
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, m) => acc + m, 0);
+  labelBalance.textContent = `${acc.balance}€`;
 };
 
 const calcDisplaySummary = function (acc) {
@@ -131,6 +131,12 @@ const createUsernames = function (accs) {
 
 createUsernames(accounts);
 
+const updateUI = function (acc) {
+  displayMovements(acc.movements);
+  calcDisplayBalance(acc);
+  calcDisplaySummary(acc);
+};
+
 //Implementing login:
 let currentAccount;
 //Event Handler
@@ -158,23 +164,17 @@ btnLogin.addEventListener('click', function (e) {
     //Clear cursor
     inputLoginPin.blur();
 
-    //Display Movements
-    displayMovements(currentAccount.movements);
-
-    //Display Balance
-    calcDisplayBalance(currentAccount.movements);
-
-    //Display Summary
-    calcDisplaySummary(currentAccount);
+    //Update UI
+    updateUI(currentAccount);
   }
 });
 
 //Implementing Transfers:
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
-  const transferTo = inputTransferTo.value;
+  const recieverAcc = inputTransferTo.value;
   const amount = Number(inputTransferAmount.value);
-  const got = accounts.find(acc => acc.username === transferTo);
+  const got = accounts.find(acc => acc.username === recieverAcc);
 
   //Clear input fields
   inputTransferTo.value = inputTransferAmount.value = '';
@@ -182,13 +182,17 @@ btnTransfer.addEventListener('click', function (e) {
   //Clear cursor
   inputTransferAmount.blur();
 
-  if (got) {
+  if (
+    amount > 0 &&
+    amount <= currentAccount.balance &&
+    got?.username !== currentAccount.username &&
+    got
+  ) {
     currentAccount.movements.push(-amount);
-    displayMovements(currentAccount.movements);
-    calcDisplayBalance(currentAccount.movements);
-    calcDisplaySummary(currentAccount);
-
     got.movements.push(amount);
+
+    //Update UI
+    updateUI(currentAccount);
   }
 });
 
