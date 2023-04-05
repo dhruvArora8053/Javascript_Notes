@@ -23,7 +23,7 @@ for (const mov of movements) {
 }
 console.log(arr);
 
-//so here in above map method we use a function to solve the problem of creating a new array while here in forOf we simply loop over one array and then manually create a new one so these two are completely different philosphies or we can also say paradigms, map method using a functional programming which is more preffered because in modern javascript there is definitely a push going on in the direction of fucntional programming and therefore in modern javascript map method is way to go then forOf for this type of computation.
+//so here in above map method we use a function to solve the problem of creating a new array while here in forOf we simply loop over one array and then manually create a new one so these two are completely different philosyphies or we can also say paradigms, map method using a functional programming which is more preffered because in modern javascript there is definitely a push going on in the direction of fucntional programming and therefore in modern javascript map method is way to go then forOf for this type of computation.
 
 //another example:
 const movementsDescriptions = movements.map(
