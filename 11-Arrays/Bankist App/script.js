@@ -256,3 +256,31 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const jonas = accounts.find(account => account.owner === 'Jonas Schmedtmann');
 // console.log(jonas);
 //basically we use find method to find one element with it's unique property
+
+//Flat method:
+//let's say that the bank itself wants to calculate the overall balance of all the movements of all the accounts:
+const accountMovements = accounts.map(acc => acc.movements);
+console.log(accountMovements);
+
+//let's unpack:
+const allMovements = accountMovements.flat();
+console.log(allMovements);
+
+//let's sum:
+const sum = allMovements.reduce((acc, mov) => acc + mov);
+console.log(sum);
+
+//let's chain:
+const chain = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov);
+
+console.log(chain);
+
+//flatMap method:
+//it essentially combines a map and a flat method into just one method which is better for performance
+
+const useflatMap = accounts.flatMap(acc => acc.movements);
+console.log(useflatMap);
+//remember, flatMap method only goes one level deep and we cannot change it so if you do need to go deeper than just one level you still need to use the flat method
