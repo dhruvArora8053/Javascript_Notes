@@ -172,7 +172,24 @@ btnLogin.addEventListener('click', function (e) {
 //Implementing Transfers:
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
-  
+  const transferTo = inputTransferTo.value;
+  const amount = Number(inputTransferAmount.value);
+  const got = accounts.find(acc => acc.username === transferTo);
+
+  //Clear input fields
+  inputTransferTo.value = inputTransferAmount.value = '';
+
+  //Clear cursor
+  inputTransferAmount.blur();
+
+  if (got) {
+    currentAccount.movements.push(-amount);
+    displayMovements(currentAccount.movements);
+    calcDisplayBalance(currentAccount.movements);
+    calcDisplaySummary(currentAccount);
+
+    got.movements.push(amount);
+  }
 });
 
 /////////////////////////////////////////////////
