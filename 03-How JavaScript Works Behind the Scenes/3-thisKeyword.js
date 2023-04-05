@@ -3,7 +3,7 @@
 console.log(this);
 //this keyword in the global scope is simply a window object
 
-//this keyword inside of a regular funciton:
+//this keyword inside of a regular function:
 const calcAge = function (birthYear) {
   console.log(2037 - birthYear);
   console.log(this); //output: undefined
