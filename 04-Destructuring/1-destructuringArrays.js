@@ -88,3 +88,4 @@ console.log(d, e, f); //output: 8 9 undefined
 const [g = 1, h = 1, k = 1] = [8, 9];
 console.log(g, h, k); //output 8 9 1
 //this can get useful for ex- when we get data from an API
+

@@ -169,6 +169,12 @@ btnLogin.addEventListener('click', function (e) {
   }
 });
 
+//Implementing Transfers:
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+  
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
