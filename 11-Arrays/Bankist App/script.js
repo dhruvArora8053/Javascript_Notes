@@ -196,6 +196,26 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+//Implementing Loan:
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputLoanAmount.value);
+
+  //bank only grants a loan if there is atleast one deposit with atleast 10% of the requested loan amount
+  const above10 = currentAccount.movements.some(
+    mov => mov >= (amount * 10) / 100
+  );
+
+  if (amount > 0 && above10) {
+    currentAccount.movements.push(amount);
+  }
+
+  updateUI(currentAccount);
+
+  inputLoanAmount.value = '';
+  inputLoanAmount.blur();
+});
+
 //Implementing Deletion
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
