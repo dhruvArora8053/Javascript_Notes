@@ -62,12 +62,15 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 //Now we could simply start writing our code out here in the global context however, that is not a good practice so whenever we do something like creating a feature, it's always best to create a function:
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
   //.textContent=0
   //it will remove the inner html of the element, and innerHTML is a bit simlilar to textContent but now the difference is that textContent simply returns the text itself while HTML returns everything including the HTML so all the html tags will be included
 
-  movements.forEach(function (mov, i) {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+  //here we used slice so that we can do the changes on the copied array not on the original array
+
+  movs.forEach(function (mov, i) {
     //now we have to essentially create an HTML that looks like movement row in the DOM:
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
@@ -235,6 +238,13 @@ btnClose.addEventListener('click', function (e) {
   }
   inputClosePin.value = inputCloseUsername.value = '';
   inputClosePin.blur();
+});
+
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 
 /////////////////////////////////////////////////
