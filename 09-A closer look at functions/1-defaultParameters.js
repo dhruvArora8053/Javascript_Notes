@@ -35,3 +35,4 @@ createBooking("Lh123", 5);
 createBooking("LH123", undefined, 1000);
 //this works because setting the parameter to undefined is the same thing as not even setting it
 
+
