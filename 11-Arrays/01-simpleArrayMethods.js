@@ -43,3 +43,16 @@ console.log([...arr, ...arr2]);
 console.log(letters.join("-"));
 
 //already known methods: push, unshift, pop, shift, indexof and includes.
+
+//Side Note:-
+let a = 10;
+console.log(a++); //10
+//why is that? well the ++ operator does actually increment the value but it still returns the previous value
+console.log(a); //11
+//so now if we log a again here now indeed we are getting 11
+//so the ++ operator did it's job above but the thing is that when we use it like this it will still return the old value
+
+//let's solve the problem:
+//Prefixed ++ operator:
+let b = 10;
+console.log(++b);

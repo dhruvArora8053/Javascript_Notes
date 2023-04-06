@@ -295,3 +295,65 @@ console.log(chain);
 const useflatMap = accounts.flatMap(acc => acc.movements);
 console.log(useflatMap);
 //remember, flatMap method only goes one level deep and we cannot change it so if you do need to go deeper than just one level you still need to use the flat method
+
+//Creating and filling Arrays:
+//remember a nodelist looks like an array but it is not an actual array so it cannot have methods like map, filter and etc.
+//now let's say we do not have movements stored in accounts instead it is stored in UI and we have to take all those movements from the UI and calculate their sum:
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+  //here we used Array.from() to create an array from the result of queryselectorAll() which is a nodelist which is not really an array but an array like structure and that array like can easily be converted to an array using Array.from() and then as a second step we even included a mapping function which then transforms that initialy array to an array exactly as we want it so basically converting the raw element to it's text content and replaceint the euro sign with nothing.
+  console.log(movementsUI);
+
+  //another way
+  const movementsUI2 = [...document.querySelectorAll('.movements__value')];
+  console.log(movementsUI2);
+});
+
+//Array Methods Practice:-
+
+//1. Calculate how much has been deposited total in the bank:
+const totalDepostit = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((acc, mov) => acc + mov);
+
+console.log(totalDepostit);
+
+//2. Calculate count how many deposits have there been in the bank with atleast $1000:
+const atleast1000 = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov >= 1000).length;
+
+console.log(atleast1000);
+
+//same thing using reduce
+const atleast1000s = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => (mov >= 1000 ? acc + 1 : acc), 0);
+console.log(atleast1000s);
+
+//3. Create an object which contains the sum of the deposits and of the withdrawals:
+// We can also use reduce to return an array or object or etc.
+const { deposits, withdrawals } = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (acc, mov) => {
+      // mov > 0 ? (acc.deposits += mov) : (acc.withdrawals += mov);
+      acc[mov > 0 ? 'deposits' : 'withdrawals'] += mov;
+      return acc;
+    },
+    { deposits: 0, withdrawals: 0 }
+  );
+
+console.log(deposits, withdrawals);
+
+//4. Create a simple function to convert any string to a titlecase:
+//this is a nice title -> This Is a Nice Title
+const convertTitleCase= function(title){
+
+}
+
+console.log(convertTitleCase);
