@@ -25,3 +25,20 @@ console.log(y);
 const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 arr.fill(23, 4, 6);
 console.log(arr);
+
+//Array.from() Method:
+const z = Array.from({ length: 7 }, () => 1);
+console.log(z);
+
+const a = Array.from({ length: 7 }, (cur, i) => i + 1);
+console.log(a);
+//you can also put throwaway '_' variable instead of 'cur'
+
+//create an array for 100 random dice rolls:
+const diceRoll = Array.from({ length: 100 }, () =>
+  Math.trunc(Math.random() * 100 + 1)
+);
+console.log(diceRoll);
+
+//Main purpose of Array.from is to convert iterables into arrays:
+//Half part: Bankist website: taking movements from UI and calcuating the sum
