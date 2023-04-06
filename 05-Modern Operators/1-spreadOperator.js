@@ -84,7 +84,7 @@ console.log(menu);
 //What is an iterable?
 //iterables are things like all [arrays, strings, maps, or sets] but not objects, so basically most of the built-in data structures in javascript are now iterables but except objects.
 
-//since strings are also iterables that means that we can use the spread operator on a sting as well:
+//since strings are also iterables that means that we can use the spread operator on a string as well:
 const str = "Jonas";
 const letters = [...str, " ", "S."];
 console.log(letters);
@@ -115,5 +115,3 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = "Ristorante Roma";
 console.log(restaurantCopy.name); //output: Ristorante Roma
 console.log(restaurant.name); //output: Classico Italiano
-
-
