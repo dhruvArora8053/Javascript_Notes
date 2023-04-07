@@ -26,4 +26,3 @@ currenciesUnique.forEach(function (value, key, set) {
 //'_': throw away variable
 
 
-//chaing

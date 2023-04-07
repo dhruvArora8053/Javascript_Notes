@@ -82,3 +82,5 @@ poll.displayResults.call(window);
 document
   .querySelector(".poll")
   .addEventListener("click", poll.registerNewAnswer.bind(poll));
+
+  
