@@ -202,7 +202,8 @@ btnTransfer.addEventListener('click', function (e) {
 //Implementing Loan:
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
-  const amount = Number(inputLoanAmount.value);
+  const amount = Math.floor(inputLoanAmount.value); 
+  //Math.floor does type coercion itself so we don't have to convert it to number
 
   //bank only grants a loan if there is atleast one deposit with atleast 10% of the requested loan amount
   const above10 = currentAccount.movements.some(
