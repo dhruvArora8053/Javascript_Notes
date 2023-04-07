@@ -88,12 +88,14 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 //Now we could simply start writing our code out here in the global context however, that is not a good practice so whenever we do something like creating a feature, it's always best to create a function:
-const displayMovements = function (movements, sort = false) {
+const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
   //.textContent=0
   //it will remove the inner html of the element, and innerHTML is a bit simlilar to textContent but now the difference is that textContent simply returns the text itself while HTML returns everything including the HTML so all the html tags will be included
 
-  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+  const movs = sort
+    ? acc.movements.slice().sort((a, b) => a - b)
+    : acc.movements;
   //here we used slice so that we can do the changes on the copied array not on the original array
 
   movs.forEach(function (mov, i) {
@@ -105,6 +107,7 @@ const displayMovements = function (movements, sort = false) {
      <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
+    <div class="movements__date">${displayDate}</div>
      <div class="movements__value">${mov.toFixed(2)}€</div>
   </div>
   `;
@@ -161,13 +164,29 @@ const createUsernames = function (accs) {
 createUsernames(accounts);
 
 const updateUI = function (acc) {
-  displayMovements(acc.movements);
+  displayMovements(acc);
   calcDisplayBalance(acc);
   calcDisplaySummary(acc);
 };
 
 //Implementing login:
 let currentAccount;
+
+//Fake Always Logged In:-
+currentAccount = account1;
+updateUI(currentAccount);
+containerApp.style.opacity = 100;
+
+const now = new Date();
+const day = `${now.getDate()}`.padStart(2, 0);
+const month = `${now.getMonth() + 1}`.padStart(2, 0); //zero based
+const year = now.getFullYear();
+const hour = now.getHours();
+const min = now.getMinutes();
+labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
+
+//day/month/year
+
 //Event Handler
 btnLogin.addEventListener('click', function (e) {
   console.log('login');
@@ -270,7 +289,7 @@ btnClose.addEventListener('click', function (e) {
 let sorted = false;
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
-  displayMovements(currentAccount.movements, !sorted);
+  displayMovements(currentAccount, !sorted);
   console.log(sorted);
   sorted = !sorted;
 });
@@ -286,4 +305,3 @@ labelBalance.addEventListener('click', function () {
   });
 });
 /////////////////////////////////////////////////
-
