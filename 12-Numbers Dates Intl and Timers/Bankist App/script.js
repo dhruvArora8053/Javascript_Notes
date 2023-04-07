@@ -79,7 +79,7 @@ const displayMovements = function (movements, sort = false) {
      <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-     <div class="movements__value">${Math.abs(mov)}€</div>
+     <div class="movements__value">${mov.toFixed(2)}€</div>
   </div>
   `;
     //now we need to attach above html somehow into the movements container in our webpage: to do that we will use a method called insertAdjacentHTML:
@@ -96,19 +96,19 @@ const displayMovements = function (movements, sort = false) {
 //using reduce method to get the sum of movements:
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, m) => acc + m, 0);
-  labelBalance.textContent = `${acc.balance}€`;
+  labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
 };
 
 const calcDisplaySummary = function (acc) {
   const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov);
-  labelSumIn.textContent = `${incomes}€`;
+  labelSumIn.textContent = `${incomes.toFixed(2)}€`;
 
   const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov);
-  labelSumOut.textContent = `${Math.abs(out)}€`;
+  labelSumOut.textContent = `${Math.abs(out).toFixed(2)}€`;
 
   //in each deposit bank gives 1.2% interest fo the deposited amount: and note bank only pays the interest if the interest amount is atleast one euro:
   const interest = acc.movements
@@ -116,7 +116,7 @@ const calcDisplaySummary = function (acc) {
     .map(mov => (mov * acc.interestRate) / 100)
     .filter(mov => mov >= 1)
     .reduce((acc, mov) => acc + mov);
-  labelSumInterest.textContent = `${interest}€`;
+  labelSumInterest.textContent = `${interest.toFixed(2)}€`;
 };
 
 //Computing Usernames:
@@ -202,7 +202,7 @@ btnTransfer.addEventListener('click', function (e) {
 //Implementing Loan:
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
-  const amount = Math.floor(inputLoanAmount.value); 
+  const amount = Math.floor(inputLoanAmount.value);
   //Math.floor does type coercion itself so we don't have to convert it to number
 
   //bank only grants a loan if there is atleast one deposit with atleast 10% of the requested loan amount

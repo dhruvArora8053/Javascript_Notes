@@ -55,4 +55,5 @@ console.log((2.345).toFixed(2)); //2.35
 console.log(+(2.345).toFixed(2));
 //so here they all are nubmers so they are primitives right and primitives actually don't have methods and so behind the scenes javascript will do boxing and boxing is to basically to transform this to a number object then call the method on that object and once the operation is finished it will convert it back to primitive
 
-//Half Part: Bankist app: 1. round the requested loan amount
+//Half Part: Bankist app: 1. round the requested loan amount, 2. toFixed on display() functions
+ 
