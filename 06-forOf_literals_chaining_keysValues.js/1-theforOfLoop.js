@@ -64,6 +64,3 @@ for (const [i, el] of menu.entries()) {
   console.log(`${i + 1}: ${el}`);
 }
 //item is now an array with item index and item and we destructured further into i and el
-
-console.log([...menu.entries()]);
-
