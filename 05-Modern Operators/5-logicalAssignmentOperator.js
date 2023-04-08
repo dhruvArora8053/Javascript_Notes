@@ -113,7 +113,7 @@ console.log(rest5, rest6);
 //Logical AND assignment operator:
 //and to learn about this one let's say that we want to anonymize the names of the restaurant owners, so when there is currently is an owner like above in the object, we want to basically replace that string with the string 'anonymous'
 
-//with short circuiting
+// with short circuiting
 // rest5.owner = rest5.owner && "anonymous";
 // rest6.owner = rest6.owner && "anonymous";
 // console.log(rest5, rest6);
