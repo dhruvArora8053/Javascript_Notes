@@ -1,6 +1,6 @@
 "use strict";
 
-//First thing that you should know about numbers is that in javascript all numbers are represented internally as floating point numbers so basically always as decimals no matter if we actuall write them as integers or as decimals:
+//First thing that you should know about numbers is that in javascript all numbers are represented internally as floating point numbers so basically always as decimals no matter if we actually write them as integers or as decimals:
 console.log(23 === 23.0); //true
 //that's the reason why we only have one data type for all numbers
 
@@ -38,7 +38,7 @@ console.log(Number.isFinite(20)); //true
 console.log(Number.isFinite("20")); //false
 console.log(Number.isFinite(+"20X")); //false
 console.log(Number.isFinite(23 / 0)); //false
-//this is the ultimate method that you should use to check if any value is a number atleas when you're working with floating point numbers and if you are sure that you just need to check for an iteger then you can use isInteger as well:
+//this is the ultimate method that you should use to check if any value is a number atleast when you're working with floating point numbers and if you are sure that you just need to check for an iteger then you can use isInteger as well:
 
 console.log(Number.isInteger(23)); //true
 console.log(Number.isInteger(23.0)); //true, because this is also an integer, remember.
