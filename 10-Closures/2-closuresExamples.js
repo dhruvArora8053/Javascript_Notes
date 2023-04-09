@@ -22,7 +22,7 @@ const h = function () {
   };
 };
 
-//Re-assigning f function throug h
+//Re-assigning f function through
 h();
 f();
 //f function still able to compute 'b' operand because of closure
