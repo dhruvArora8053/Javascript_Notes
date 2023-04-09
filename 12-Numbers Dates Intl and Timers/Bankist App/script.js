@@ -146,6 +146,14 @@ const formatMovementDate = function (date, locale) {
 
 // labelDate.textContent = new Intl.DateTimeFormat(locale, options).format(now);
 
+//Formatting Currency:-
+const formatCurrency = function (value, locale, currency) {
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency: currency,
+  }).format(value);
+};
+
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
   //.textContent=0
@@ -167,13 +175,21 @@ const displayMovements = function (acc, sort = false) {
 
     const displayDate = formatMovementDate(date, acc.locale);
 
+    //Implementing Currency:
+    // const formattedMov = new Intl.NumberFormat(acc.locale, {
+    //   style: 'currency',
+    //   currency: acc.currency,
+    // }).format(mov);
+
+    const formattedMov = formatCurrency(mov, acc.locale, acc.currency);
+
     const html = `
     <div class="movements__row">
      <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
     <div class="movements__date">${displayDate}</div>
-     <div class="movements__value">${mov.toFixed(2)}€</div>
+     <div class="movements__value">${formattedMov}</div>
   </div>
   `;
     //now we need to attach above html somehow into the movements container in our webpage: to do that we will use a method called insertAdjacentHTML:
@@ -190,19 +206,28 @@ const displayMovements = function (acc, sort = false) {
 //using reduce method to get the sum of movements:
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, m) => acc + m, 0);
-  labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
+
+  labelBalance.textContent = formatCurrency(
+    acc.balance,
+    acc.locale,
+    acc.currency
+  );
 };
 
 const calcDisplaySummary = function (acc) {
   const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov);
-  labelSumIn.textContent = `${incomes.toFixed(2)}€`;
+  labelSumIn.textContent = formatCurrency(incomes, acc.locale, acc.currency);
 
   const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov);
-  labelSumOut.textContent = `${Math.abs(out).toFixed(2)}€`;
+  labelSumOut.textContent = formatCurrency(
+    Math.abs(out),
+    acc.locale,
+    acc.currency
+  );
 
   //in each deposit bank gives 1.2% interest fo the deposited amount: and note bank only pays the interest if the interest amount is atleast one euro:
   const interest = acc.movements
@@ -210,7 +235,11 @@ const calcDisplaySummary = function (acc) {
     .map(mov => (mov * acc.interestRate) / 100)
     .filter(mov => mov >= 1)
     .reduce((acc, mov) => acc + mov);
-  labelSumInterest.textContent = `${interest.toFixed(2)}€`;
+  labelSumInterest.textContent = formatCurrency(
+    interest,
+    acc.locale,
+    acc.currency
+  );
 };
 
 //Computing Usernames:
