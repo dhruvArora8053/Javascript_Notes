@@ -102,6 +102,17 @@ const displayMovements = function (acc, sort = false) {
     //now we have to essentially create an HTML that looks like movement row in the DOM:
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
+    //looping over two arrays at the same time: so we called the foreach method on one of them i.e. movements and then we use the current index to also get the data fro some other array:
+    const date = new Date(acc.movementsDates[i]);
+
+    //acc.movements[i] is gonna be a nicely formatted time string and we can use that string to create a new date object and we need that object so that then from there we can call our usual methods to get the date, month and a year so that's the reason why we need to convert these strings back into a javascript object because only then we can actually work with that data
+
+    const day = `${date.getDate()}`.padStart(2, 0);
+    const month = `${date.getMonth() + 1}`.padStart(2, 0); //zero based
+    const year = date.getFullYear();
+
+    const displayDate = `${day}/${month}/${year}`;
+
     const html = `
     <div class="movements__row">
      <div class="movements__type movements__type--${type}">${
@@ -177,14 +188,6 @@ currentAccount = account1;
 updateUI(currentAccount);
 containerApp.style.opacity = 100;
 
-const now = new Date();
-const day = `${now.getDate()}`.padStart(2, 0);
-const month = `${now.getMonth() + 1}`.padStart(2, 0); //zero based
-const year = now.getFullYear();
-const hour = now.getHours();
-const min = now.getMinutes();
-labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
-
 //day/month/year
 
 //Event Handler
@@ -205,6 +208,15 @@ btnLogin.addEventListener('click', function (e) {
       currentAccount.owner.split(' ')[0]
     }`;
     containerApp.style.opacity = 100;
+
+    //Create current Date and Time:
+    const now = new Date();
+    const day = `${now.getDate()}`.padStart(2, 0);
+    const month = `${now.getMonth() + 1}`.padStart(2, 0); //zero based
+    const year = now.getFullYear();
+    const hour = `${now.getHours()}`.padStart(2, 0);
+    const min = `${now.getMinutes()}`.padStart(2, 0);
+    labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
 
     //Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
@@ -239,8 +251,15 @@ btnTransfer.addEventListener('click', function (e) {
     currentAccount.movements.push(-amount);
     got.movements.push(amount);
 
+    //Add Transfer Date:
+    currentAccount.movementsDates.push(new Date().toISOString());
+    //here we are passing an date object itself, let's convert it into ISO string:
+    got.movementsDates.push(new Date().toISOString());
+
     //Update UI
     updateUI(currentAccount);
+
+    //Note:- In the real world we would probably have an object for each movement and so that object then would contain the amount, tha date, and some other information about movement. And now we don't want to restructure the entire application at this point.
   }
 });
 
@@ -259,6 +278,10 @@ btnLoan.addEventListener('click', function (e) {
     currentAccount.movements.push(amount);
   }
 
+  //Add Transfer Date:
+  currentAccount.movementsDates.push(new Date().toISOString());
+
+  //Current Account Display:
   updateUI(currentAccount);
 
   inputLoanAmount.value = '';
