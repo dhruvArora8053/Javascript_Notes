@@ -12,7 +12,7 @@ const secureBooking = function () {
 };
 
 const booker = secureBooking();
-//before we start running the secure booking function down here, our code is running in the global execution context and in there we currently only have this secureBooking function and so we can also say that the global scope now contains secure booking then when secureBooking is actually executed a new execution context is put on the top of the execution stack now remember each execution context has a variable environment which contains all it's local variables and in this case it only contains the passengerCount set to 0, this variable environment is also the scope of this function. passengerCount is in the local scope but ofcourse this scope also gets access to all variables of the parent's scopes and in this case just a global scope anyway in the nex line of the secure booking function a new function is returned and it will be stored in the booker variable so the global context now also contains the booker variable and now what else happens when the secure booking function returns?
+//before we start running the secure booking function down here, our code is running in the global execution context and in there we currently only have this secureBooking function and so we can also say that the global scope now contains secure booking then when secureBooking is actually executed a new execution context is put on the top of the execution stack now remember each execution context has a variable environment which contains all it's local variables and in this case it only contains the passengerCount set to 0, this variable environment is also the scope of this function. passengerCount is in the local scope but ofcourse this scope also gets access to all variables of the parent's scopes and in this case just a global scope anyway in the next line of the secure booking function a new function is returned and it will be stored in the booker variable so the global context now also contains the booker variable and now what else happens when the secure booking function returns?
 //it's execution context pops off the stack and disappears so the secure booking function has done it's job and has now finished execution, it really is gone now and that's important to be aware of and now let's call booker function:
 booker();
 booker();
@@ -24,4 +24,5 @@ booker();
 //Note:- there is no way for us to explicitly access closed over variables that's because closures are not like a tangible thing, they're not like an object or so that we can access so we just cannot reach into a closure and take variables from it, it's impossible because a closure is just an internal property of a function. We can observe that a closure happens but cannot access it's variables:
 
 console.dir(booker);
-//remember anything inside '[[]]' this is not accessible
+//remember anything inside '[[]]' is not accessible
+
