@@ -73,7 +73,7 @@ if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 //ES2020 optional chaining:
 //it is a feature if a certain property doesn't exist then undefined is returned immediatedly and so that to avoid that kind of error that we saw earlier
 console.log(restaurant.openingHours.mon?.open); //output: undefined
-//so only if 'mon' exists then this open property will be read from there but if not then immediately undefine will be returned
+//so only if 'mon' exists then this open property will be read from there but if not then immediately undefined will be returned
 //and exists here actually means the nullish cocept that we already talked before so a property exists if it's not null and not undefined so if it's 0 or the empty string then it still exists ofcourse.
 
 console.log(restaurant.openingHours?.mon?.open);
@@ -102,4 +102,5 @@ const users = [{ name: "Jonas", email: "hello@jona.io" }];
 
 console.log(users[0]?.name ?? "User array empty"); //output: Jonas
 console.log(users[2]?.name ?? "User array empty"); //output: "User arry empty"
+
 
