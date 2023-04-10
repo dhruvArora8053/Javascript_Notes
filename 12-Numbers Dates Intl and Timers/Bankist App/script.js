@@ -372,15 +372,16 @@ btnLoan.addEventListener('click', function (e) {
   );
 
   if (amount > 0 && above10) {
-    currentAccount.movements.push(amount);
+    setTimeout(function () {
+      currentAccount.movements.push(amount);
+
+      //Add Transfer Date:
+      currentAccount.movementsDates.push(new Date().toISOString());
+
+      //Current Account Display:
+      updateUI(currentAccount);
+    }, 3000);
   }
-
-  //Add Transfer Date:
-  currentAccount.movementsDates.push(new Date().toISOString());
-
-  //Current Account Display:
-  updateUI(currentAccount);
-
   inputLoanAmount.value = '';
   inputLoanAmount.blur();
 });

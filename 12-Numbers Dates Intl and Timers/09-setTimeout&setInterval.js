@@ -21,3 +21,9 @@ if (ingredients.includes("spinach")) clearTimeout(pizzaTimer);
 //if it did not include the spinach then it would still work
 
 //Half Part: Bankist App: implement timer to simulate the approval of loan
+
+//What if we wanted to run a function over and over again like every five seconds or every 10 minutes?
+//setInterval function:
+// setInterval(() => {
+//   console.log(new Date());
+// }, 2000);
