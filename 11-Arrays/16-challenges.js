@@ -182,3 +182,9 @@ tooLittle.flat().forEach((owner) => {
 });
 str += `dogs eat too much!`;
 console.log(str);
+
+// 8. Create a shallow copy of the 'dogs' array and sort it by recommended food
+// portion in an ascending order (keep in mind that the portions are inside the
+// array's objects �)
+const dogsShallow = dogs.slice().sort((a, b) => a.rec - b.rec);
+console.log(dogsShallow);
