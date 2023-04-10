@@ -137,10 +137,6 @@ calcAverageHumanAge1([5, 2, 4, 1, 15, 8, 3]);
 //  ];
 // GOOD LUCK
 
-// 2. Find Sarah's dog and log to the console whether it's eating too much or too
-// little. Hint: Some dogs have multiple owners, so you first need to find Sarah in
-// the owners array, and so this one is a bit tricky (on purpose) �
-
 const dogs = [
   { weight: 22, curFood: 250, owners: ["Alice", "Bob"] },
   { weight: 8, curFood: 200, owners: ["Matilda"] },
@@ -148,55 +144,41 @@ const dogs = [
   { weight: 32, curFood: 340, owners: ["Michael"] },
 ];
 
-// 3. Create an array containing all owners of dogs who eat too much
-// ('ownersEatTooMuch') and an array with all owners of dogs who eat too little
-// ('ownersEatTooLittle').
-// 4. Log a string to the console for each array created in 3., like this: "Matilda and
-// Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat
-// too little!"
-
 dogs.forEach((dog) => {
-  dog.recommended = dog.weight ** 0.75 * 28;
+  dog.rec = Math.round(dog.weight ** 0.75 * 28);
 });
-console.log(dogs);
 
-// § Being within a range 10% above and below the recommended portion means:
-// current > (recommended * 0.90) && current < (recommended *
-// 1.10). Basically, the current portion should be between 90% and 110% of the
-// recommended portion.
-
-const normalRange = function (cur, rec) {
-  return cur > rec * 0.9 && cur < rec * 1.1;
+const tooMuch = [];
+const tooLittle = [];
+const checkWeight = function (curWeight, recWeight, owners) {
+  if (curWeight > recWeight * 0.9 && curWeight < recWeight * 1.1) {
+    console.log("normal range");
+  } else if (curWeight < recWeight * 0.9) {
+    console.log("less range");
+    tooLittle.push(owners);
+  } else {
+    tooMuch.push(owners);
+    console.log("high range");
+  }
 };
 
-console.log(normalRange(dogs[0].curFood, dogs[0].recommended));
+const sarahDog = dogs.find((dog) => dog.owners.includes("Sarah"));
+checkWeight(sarahDog.curFood, sarahDog.rec);
 
-const normal = dogs.filter((dog) => normalRange(dog.curFood, dog.recommended));
-console.log(normal);
+for (const dog of dogs) {
+  console.log(dog.owners);
+  checkWeight(dog.curFood, dog.rec, dog.owners);
+}
 
-const notNormal = dogs.filter(
-  (dog) => !normalRange(dog.curFood, dog.recommended)
-);
-console.log(notNormal);
-
-// current > (recommended * 0.90) && current < (recommended *
-// 1.10)
+console.log(tooLittle.flat());
+console.log(tooMuch.flat());
 
 // 4. Log a string to the console for each array created in 3., like this: "Matilda and
 // Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat
 // too little!"
-
-const eatMuch = notNormal.filter((dog) => {
-  if (dog.curFood > dog.recommended * 1.1) return dog.owners;
+let str = ``;
+tooLittle.flat().forEach((owner) => {
+  str += `${owner} and `;
 });
-console.log(eatMuch);
-
-let str;
-eatMuch.forEach((dog) => {
-  // const unpack= ...dog.owners;
-  str = ``;
-});
-
-const eatLess = notNormal.filter((dog) => dog.curFood < dog.recommended * 0.9);
-console.log(eatLess);
-
+str += `dogs eat too much!`;
+console.log(str);
