@@ -263,13 +263,37 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
+const startLogOutTimer = function () {
+  //Set time to 5 minutes
+  let time = 10;
+
+  //Call the timer every second
+  const timer = setInterval(() => {
+    const min = String(Math.trunc(time / 60)).padStart(2, 0);
+    const sec = String(time % 60).padStart(2, 0);
+    //In each call, print the reamining time to UI
+    labelTimer.textContent = `${min}:${sec}`;
+
+    //Decrease 1 second
+    time = time - 1;
+
+    //When 0 seconds, stop timer and log out user
+    if (time === 0) {
+      clearInterval(timer);
+
+      labelWelcome.textContent = 'Login to get started';
+      containerApp.style.opacity = 0;
+    }
+  }, 1000);
+};
+
 //Implementing login:
 let currentAccount;
 
 //Fake Always Logged In:-
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 100;
+// currentAccount = account1;
+// updateUI(currentAccount);
+// containerApp.style.opacity = 100;
 
 //day/month/year
 
@@ -320,6 +344,8 @@ btnLogin.addEventListener('click', function (e) {
 
     //Clear cursor
     inputLoginPin.blur();
+
+    startLogOutTimer();
 
     //Update UI
     updateUI(currentAccount);
