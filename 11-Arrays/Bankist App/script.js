@@ -353,24 +353,19 @@ console.log(deposits, withdrawals);
 //4. Create a simple function to convert any string to a titlecase:
 //this is a nice title -> This Is a Nice Title
 const convertTitleCase = function (title) {
-  const capitalize = str => str.replace(str[0], str[0].toUpperCase());
+  const capitalize = str => str[0].toUpperCase() + str.slice(1);
 
   const exceptions = ['and', 'a', 'an', 'the', 'but', 'or', 'on', 'in', 'with'];
 
   const titlecase = title
     .toLowerCase()
     .split(' ')
-    .map(word => {
-      for (const ex of exceptions) {
-        if (word === ex) {
-          return word;
-        }
-      }
-      return capitalize(word);
-    })
+    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
     .join(' ');
 
-  return capitalize(titlecase);
+  const firstWord = capitalize(titlecase);
+
+  console.log(firstWord);
 };
 
 convertTitleCase('this is a nice title');
