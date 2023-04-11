@@ -380,6 +380,7 @@ btnTransfer.addEventListener('click', function (e) {
     //here we are passing an date object itself, let's convert it into ISO string:
     got.movementsDates.push(new Date().toISOString());
 
+    //Adding timer
     clearInterval(timer);
     timer = startLogOutTimer();
 
@@ -392,6 +393,7 @@ btnTransfer.addEventListener('click', function (e) {
 
 //Implementing Loan:
 btnLoan.addEventListener('click', function (e) {
+  console.log(e);
   e.preventDefault();
   const amount = Math.floor(inputLoanAmount.value);
   //Math.floor does type coercion itself so we don't have to convert it to number
@@ -411,6 +413,7 @@ btnLoan.addEventListener('click', function (e) {
       //Current Account Display:
       updateUI(currentAccount);
 
+      //Adding Timer
       clearInterval(timer);
       timer = startLogOutTimer();
     }, 3000);
@@ -421,6 +424,7 @@ btnLoan.addEventListener('click', function (e) {
 
 //Implementing Deletion
 btnClose.addEventListener('click', function (e) {
+
   e.preventDefault();
   if (
     inputCloseUsername.value === currentAccount.username &&
@@ -443,6 +447,7 @@ btnClose.addEventListener('click', function (e) {
 let sorted = false;
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
+  console.log(e);
   displayMovements(currentAccount, !sorted);
   console.log(sorted);
   sorted = !sorted;
