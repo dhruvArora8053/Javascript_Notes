@@ -30,3 +30,35 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+//////////////////////////////////////////////////
+//186:- Selecting, Creating and Deleting elements:
+
+//Selecting Elements:-
+console.log(document.documentElement);
+//selecting the entire document of a webpage, so just document above is not enough to select the document element because this is not the real DOM element so for ex: if we want to apply CSS styles to the entire page we always need to select document element
+
+//selecting head and the body
+console.log(document.head);
+console.log(document.body);
+//for these special elements we don't even need to write any selector otherwise we can also use querySelecotr:
+console.log(document.querySelector('.header'));
+//and this wil return the first element that matches the above selector
+
+//to select multiple elements:
+const allSections = document.querySelectorAll('.section');
+console.log(allSections);
+
+//to select through id:
+console.log(document.getElementById('section--1'));
+
+//Get elements by tage name:
+const allButtons = document.getElementsByTagName('button');
+console.log(allButtons);
+//this method actually returns an html collection so that's different from a node list because an html collection is actually so-called live collection and that means that if the DOM changes then this collection is also immediately updated automatically so for ex: if we delete one button element from then that element would also get removed from the allButtons but the same does not happen with the nodelist, it doesn't get updated
+
+//Get elements by class name:
+console.log(document.getElementsByClassName('btn'));
+//this one also returns the html collection
+
+//Creating and Inserting Elements:-
