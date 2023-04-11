@@ -101,7 +101,8 @@ const formatMovementDate = function (date, locale) {
   if (daysPassed <= 7) return `${daysPassed} days ago`;
   else {
     // const day = `${date.getDate()}`.padStart(2, 0);
-    // const month = `${date.getMonth() + 1}`.padStart(2, 0); //zero based
+    const month = `${date.getMonth() + 1}`.padStart(2, 0); //zero based
+    console.log(month);
     // const year = date.getFullYear();
 
     // return `${day}/${month}/${year}`;
