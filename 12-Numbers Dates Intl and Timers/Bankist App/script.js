@@ -265,31 +265,30 @@ const updateUI = function (acc) {
 };
 
 const startLogOutTimer = function () {
-  //Set time to 5 minutes
-  let time = 10;
-
-  //Call the timer every second
-  const timer = setInterval(() => {
+  const tick = function () {
     const min = String(Math.trunc(time / 60)).padStart(2, 0);
     const sec = String(time % 60).padStart(2, 0);
-    //In each call, print the reamining time to UI
     labelTimer.textContent = `${min}:${sec}`;
 
-    //Decrease 1 second
-    time = time - 1;
-
-    //When 0 seconds, stop timer and log out user
     if (time === 0) {
-      clearInterval(timer);
-
-      labelWelcome.textContent = 'Login to get started';
       containerApp.style.opacity = 0;
+      labelWelcome.textContent = 'Login to get started';
+      clearTimeout(timer);
     }
-  }, 1000);
+    --time;
+  };
+
+  let time = 30;
+  tick();
+
+  timer = setInterval(tick, 1000);
+  //here the problem with setInterval is it does not get called immediately, it takes time of one sec and then start  executing the callback function that's why we are seeing the wrong time for one sec.
+
+  return timer;
 };
 
 //Implementing login:
-let currentAccount;
+let currentAccount, timer;
 
 //Fake Always Logged In:-
 // currentAccount = account1;
@@ -346,7 +345,8 @@ btnLogin.addEventListener('click', function (e) {
     //Clear cursor
     inputLoginPin.blur();
 
-    startLogOutTimer();
+    if (timer) clearInterval(timer);
+    timer = startLogOutTimer();
 
     //Update UI
     updateUI(currentAccount);
@@ -380,6 +380,9 @@ btnTransfer.addEventListener('click', function (e) {
     //here we are passing an date object itself, let's convert it into ISO string:
     got.movementsDates.push(new Date().toISOString());
 
+    clearInterval(timer);
+    timer = startLogOutTimer();
+
     //Update UI
     updateUI(currentAccount);
 
@@ -407,6 +410,9 @@ btnLoan.addEventListener('click', function (e) {
 
       //Current Account Display:
       updateUI(currentAccount);
+
+      clearInterval(timer);
+      timer = startLogOutTimer();
     }, 3000);
   }
   inputLoanAmount.value = '';
