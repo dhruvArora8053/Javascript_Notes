@@ -34,3 +34,4 @@ console.log(movements.some(deposit)); //true
 //and now we could reuse the same deposit function for all kinds of different methods that require callbacks with a true/false condition:
 console.log(movements.every(deposit)); //false
 console.log(movements.filter(deposit));
+
