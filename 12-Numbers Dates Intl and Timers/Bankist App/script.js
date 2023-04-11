@@ -424,7 +424,6 @@ btnLoan.addEventListener('click', function (e) {
 
 //Implementing Deletion
 btnClose.addEventListener('click', function (e) {
-
   e.preventDefault();
   if (
     inputCloseUsername.value === currentAccount.username &&
