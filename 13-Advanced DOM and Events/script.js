@@ -48,9 +48,39 @@ btnScrollTo.addEventListener('click', function (e) {
   1. when we scroll x and y changes
   2. boundingClientRect is relative to the visible viewport
   */
+  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
+  //y coordinate here: is the dist between the current top position of the viewport and at the top of the page
+  console.log(
+    'Current height/width viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+
+  //Scrolling:
+  //traditional
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+  ///here we added pageXoffset and pageYoffset because you will get the result correct if you are scrolling from the top of the web page but you are scrolling from little below then it won't get scrolled way to the section1, it is because
+  //before scroll: x=0 and y=744--> total dist. between section top and web top
+  //--> current top viewport position from section: 744
+
+  //little scroll: x=0 and y=444--> total dist. between section top and viewport top
+  //--> current top viewport position: 444
+
+  //now when we scrollTo for 444px then it would get scrolled from web top to somewhere in the middle 444px distance
+
+  //that's why we need to give total distance for all scenarios i.e:
+  //top page dist to the current viewport top dist+ current viewport dist to the element dist
+  //i.e. 444+300
+
+  //modern
+  section1.scrollIntoView({
+    behavior: 'smooth',
+  });
 });
 
-console.log(window.pageXOffset, window.pageYOffset);
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //LECTURES:-
