@@ -27,3 +27,12 @@ if (ingredients.includes("spinach")) clearTimeout(pizzaTimer);
 // setInterval(() => {
 //   console.log(new Date());
 // }, 2000);
+
+//Implementing clock:
+setInterval(() => {
+  let date = new Date();
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  let sec = date.getSeconds();
+  console.log(`${hour}:${minute}:${sec}`);
+}, 1000);
