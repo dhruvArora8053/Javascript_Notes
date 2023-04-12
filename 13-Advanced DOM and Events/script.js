@@ -32,6 +32,28 @@ document.addEventListener('keydown', function (e) {
 });
 
 //////////////////////////////////////////////////
+//188:- Implementing smooth scrolling:
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  //Get coordinates of the element that we want to scroll to
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+  console.log(e.target.getBoundingClientRect());
+  /*
+  x=left: measured from the left--> dist. between the element and the left side of the viewport
+  y=top: measured form the top--> dist. between the element and the top of the viewport 
+
+  1. when we scroll x and y changes
+  2. boundingClientRect is relative to the visible viewport
+  */
+});
+
+console.log(window.pageXOffset, window.pageYOffset);
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//LECTURES:-
 //186:- Selecting, Creating and Deleting elements:
 
 //Selecting Elements:-
