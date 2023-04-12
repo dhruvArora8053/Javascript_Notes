@@ -225,3 +225,7 @@ logo.className = 'jonas';
 
 //////////////////////////////////////////////////
 //189:- Types of Events and Event Handlers:-
+const h1 = document.querySelector('h1');
+h1.addEventListener('mouseenter', function (e) {
+  alert('addEventListener: Great you are reading the heading');
+});
