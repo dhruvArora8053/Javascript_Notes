@@ -92,3 +92,14 @@ header.after(message);
 
 //Delete Elements:-
 //as we click the cookie the button, remove the message element:
+document
+  .querySelector('.btn--close--cookie')
+  .addEventListener('click', function () {
+    message.remove();
+    //here we don't have to select the message element again because we already have it in memory so there's no need to run document.queryselector, ofcourse we could do it and it would work as well so we could select the element with the class of cookie-message but again that's no necessary becasue we already have it stored in memory
+
+    //old way:
+    // message.parentElement.removeChild(message);
+  });
+
+//This way of moving up and down in the DOM tree like selecting the parent element is called DOM traversing.
