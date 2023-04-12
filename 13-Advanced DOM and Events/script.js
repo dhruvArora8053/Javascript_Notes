@@ -105,7 +105,7 @@ document
 //This way of moving up and down in the DOM tree like selecting the parent element is called DOM traversing.
 
 //////////////////////////////////////////////////
-//187:- Styles, Attributes and Classes:-
+//187:- Manipulating: Styles, Attributes and Classes:-
 
 //Styles:
 message.style.backgroundColor = '#37383d';
@@ -127,4 +127,46 @@ message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
 console.log(message.style.height);
 
-//Manipulating 
+//Manipulating root CSS styles:
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+//we can also use setProperty to manipulate element styles too
+
+//Attributes:-
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src);
+//here in the console the URL is different than the src in the html, because the src in the console is an absolute URL while in the html it is just a relative URL, relative to the folder in which index.html file is located and if we want to get the html URL than we will be needing to use getAttribute
+console.log(logo.className);
+//so this works because on images they are supposed to have the alt, and the src attributes on them and so we specify them on the html then javascirpt will atutomatically create these properties on the object but if we add some other property that is not a standard then javascript will not automatically create a property on the object
+//so let's add on the nav image for ex: designer property set it to 'Jonas':
+console.log(logo.designer);
+//now here we get undefined and again that is because this is not a standard property that is expected to be on images but there is another way of reading this value from the dom
+console.log(logo.getAttribute('designer'));
+console.log(logo.getAttribute('src'));
+
+//Now just as we can read these values for these attributes, we can also set them:
+logo.alt = 'Beautiful minimalist logo';
+console.log(logo.alt);
+
+logo.setAttribute('company', 'Bankist');
+
+//Another example of absolute and relative links:
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href);
+console.log(link.getAttribute('href'));
+
+//Data attributs:-
+//let's add data-version-number attribute to nav logo:
+console.log(logo.dataset.versionNumber);
+//here we use camelcase versionNumber while in the html we used dash, so these special attributes are always stored in the dataset object. We use data attributes quite a lot when we work with the UI and especially when we need to store data in user interface
+
+//Classes:-
+logo.classList.add('c', 'j');
+logo.classList.remove('c', 'j');
+logo.classList.toggle('c', 'j');
+logo.classList.contains('c', 'j');
+
+//We can also set a class:
+//Don't use this:
+logo.className = 'jonas';
+//becasue this will overwrite all the existing classes and also it allows us to only put one class on any elment
