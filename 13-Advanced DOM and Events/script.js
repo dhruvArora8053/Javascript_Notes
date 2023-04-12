@@ -222,3 +222,6 @@ logo.classList.contains('c', 'j');
 //Don't use this:
 logo.className = 'jonas';
 //becasue this will overwrite all the existing classes and also it allows us to only put one class on any elment
+
+//////////////////////////////////////////////////
+//189:- Types of Events and Event Handlers:-
