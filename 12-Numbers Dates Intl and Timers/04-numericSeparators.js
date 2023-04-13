@@ -18,3 +18,4 @@ console.log(Number("230000"));
 console.log(Number("230_000")); //NaN
 console.log(Number.parseInt("230_000")); //230
 //so you should really only use these numeric separators when you are writing down numbers, so if you get a number as a string from an API, you should not use uderscores in there because then javascript will not be able to parse the number correctly out of that string
+
