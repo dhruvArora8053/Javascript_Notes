@@ -249,10 +249,34 @@ const alertH1 = function (e) {
   //because of this our even listener will only execute for once
 };
 
-h1.addEventListener('mouseenter', alertH1);
-//another
-setTimeout(() => {
-  h1.removeEventListener('mouseenter', alertH1);
-}, 3000);
+// h1.addEventListener('mouseenter', alertH1);
+// //another
+// setTimeout(() => {
+//   h1.removeEventListener('mouseenter', alertH1);
+// }, 3000);
 
 //Third way of listening events on the html itself: should not be used
+
+/////////////////////////////////////////////////
+//191:- Event Propagation in Practive:-
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+
+//nav link
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  console.log('link');
+});
+
+//nav links
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  console.log('link');
+});
+
+//header
+document.querySelector('.nav').addEventListener('click', function (e) {
+  console.log('link');
+});
+
