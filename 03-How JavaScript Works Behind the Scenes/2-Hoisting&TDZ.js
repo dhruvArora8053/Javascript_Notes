@@ -43,7 +43,7 @@ const addArrow = (a, b) => a + b;
 
 // console.log(addArrow1(5,5)); //output: error( addArrow1 is not a function)
 
-//the reason for different error message here is, so as you already know any variables declared with var will be hoisted and set to undefined and now this 'addExpr1' here is esentially that, it's a variable declared with var and so right now it is undefined and then here below we are trying to call undfined basically
+//the reason for different error message here is, so as you already know any variables declared with var will be hoisted and set to undefined and now this 'addExpr1' here is esentially that, it's a variable declared with var and so right now it is undefined and then here below we are trying to call undefined basically
 
 console.log(addExpr1); //output: undefined
 console.log(addArrow1); //output: undefined
