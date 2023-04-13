@@ -82,6 +82,9 @@ btnScrollTo.addEventListener('click', function (e) {
 });
 
 //////////////////////////////////////////////////
+//192:- Event delegation, Implementing Page Navigation:
+
+//////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //LECTURES:-
 //186:- Selecting, Creating and Deleting elements:
@@ -267,13 +270,13 @@ const randomColor = () =>
 
 //nav link
 document.querySelector('.nav__link').addEventListener('click', function (e) {
-  e.preventDefault();
+  // e.preventDefault();
   this.style.backgroundColor = randomColor();
   //remember that in an event handler that this keyword points always to the element on which that even handler is attached
-  console.log('LINK', e.target, e.currentTarget);
+  // console.log('LINK', e.target, e.currentTarget);
   //e.target is essentially where the event originated so where the evern first happened and this is not the element on which the handler is attached
 
-  console.log(this === e.currentTarget); //true
+  // console.log(this === e.currentTarget); //true
 
   //Stopping propogation/bubbling:-
   e.stopPropagation();
@@ -285,7 +288,7 @@ document.querySelector('.nav__link').addEventListener('click', function (e) {
 //nav links
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
-  console.log('CONTAINER', e.target, e.currentTarget);
+  // console.log('CONTAINER', e.target, e.currentTarget);
 });
 //now when we click to the 'Features' nav__link, the container nav__links also got it's own random background color, so why do you think this is happening?
 //Because the event actually happnes in document root and from there it then travels down to the target element and so in this case that is the nav__link and then from there it bubbles up and bubbling up means that basically it's as if the event had also happened in all of the parent elements of nav__link and so that is the reason why this exact event in now also being handled by nav__links event listener
@@ -296,7 +299,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 //header
 document.querySelector('.nav').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
-  console.log('NAV', e.target, e.currentTarget);
+  // console.log('NAV', e.target, e.currentTarget);
 });
 //now when we clicked nav__link, with nav_links the nav color also got changed
 
@@ -322,3 +325,12 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 //   true //(default is false)
 // );
 //so in this case where this used capture parameter is set to true, now the event handler will no longer listen to bubbling events but instead to capturing events, now in practice it's gonna look same here but as we take a look in our log, you will see that the nav is actually the first appearance, so you see that now the first element through which the event passes is the naviagation and the reason for that is that this element is now actually listening for the event as it travels down from the dom while these other ones are listening for the event as it travel back up and that happens later and therfore the nav is now the first one to show up
+
+//////////////////////////////////////////////////
+//192:- Event delegation, Implementing Page Navigation:
+document.querySelectorAll('.nav__link').forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log('LINK');
+  });
+});
