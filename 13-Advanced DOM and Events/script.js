@@ -226,6 +226,33 @@ logo.className = 'jonas';
 //////////////////////////////////////////////////
 //189:- Types of Events and Event Handlers:-
 const h1 = document.querySelector('h1');
-h1.addEventListener('mouseenter', function (e) {
+// h1.addEventListener('mouseenter', function (e) {
+//   alert('addEventListener: Great you are reading the heading');
+// });
+//as we hover over h1, we get the alert!
+//you can also take a look of events list in MDN
+
+//Another way of attaching an event listener to the element:
+// h1.onmouseenter = function (e) {
+//   alert('onmouseenter: Great you are reading the heading');
+// };
+//For each of the events that we just saw in the MDN there is one on-event property however, this way of listening to events is a bit old school and now we usually always use addEventListener
+
+//Why addEventListener is better:
+//1. It allows us to add multiple event listeners to the same event so we could add another event listener on the same element and both will run but in the case of 'on events' the second one will override the first one
+
+//2. We can actually remove an event handler incase we don't need it anymore and to do that first we need to export the function into the named function:
+const alertH1 = function (e) {
   alert('addEventListener: Great you are reading the heading');
-});
+
+  h1.removeEventListener('mouseenter', alertH1);
+  //because of this our even listener will only execute for once
+};
+
+h1.addEventListener('mouseenter', alertH1);
+//another
+setTimeout(() => {
+  h1.removeEventListener('mouseenter', alertH1);
+}, 3000);
+
+//Third way of listening events on the html itself: should not be used
