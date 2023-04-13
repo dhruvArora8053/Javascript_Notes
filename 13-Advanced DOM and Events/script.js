@@ -63,7 +63,7 @@ btnScrollTo.addEventListener('click', function (e) {
   //   s1coords.top + window.pageYOffset
   // );
   ///here we added pageXoffset and pageYoffset because you will get the result correct if you are scrolling from the top of the web page but you are scrolling from little below then it won't get scrolled way to the section1, it is because
-  //before scroll: x=0 and y=744--> total dist. between section top and web top
+  //before scroll: x=0 and y=744--> total dist. between section top and web top(top viewoport)
   //--> current top viewport position from section: 744
 
   //little scroll: x=0 and y=444--> total dist. between section top and viewport top
@@ -162,7 +162,7 @@ document
 //Styles:
 message.style.backgroundColor = '#37383d';
 message.style.width = '120%';
-//thse styles are actually set as inline styles, so styles set here directly in the dom
+//these styles are actually set as inline styles, so styles set here directly in the dom
 
 console.log(message.style.height);
 //empty script in console
@@ -188,13 +188,13 @@ const logo = document.querySelector('.nav__logo');
 console.log(logo.alt);
 console.log(logo.src);
 //here in the console the URL is different than the src in the html, because the src in the console is an absolute URL while in the html it is just a relative URL, relative to the folder in which index.html file is located and if we want to get the html URL than we will be needing to use getAttribute
+console.log(logo.getAttribute('src'));
 console.log(logo.className);
 //so this works because on images they are supposed to have the alt, and the src attributes on them and so we specify them on the html then javascirpt will atutomatically create these properties on the object but if we add some other property that is not a standard then javascript will not automatically create a property on the object
 //so let's add on the nav image for ex: designer property set it to 'Jonas':
 console.log(logo.designer);
 //now here we get undefined and again that is because this is not a standard property that is expected to be on images but there is another way of reading this value from the dom
 console.log(logo.getAttribute('designer'));
-console.log(logo.getAttribute('src'));
 
 //Now just as we can read these values for these attributes, we can also set them:
 logo.alt = 'Beautiful minimalist logo';
