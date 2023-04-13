@@ -270,14 +270,22 @@ document.querySelector('.nav__link').addEventListener('click', function (e) {
   e.preventDefault();
   this.style.backgroundColor = randomColor();
   //remember that in an event handler that this keyword points always to the element on which that even handler is attached
-  console.log('LINK', e.target);
+  console.log('LINK', e.target, e.currentTarget);
   //e.target is essentially where the event originated so where the evern first happened and this is not the element on which the handler is attached
+
+  console.log(this === e.currentTarget); //true
+
+  //Stopping propogation/bubbling:-
+  e.stopPropagation();
+  //now the parent did not change their background colors which means that the event never arrived at those elements that's why they weren't handled there and again that is because we stopped the propagation right here
+
+  //but in practice it's not a good idea to stop propagation so stopping the event propagation like this can somethimes fix problems in very complex applications with many handlers for the same events but in general it's not really a good idea to stop propagation of events
 });
 
 //nav links
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
-  console.log('LINK', e.target);
+  console.log('CONTAINER', e.target, e.currentTarget);
 });
 //now when we click to the 'Features' nav__link, the container nav__links also got it's own random background color, so why do you think this is happening?
 //Because the event actually happnes in document root and from there it then travels down to the target element and so in this case that is the nav__link and then from there it bubbles up and bubbling up means that basically it's as if the event had also happened in all of the parent elements of nav__link and so that is the reason why this exact event in now also being handled by nav__links event listener
@@ -288,6 +296,29 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 //header
 document.querySelector('.nav').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
-  console.log('LINK', e.target);
+  console.log('NAV', e.target, e.currentTarget);
 });
 //now when we clicked nav__link, with nav_links the nav color also got changed
+
+//e.target:
+//now when we clicked nav__link once again the e.target in a console is similar for the all three targets and i.e. nav__link. So in all three handlers the target element will always be the same and that's ofcourse the element where click first happened and it appear in all the three handlers because all of them are essentially handling the exact same event and again that is because of event bubbling
+
+//e.currentTarget:
+//but the currentTarget is not the same it is because currentTarget points to where the event had happened and where the handler is attached to.
+
+//So as we just saw these three event handlers that we set up above recive events from the target elements and also from the bubbling phase so in other words the event handler functions are listening for click events that happen on the element itself and they are also listening for events that keep bubbling up from their child elements and that's why the color changes in all of the parent elements here as well.
+
+//So the two phases that we just described are phase two and phase three but now what about the capture phase so that was pahse one?
+//well as we learned, events are captured when they come down from the document route all the way to the target but our event handlers are not picking up these events during the capure phase, they're only listening for events in the bubbling phase but not in the capturing phase?
+//it is because of the default behavior of the add event listener method and the reason for that is that the capturing phase is usually irrelevant for us, it's just not that useful now on the other hand, the bubbling phase can be very useful for something called event delegation. However, if we really do want to catch events during the capturing phase then we can define a third parameter in the addEventListener function
+
+// header
+// document.querySelector('.nav').addEventListener(
+//   'click',
+//   function (e) {
+//     this.style.backgroundColor = randomColor();
+//     console.log('NAV', e.target, e.currentTarget);
+//   },
+//   true //(default is false)
+// );
+//so in this case where this used capture parameter is set to true, now the event handler will no longer listen to bubbling events but instead to capturing events, now in practice it's gonna look same here but as we take a look in our log, you will see that the nav is actually the first appearance, so you see that now the first element through which the event passes is the naviagation and the reason for that is that this element is now actually listening for the event as it travels down from the dom while these other ones are listening for the event as it travel back up and that happens later and therfore the nav is now the first one to show up
