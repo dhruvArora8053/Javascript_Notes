@@ -267,16 +267,27 @@ const randomColor = () =>
 
 //nav link
 document.querySelector('.nav__link').addEventListener('click', function (e) {
-  console.log('link');
+  e.preventDefault();
+  this.style.backgroundColor = randomColor();
+  //remember that in an event handler that this keyword points always to the element on which that even handler is attached
+  console.log('LINK', e.target);
+  //e.target is essentially where the event originated so where the evern first happened and this is not the element on which the handler is attached
 });
 
 //nav links
 document.querySelector('.nav__links').addEventListener('click', function (e) {
-  console.log('link');
+  this.style.backgroundColor = randomColor();
+  console.log('LINK', e.target);
 });
+//now when we click to the 'Features' nav__link, the container nav__links also got it's own random background color, so why do you think this is happening?
+//Because the event actually happnes in document root and from there it then travels down to the target element and so in this case that is the nav__link and then from there it bubbles up and bubbling up means that basically it's as if the event had also happened in all of the parent elements of nav__link and so that is the reason why this exact event in now also being handled by nav__links event listener
+
+//Now what do think happens when we click only outside here at the nav__links?
+//no color get change on the nav__links and that's because nav__link is the parent element and so from here the even only bubbles up to it's parent elements
 
 //header
 document.querySelector('.nav').addEventListener('click', function (e) {
-  console.log('link');
+  this.style.backgroundColor = randomColor();
+  console.log('LINK', e.target);
 });
-
+//now when we clicked nav__link, with nav_links the nav color also got changed
