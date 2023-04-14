@@ -328,9 +328,20 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 
 //////////////////////////////////////////////////
 //192:- Event delegation, Implementing Page Navigation:
-document.querySelectorAll('.nav__link').forEach(function (el) {
-  el.addEventListener('click', function (e) {
-    e.preventDefault();
-    console.log('LINK');
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     console.log('LINK');
+//   });
+// });
+
+// section1.scrollIntoView({
+//   behavior: 'smooth',
+// });
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  e.preventDefault();
+  section1.scrollIntoView({
+    behavior: 'smooth',
   });
 });
