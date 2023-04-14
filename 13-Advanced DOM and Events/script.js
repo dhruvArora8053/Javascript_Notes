@@ -241,7 +241,7 @@ const h1 = document.querySelector('h1');
 // };
 //For each of the events that we just saw in the MDN there is one on-event property however, this way of listening to events is a bit old school and now we usually always use addEventListener
 
-//Why addEventListener is better:
+//Why addEventListener is better?
 //1. It allows us to add multiple event listeners to the same event so we could add another event listener on the same element and both will run but in the case of 'on events' the second one will override the first one
 
 //2. We can actually remove an event handler incase we don't need it anymore and to do that first we need to export the function into the named function:
@@ -261,7 +261,7 @@ const alertH1 = function (e) {
 //Third way of listening events on the html itself: should not be used
 
 /////////////////////////////////////////////////
-//191:- Event Propagation in Practive:-
+//191:- Event Propagation in Practice:-
 const randomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
 
