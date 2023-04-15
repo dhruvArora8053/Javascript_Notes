@@ -74,16 +74,30 @@ const nearShop = {
 
   orderPizza(sizeNum, ing1, ing2) {
     console.log(
-      `I want to order ${this.brand} pizza of size ${this.size[sizeNum]} with ${this.ing[ing1]}, ${this.ing[ing1]} and for others`
-    ) + this.other.join(" ");
+      `I want to order ${this.brand} pizza of size ${this.size[sizeNum]} with ${this.ing[ing1]}, ${this.ing[ing2]} and with ` +
+        this.other.join(" ")
+    );
   },
 };
 
 const farShop = {
-  brand: "Dominoes",
+  brand: "Pizza Hut",
   size: ["small", "normal", "large"],
   ing: ["capsicum", "tomato", "cheese", "mushroom", "corn"],
   other: ["cutlery", "sauce", "mayonnaise"],
 };
 
 farShop.orderPizza = nearShop.orderPizza;
+const pizzaFn = nearShop.orderPizza;
+
+nearShop.orderPizza(1, 2, 3);
+farShop.orderPizza(1, 3, 4);
+
+pizzaFn.call(farShop, 1, 2, 3);
+pizzaFn.call(nearShop, 1, 2, 4);
+
+const orderDominoes = pizzaFn.bind(nearShop, 1, 2);
+const orderPizzaHut = pizzaFn.bind(farShop);
+
+orderDominoes(4);
+orderPizzaHut(1, 2, 3);
