@@ -83,7 +83,49 @@ btnScrollTo.addEventListener('click', function (e) {
 
 //////////////////////////////////////////////////
 //192:- Event delegation, Implementing Page Navigation:
+//Without Event Delegation:
+// document.querySelectorAll('.nav__link').forEach(el => {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
 
+//     //implementing smooth scrolling
+//     const id = this.getAttribute('href');
+//     //href has the id of respective sections and we used getAttribute here to get relative html written(not the absolute link)
+//     console.log(id);
+//     document.querySelector(id).scrollIntoView({
+//       behavior: 'smooth',
+//     });
+//     //the exact string that we get from the href attribute is already the perfect selector, so we can just use this and this is a pretty common technique that we use for implementing a navigation like this so we put the id of the elements that we want to scroll to in the href attribute so that then in the javascript we can read that href and then we can select the element that we want to scroll to
+//   });
+// });
+//so this mehtod worked beautifully for smooth scrolling, now as you this works just fine but the problem is that it's not really efficient so we are adding here the exact same callback function, we are addint it once to each of these three elements. So the exact same function is now attached to these three elements and this kind of unnecessary, ofcourse it would be fine for three elements but what if we had 1000 or like 10,000 elements?
+//If were to attach an event handler to 10,000 elements like this then we would effectively be creating 10,000 copies of the same exact function and so that would cetainly impact the performance and it's really just not a clean solution in that case. And so the better solution without a doubt is to use event delegation:
+
+//So in event delegation we use the fact that events bubbles up and we do that by putting the event listener on a common parent of all the elements that we are interested in:
+//so in our above example it's nav__links container that's around all of these 3 nav__link so we will put our event handler on nav__links element and then when a user clicks one of the links then the event is generated and bubbles up, and then we can basically catch that event in this common parent element and handle it there becasue we also know where the event actually originated:
+
+//1. Add event listener to common parent element
+//2. Determine what element originated the event
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  //figuring where the event happend
+  console.log(e.target);
+
+  //Matching Strategy
+  if(e.target.classList.contains('nav__link')){
+    console.log('LINK');
+  }
+});
+ 
+
+
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //LECTURES:-
@@ -328,20 +370,3 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 
 //////////////////////////////////////////////////
 //192:- Event delegation, Implementing Page Navigation:
-// document.querySelectorAll('.nav__link').forEach(function (el) {
-//   el.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     console.log('LINK');
-//   });
-// });
-
-// section1.scrollIntoView({
-//   behavior: 'smooth',
-// });
-
-document.querySelector('.nav__link').addEventListener('click', function (e) {
-  e.preventDefault();
-  section1.scrollIntoView({
-    behavior: 'smooth',
-  });
-});
