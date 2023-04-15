@@ -65,4 +65,25 @@ console.log(swiss);
 
 book.call(swiss, ...flightData);
 
+//My Example:
+const nearShop = {
+  brand: "Dominoes",
+  size: ["small", "normal", "large"],
+  ing: ["capsicum", "tomato", "cheese", "mushroom", "corn"],
+  other: ["cutlery", "sauce", "mayonnaise"],
 
+  orderPizza(sizeNum, ing1, ing2) {
+    console.log(
+      `I want to order ${this.brand} pizza of size ${this.size[sizeNum]} with ${this.ing[ing1]}, ${this.ing[ing1]} and for others`
+    ) + this.other.join(" ");
+  },
+};
+
+const farShop = {
+  brand: "Dominoes",
+  size: ["small", "normal", "large"],
+  ing: ["capsicum", "tomato", "cheese", "mushroom", "corn"],
+  other: ["cutlery", "sauce", "mayonnaise"],
+};
+
+farShop.orderPizza = nearShop.orderPizza;
