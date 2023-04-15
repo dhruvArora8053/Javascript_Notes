@@ -23,4 +23,11 @@ const greetArrow = (greeting) => (name) => console.log(`${greeting} ${name}`);
 
 greetArrow("Hello")("Jonas");
 
+//My example:-
+const pizzaSize = function (size) {
+  return function (brand) {
+    console.log(`This is a ${size} size pizza from ${brand}`);
+  };
+};
 
+pizzaSize("normal")("Dominoes");
