@@ -65,6 +65,7 @@ console.log(swiss);
 
 book.call(swiss, ...flightData);
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
 //My Example:
 const nearShop = {
   brand: "Dominoes",
@@ -87,11 +88,10 @@ const farShop = {
   other: ["cutlery", "sauce", "mayonnaise"],
 };
 
-farShop.orderPizza = nearShop.orderPizza;
 const pizzaFn = nearShop.orderPizza;
 
 nearShop.orderPizza(1, 2, 3);
-farShop.orderPizza(1, 3, 4);
+// farShop.orderPizza(1, 3, 4);
 
 pizzaFn.call(farShop, 1, 2, 3);
 pizzaFn.call(nearShop, 1, 2, 4);
