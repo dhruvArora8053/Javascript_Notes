@@ -25,7 +25,7 @@ const Person = function (firstName, birthYear) {
   console.log(this);
   //indeed here we got the empty object and the browser console is actually already telling us that it's basically here of the type 'Person'
 
-  //And now let's use this knowledge to our advantage becuse we already that in the end of this function the this keyword will basically be returned and so whatever we add to that empty object will then be returned from the function and that returned object is gonna be the object that we are trying to build here:
+  //And now let's use this knowledge to our advantage becuse we already know that in the end of this function the this keyword will basically be returned and so whatever we add to that empty object will then be returned from the function and that returned object is gonna be the object that we are trying to build here:
   this.firstName = firstName; //instance properties
   this.birthYear = birthYear; //instance properties
   //here we gave same name to the properties as of parameters ofcourse we can set other names but it's just a convention
