@@ -61,3 +61,26 @@ jack.calcAge();
 console.log(jonas.__proto__);
 //so the prototype of the jonas object is essentially the prototype property of the constructor function:
 console.log(jonas.__proto__ === Person.prototype); //true
+
+//what we checked above isn't it confusing? So shouldn't Person.prototype be the prototype of Person?
+//Well actually no, so Person.prototype here is actually not the prototype of Person but instead it is what's gonna be used as the prototype of all the objects that are created with the Person constructor function so this is a subtle but importand difference and ifact what we just exaplained is confirmed by the above comparison that we did. So we just saw that jonas's prototype is the prototype property of the Person constructor function and there are actually other built-in methods that we can use to prove this:
+console.log(Person.prototype.isPrototypeOf(jonas)); //true
+console.log(Person.prototype.isPrototypeOf(matilda)); //true
+console.log(Person.prototype.isPrototypeOf(jack)); //true
+console.log(Person.prototype.isPrototypeOf(Person)); //false
+
+//Now anyway, where does this __proto__ property here on the jonas object actually come from?
+//Well, remember the new operator, it links the new empty object to the prototype and basically the step number three which will create the __proto__ property, so it creates the __proto__ property and sets it's value to the prototype property of the function that is being called so again it sets the proto property on the object to the prototype property of the constructor function and so this is how javascript knows internally that the jonas object is connected to Person.prototype and infact we check the jonas object in a console we can see the __proto__ property in here
+console.log(jonas);
+
+//We can also set properties on the prototype:
+Person.prototype.species = "Homo Sapiens";
+console.log(jonas);
+console.log(matilda);
+//this property is now also in the [[Prototype]]
+
+console.log(jonas.species, matilda.species);
+
+//remeber .species is not jonas's or matilda's own property: so own properties are only the ones that are declared directly on the object itself so not including the inherited properties:
+console.log(jonas.hasOwnProperty('firstName')); //true
+console.log(jonas.hasOwnProperty('species')); //false
