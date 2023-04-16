@@ -136,4 +136,4 @@ console.log(arr.unique());
 const h1 = document.querySelector("h1");
 //as we already know that all the DOM elements are behind the scenes objects
 console.dir(h1);
-console.dir((x) => x + 1 );
+console.dir((x) => x + 1);
