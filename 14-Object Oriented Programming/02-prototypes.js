@@ -63,7 +63,7 @@ console.log(jonas.__proto__);
 console.log(jonas.__proto__ === Person.prototype); //true
 
 //what we checked above isn't it confusing? So shouldn't Person.prototype be the prototype of Person?
-//Well actually no, so Person.prototype here is actually not the prototype of Person but instead it is what's gonna be used as the prototype of all the objects that are created with the Person constructor function so this is a subtle but importand difference and ifact what we just exaplained is confirmed by the above comparison that we did. So we just saw that jonas's prototype is the prototype property of the Person constructor function and there are actually other built-in methods that we can use to prove this:
+//Well actually no, so Person.prototype here is actually not the prototype of Person but instead it is what's gonna be used as the prototype of all the objects that are created with the Person constructor function so this is a subtle but important difference and infact what we just exaplained is confirmed by the above comparison that we did. So we just saw that jonas's prototype is the prototype property of the Person constructor function and there are actually other built-in methods that we can use to prove this:
 console.log(Person.prototype.isPrototypeOf(jonas)); //true
 console.log(Person.prototype.isPrototypeOf(matilda)); //true
 console.log(Person.prototype.isPrototypeOf(jack)); //true
