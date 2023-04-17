@@ -25,4 +25,3 @@ booker();
 
 console.dir(booker);
 //remember anything inside '[[]]' is not accessible
-
