@@ -49,3 +49,21 @@ mike.introduce();
 mike.calcAge(); //17
 //This worked because of prototype chain let's see how:
 //so when we do mike.calcAge(), we are effectively doing a property or a method lookup so that is javascript trying to find the requested property or method. Now in this case as we know the calcAge() method is ofcourse not direcly on the mike object it's also not in mike's prototype that's where we defined the introduce method but not calcAge. So just like before whenever we try to access a method that's not on the object's prototype then javascrip will lookup even further in the prototype chain and see if it can find a method so in the parent prototype and that's exactly what happened here so javascript will finally find the calcAge in Person.prototype which is exactly where we defined it
+
+//So just like before Object.prototype will sit on top of the prototype chain so ofcourse we could still call the methods like hasOwnProperty to mike too, it doesn't matter how far away in the prototype chain a method is and with this we now have the full picture of how inheritance between classes works with function constructors.
+
+//Let's inspect
+console.log(mike.__proto__);
+console.log(mike.__proto__.__proto__);
+console.log(mike.__proto__.__proto__.__proto__);
+
+console.dir(Student.prototype.constructor);
+//ideally this should point back to the Student but here it points back apparent to Person and so you see that javascript now thinks that the constructor of Student.prototype is Person and the reason for that is that we set the prototype property of the Student using Object.create and so this makes it so that the constructor of student.prototype is still Person so we need to fix this because sometimes it's important to rely on the constructor property, let's fix:
+Student.prototype.constructor = Student;
+
+console.log(mike instanceof Student); //true
+console.log(mike instanceof Person); //true
+//it's because we linked prototypes together if hadn't used Object.create then this should be false
+console.log(mike instanceof Object); //true
+
+
