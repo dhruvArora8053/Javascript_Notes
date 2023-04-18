@@ -20,7 +20,7 @@ const account = {
 
 //getter
 console.log(account.latest); //300
-//we simply type lates as a property so we don't call the method but instead we write it as if it was just a property. So this can be very useful when we want to read something as a property but still need to do some calculations before
+//we simply type latest as a property so we don't call the method but instead we write it as if it was just a property. So this can be very useful when we want to read something as a property but still need to do some calculations before
 
 //setter
 //How do we uset the setter now?
