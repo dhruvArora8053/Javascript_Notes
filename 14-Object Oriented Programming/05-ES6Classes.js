@@ -40,13 +40,13 @@ jessica.greet();
 
 //Note:- Important facts about classes:
 
-//1. Classes are not hoisted and so even if they are class declarations so functional declaration remember are hoisted whic means we can use them before they are declared in the code but with classes that doesn't work
+//1. Classes are not hoisted and so even if they are class declarations so functional declaration remember are hoisted which means we can use them before they are declared in the code but with classes that doesn't work
 
 //2. Just like functions, classes are also first-class citizens and so what that means is that we can pass them into functions and also return them from functions and as we mentioned before that is because classes are really just a special kind of function behind the scenes
 
 //3. Body of a class is always exectuted in strict mode
 
 //Now you might ask if you should use constructor functions like we have been doing or instead it's better to just use classes?
-// Well, constructor functions are not like old or deprecated syntax so it's 100% fine to keep using them so one more time this is more a question of person preference 
+// Well, constructor functions are not like old or deprecated syntax so it's 100% fine to keep using them so one more time this is more a question of personal preference 
 //Now if you're asking if you should classes without understanding prototypal inheritance well then the reply is definitely no 
-//Now some people actually say that classes are really bad in general and that no one should ever be using them simply becase they hide the true nature of javascript but I don't actually agree with that and I think it's absolutely okay to use classes in your code as long as you understand everything that I just showed you previously 
+//Now some people actually say that classes are really bad in general and that no one should ever be using them simply becase they hide the true nature of javascript but I don't actually agree with that and I think it's absolutely okay to use classes in your code as long as you understand everything that we just showed you previously 
