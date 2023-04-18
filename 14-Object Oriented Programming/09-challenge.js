@@ -30,10 +30,15 @@ class Car {
     this.speed -= 5;
     console.log(`New Speed: ${this.speed}`);
   }
+
+  get speedUS() {
+    return this.speed / 1.6;
+  }
 }
 
 const car1 = new Car("BMW", 120);
 const car2 = new Car("Mercedes", 95);
+const car3 = new Car("Ford", 120);
 
 car1.accelerate();
 car1.accelerate();
@@ -48,3 +53,21 @@ car2.accelerate();
 car2.accelerate();
 car2.brake();
 car2.brake();
+
+// Coding Challenge #2
+// Your tasks:
+// 1. Re-create Challenge #1, but this time using an ES6 class (call it 'CarCl')
+// 2. Add a getter called 'speedUS' which returns the current speed in mi/h (divide
+// by 1.6)
+// 3. Add a setter called 'speedUS' which sets the current speed in mi/h (but
+// converts it to km/h before storing the value, by multiplying the input by 1.6)
+// 4. Create a new car and experiment with the 'accelerate' and 'brake'
+// methods, and with the getter and setter.
+// Test data:
+// § Data car 1: 'Ford' going at 120 km/h
+// GOOD LUCK
+
+//2.
+console.log(car1.speedUS);
+console.log(car2.speedUS);
+console.log(car3.speedUS);
