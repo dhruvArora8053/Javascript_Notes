@@ -19,13 +19,13 @@ new Person0("Jonas", 1991);
 
 //3. this newly created object is linked to a prototype,
 
-//4. the object that was created in the beginning is then automatically returned from the constructor function, but actually at this point the object no longer needs to be empty and this is actually the trick  of making the constructor function work
+//4. the object that was created in the beginning is then automatically returned from the constructor function, but actually at this point the object no longer needs to be empty and this is actually the trick of making the constructor function work
 
 const Person = function (firstName, birthYear) {
   console.log(this);
   //indeed here we got the empty object and the browser console is actually already telling us that it's basically here of the type 'Person'
 
-  //And now let's use this knowledge to our advantage becuse we already know that in the end of this function the this keyword will basically be returned and so whatever we add to that empty object will then be returned from the function and that returned object is gonna be the object that we are trying to build here:
+  //And now let's use this knowledge to our advantage because we already know that in the end of this function the this keyword will basically be returned and so whatever we add to that empty object will then be returned from the function and that returned object is gonna be the object that we are trying to build here:
   this.firstName = firstName; //instance properties
   this.birthYear = birthYear; //instance properties
   //here we gave same name to the properties as of parameters ofcourse we can set other names but it's just a convention
@@ -35,7 +35,7 @@ const Person = function (firstName, birthYear) {
     console.log(2037 - this.birthYear);
   };
   //we should never create a method inside of a constructor function, it is because:
-  //image we were gonna create a hundered or thousands or even tens of thousands of person objects using this constructor function then what would happen is that each of these objects would carry around this function here so if we had a thousand objects we would essentially create a thousand copies of this function and so that would be terrible of the performance of our code but instead to solve this problem we are gonna use prototypes and prototype inheritance
+  //imagine we were gonna create a hundered or thousands or even tens of thousands of person objects using this constructor function then what would happen is that each of these objects would carry around this function here so if we had a thousand objects we would essentially create a thousand copies of this function and so that would be terrible of the performance of our code but instead to solve this problem we are gonna use prototypes and prototype inheritance
 };
 
 const jonas = new Person("Jonas", 1991);

@@ -31,3 +31,39 @@ account.latest = 50;
 console.log(account.movements);
 
 //Setter and Getters With Classes:
+
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  //adding getter
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  //adding setter
+  set fullName(name) {
+    console.log(name);
+    if (name.includes(" ")) this.fullName = name;
+    else alert(`${name} is not a full name`);
+  }
+}
+
+const jessica = new PersonCl("Jessica Davis", 1996);
+
+//with method
+jessica.calcAge();
+
+//with getter
+console.log(jessica.age);
+//so you see that getter is indeed just like any other regular method that we set on the prototype, you can also this on the jessica.__proto__
+console.log(jessica.__proto__);
+
+//Setters and Getters can actually be very useful for data validation for ex: let's try validation with the name:
+//now we will create a setter for the fullName property which will check if this is actually a full name:
