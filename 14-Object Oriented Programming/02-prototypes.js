@@ -4,7 +4,7 @@ const Person = function (firstName, birthYear) {
   //   console.log(this);
   //indeed here we got the empty object and the browser console is actually already telling us that it's basically here of the type 'Person'
 
-  //And now let's use this knowledge to our advantage becuse we already that in the end of this function the this keyword will basically be returned and so whatever we add to that empty object will then be returned from the function and that returned object is gonna be the object that we are trying to build here:
+  //And now let's use this knowledge to our advantage becuse we already know that in the end of this function the this keyword will basically be returned and so whatever we add to that empty object will then be returned from the function and that returned object is gonna be the object that we are trying to build here:
   this.firstName = firstName; //instance properties
   this.birthYear = birthYear; //instance properties
   //here we gave same name to the properties as of parameters ofcourse we can set other names but it's just a convention
@@ -54,7 +54,7 @@ console.log(jonas);
 matilda.calcAge();
 jack.calcAge();
 
-//And now it also solves the previous problem of getting copied each method to every object, because now there exists only one copy of calcAge function and now all of the objects that are created using the 'Person' constructor function can basically reuse this function on themselves and so the this keyword ofcorse in each of them is as always set to the object that is calling the method
+//And now it also solves the previous problem of getting copied each method to every object, because now there exists only one copy of calcAge function and now all of the objects that are created using the 'Person' constructor function can basically reuse this function on themselves and so the this keyword ofcourse in each of them is as always set to the object that is calling the method
 
 //But how this all works?
 //Well, it works because any object always has access to the methods and properties from it's prototype and the prototype of jonas and matilda is Person.prototype and we can actually confirm that becase each object has a special property:
