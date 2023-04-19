@@ -34,3 +34,16 @@ const max1 = movements.reduce(
   movements[0]
 );
 console.log(max1);
+
+//My Examples:-
+const sumPositive = movements.reduce(
+  (acc, mov) => (mov > 0 ? acc + mov : acc),
+  0
+);
+console.log(sumPositive);
+
+const maximum = movements.reduce(
+  (acc, mov) => (acc < mov ? mov : acc),
+  movements[0]
+);
+console.log(maximum);
