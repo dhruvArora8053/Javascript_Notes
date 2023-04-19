@@ -277,6 +277,11 @@ console.log(accountMovements);
 const allMovements = accountMovements.flat();
 console.log(allMovements);
 
+const all = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(all);
+
 //let's sum:
 const sum = allMovements.reduce((acc, mov) => acc + mov);
 console.log(sum);
