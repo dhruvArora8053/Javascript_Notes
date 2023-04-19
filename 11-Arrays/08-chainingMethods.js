@@ -28,3 +28,5 @@ console.log(totalDepositUsd1);
 
 //Note:- 1. we should not go overboard with chaining methods, use as minimum methods as you can while chaining.
 //2. it is a bad practice in javascript to chain methods that mutate the underlying original array and an example of that is the splice or reverse method.
+
+
