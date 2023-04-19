@@ -12,7 +12,7 @@ const movementsUSD = movements.map(function (mov) {
 console.log(movements);
 console.log(movementsUSD);
 
-//simplifying callback fucntion:
+//simplifying callback function:
 const movementsUSD1 = movements.map((mov) => mov * eurToUsd);
 console.log(movementsUSD1);
 
