@@ -277,11 +277,6 @@ console.log(accountMovements);
 const allMovements = accountMovements.flat();
 console.log(allMovements);
 
-const all = accounts
-  .flatMap(acc => acc.movements)
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(all);
-
 //let's sum:
 const sum = allMovements.reduce((acc, mov) => acc + mov);
 console.log(sum);
@@ -311,6 +306,12 @@ labelBalance.addEventListener('click', function () {
   );
   //here we used Array.from() to create an array from the result of queryselectorAll() which is a nodelist which is not really an array but an array like structure and that array like can easily be converted to an array using Array.from() and then as a second step we even included a mapping function which then transforms that initialy array to an array exactly as we want it so basically converting the raw element to it's text content and replaceint the euro sign with nothing.
   console.log(movementsUI);
+
+  const arrFromUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => +el.textContent.replace('€','')
+  );
+  console.log(arrFromUI);
 
   //another way
   const movementsUI2 = [...document.querySelectorAll('.movements__value')];
