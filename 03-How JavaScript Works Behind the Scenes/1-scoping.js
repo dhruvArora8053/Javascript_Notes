@@ -35,7 +35,7 @@ function calcAge1(birthYear) {
       const firstName1 = "Steven";
       //output will now change from jonas to steven that is becuase as always javascript tries to look for the variable name in the current scope and right now it actually is in the current scope so firstName1 is indeed in this same block and so therefore javascript will then use that variable and not perform any variable look up in the scope chain
       //but ofcourse then outside of this block the firstName1 variable is still gonna be the one coming from the scope chain so that's why you still see jonas on the console
-      //and remember the both firstName1 are completely different variable they just happen to have same name
+      //and remember the both firstName1 are completely different variables they just happen to have same name
       const str = `Oh, and you're a millenial, ${firstName1}`;
       console.log(str);
 
