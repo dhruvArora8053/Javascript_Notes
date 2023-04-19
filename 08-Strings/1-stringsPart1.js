@@ -57,3 +57,6 @@ console.log(typeof new String("jonas")); //otput: object
 //and infact all string methods return primitives even if called on string object:
 console.log(typeof new String("jonas").slice(1));
 //and so the result of all of this is then back to being a string
+
+
+
