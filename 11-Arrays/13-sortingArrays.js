@@ -48,4 +48,5 @@ console.log(movements);
 
 //Half Part: bankist app: implementing sorting on movements
 
-
+console.log(movements.sort((a, b) => a - b));
+console.log(movements.sort((a, b) => b - a));
