@@ -48,7 +48,7 @@ mike.introduce();
 
 mike.calcAge(); //17
 //This worked because of prototype chain let's see how:
-//so when we do mike.calcAge(), we are effectively doing a property or a method lookup so that is javascript trying to find the requested property or method. Now in this case as we know the calcAge() method is ofcourse not direcly on the mike object it's also not in mike's prototype that's where we defined the introduce method but not calcAge. So just like before whenever we try to access a method that's not on the object's prototype then javascrip will lookup even further in the prototype chain and see if it can find a method so in the parent prototype and that's exactly what happened here so javascript will finally find the calcAge in Person.prototype which is exactly where we defined it
+//so when we do mike.calcAge(), we are effectively doing a property or a method lookup so that is javascript trying to find the requested property or method. Now in this case as we know the calcAge() method is ofcourse not directly on the mike object it's also not in mike's prototype that's where we defined the introduce method but not calcAge. So just like before whenever we try to access a method that's not on the object's prototype then javascript will lookup even further in the prototype chain and see if it can find a method so in the parent prototype and that's exactly what happened here so javascript will finally find the calcAge in Person.prototype which is exactly where we defined it
 
 //So just like before Object.prototype will sit on top of the prototype chain so ofcourse we could still call the methods like hasOwnProperty to mike too, it doesn't matter how far away in the prototype chain a method is and with this we now have the full picture of how inheritance between classes works with function constructors.
 
@@ -66,4 +66,48 @@ console.log(mike instanceof Person); //true
 //it's because we linked prototypes together if hadn't used Object.create then this should be false
 console.log(mike instanceof Object); //true
 
+//My Example:-
+const SmallFactory = function (name, bike, car, plane) {
+  this.name = name;
+  this.bike = bike;
+  this.car = car;
+  this.plane = plane;
+};
 
+SmallFactory.prototype.bought = function () {
+  console.log(
+    `${this.name} bought ${this.bike}, ${this.car} and a ${this.plane}`
+  );
+};
+
+const buyJonas = new SmallFactory("Jonas", "Kawasaki", "Ferrari", "Typhoon");
+console.log(buyJonas);
+buyJonas.bought();
+
+const buyDhruv = new SmallFactory(
+  "Dhruv",
+  "Hayabusa",
+  "Aston Martin",
+  "Apache"
+);
+console.log(buyDhruv);
+buyDhruv.bought();
+
+const BigFactory = function (name, bike, car, plane, train, boat) {
+  SmallFactory.call(this, name, bike, car, plane);
+  this.train = train;
+  this.boat = boat;
+};
+
+const johnBuy = new BigFactory(
+  "John",
+  "Duke",
+  "Paggani",
+  "Jumbo",
+  "American",
+  "Lamborghini"
+);
+
+BigFactory.prototype = Object.create(SmallFactory.prototype);
+
+console.log(johnBuy);
