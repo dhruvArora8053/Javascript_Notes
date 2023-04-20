@@ -16,26 +16,16 @@ const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
 
 console.log(newName);
 
-// //Example: how to capitalize a name:
-// const capitalizeName = function (name) {
-//   const names = name.split(" ");
-//   const arr = [];
+//Example: how to capitalize a name:
+const capitalizeName = function (name) {
+  const names = name.split(" ");
+  const arr = [];
 
-//   for (const n of names) {
-//     // arr.push(n[0].toUpperCase() + n.slice(1));
-//     arr.push(n.replace(n[0], n[0].toUpperCase()));
-//   }
-//   console.log(arr.join(" "));
-// };
-
-const capitalizeName = function (str) {
-  const capitalize = str
-    .toLowerCase()
-    .split(" ")
-    .map((word) => word.replace(word[0], word[0].toUpperCase()))
-    .join(" ");
-
-  console.log(capitalize);
+  for (const n of names) {
+    // arr.push(n[0].toUpperCase() + n.slice(1));
+    arr.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(arr.join(" "));
 };
 
 capitalizeName("jessica ann smith davis");
