@@ -45,7 +45,7 @@ console.log(announcement.replace("door", "gate"));
 //will change only first word 'door'
 
 console.log(announcement.replaceAll("door", "gate"));
-//whill change all the words in a paragraph
+//will change all the words in a paragraph
 
 //traditional way: regular expression:
 console.log(announcement.replace(/door/g, "gate"));
