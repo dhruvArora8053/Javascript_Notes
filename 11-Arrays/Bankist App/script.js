@@ -352,22 +352,48 @@ console.log(deposits, withdrawals);
 
 //4. Create a simple function to convert any string to a titlecase:
 //this is a nice title -> This Is a Nice Title
-// const convertTitleCase = function (title) {
-//   const capitalize = str => str[0].toUpperCase() + str.slice(1);
+const convertTitleCase = function (title) {
+  const capitalize = str => str[0].toUpperCase() + str.slice(1);
 
-//   const exceptions = ['and', 'a', 'an', 'the', 'but', 'or', 'on', 'in', 'with'];
+  const exceptions = ['and', 'a', 'an', 'the', 'but', 'or', 'on', 'in', 'with'];
 
-//   const titlecase = title
-//     .toLowerCase()
-//     .split(' ')
-//     .map(word => (exceptions.includes(word) ? word : capitalize(word)))
-//     .join(' ');
+  const titlecase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+    .join(' ');
 
-//   const firstWord = capitalize(titlecase);
+  const firstWord = capitalize(titlecase);
 
-//   console.log(firstWord);
-// };
+  console.log(firstWord);
+};
 
-// convertTitleCase('this is a nice title');
-// convertTitleCase('this is a LONG title but not too long');
-// convertTitleCase('and here is another title with an EXAMPLE');
+convertTitleCase('this is a nice title');
+convertTitleCase('this is a LONG title but not too long');
+convertTitleCase('and here is another title with an EXAMPLE');
+
+//3. Create an object which contains the sum of the deposits and of the withdrawals:
+// We can also use reduce to return an array or object or etc.
+const movements1 = [1, 2, 3, 4, 5, -1, -2, -3, -4, -5];
+
+const sumObj = movements1.reduce(
+  (acc, mov) => {
+    mov > 0 ? (acc.deposits += mov) : (acc.withdrawals += mov);
+    return acc;
+  },
+
+  { deposits: 0, withdrawals: 0 }
+);
+
+console.log(sumObj);
+
+// const { deposits, withdrawals } = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce(
+//     (acc, mov) => {
+//       // mov > 0 ? (acc.deposits += mov) : (acc.withdrawals += mov);
+//       acc[mov > 0 ? 'deposits' : 'withdrawals'] += mov;
+//       return acc;
+//     },
+//     { deposits: 0, withdrawals: 0 }
+//   );
