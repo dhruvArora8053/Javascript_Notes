@@ -1,5 +1,5 @@
 "use strict";
-//Prev lect: on the banist app: intl date
+//Prev lect: on the bankist app: intl date
 
 const num = 3884764.23;
 console.log("US:     ", new Intl.NumberFormat("en-US").format(num));

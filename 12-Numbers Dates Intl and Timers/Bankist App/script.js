@@ -115,7 +115,7 @@ const formatMovementDate = function (date, locale) {
 // //Internationalizing Dates API:-
 // const now = new Date();
 
-// //we need to pass inside the Intl.DateTimeFormat function is a so called locale string and this locale is usually the 'language and then dash the country' after passing the locale string all of this will create the so-called formatter for the particular language and the country so all of this create a new formatter and then on that foramtter we can call .format and then here we actually pass in the date that we want to format
+// //we need to pass inside the Intl.DateTimeFormat function is a so called locale string and this locale is usually the 'language and then dash the country' after passing the locale string all of this will create the so-called formatter for the particular language and the country so all of this create a new formatter and then on that formatter we can call .format and then here we actually pass in the date that we want to format
 // labelDate.textContent = new Intl.DateTimeFormat('en-US').format(now); //As of 4/9/2023
 // //now you see the date is actually formatted just like it usually formatted in the US with the month first and then the day, let's try UK:
 // labelDate.textContent = new Intl.DateTimeFormat('en-UK').format(now); //As of 09/04/2023
