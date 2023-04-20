@@ -6,7 +6,7 @@ console.log(Array.from(document.querySelectorAll("h1")));
 // console.log([1,2,3].from()); //error
 //so this is not gonna work and that is because this from method is really attached to the entire Array costructor and not to the prototype property of the constructor and so therefore all the arrays do not inherit this from() method because again it's not on their prototype
 
-//So Array.from() is basically just a simple function but it's a function that is attached to the Array constructor and the reason for that is simply so that developers know that it is realted to arrays. We also say that the from method in in the Array namespace and we actually used this term before for some methods in the number and in the internationalization name space:
+//So Array.from() is basically just a simple function but it's a function that is attached to the Array constructor and the reason for that is simply so that developers know that it is related to arrays. We also say that the from method in the Array namespace and we actually used this term before for some methods in the number and in the internationalization name space:
 
 console.log(Number.parseFloat(12));
 //so this method is another static method and it's static on the number constructor so it's not available on numbers but only on this very constructor
