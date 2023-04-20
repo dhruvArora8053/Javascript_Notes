@@ -67,47 +67,49 @@ console.log(mike instanceof Person); //true
 console.log(mike instanceof Object); //true
 
 //My Example:-
-const SmallFactory = function (name, bike, car, plane) {
-  this.name = name;
-  this.bike = bike;
-  this.car = car;
-  this.plane = plane;
-};
+// const SmallFactory = function (name, bike, car, plane) {
+//   this.name = name;
+//   this.bike = bike;
+//   this.car = car;
+//   this.plane = plane;
+// };
 
-SmallFactory.prototype.bought = function () {
-  console.log(
-    `${this.name} bought ${this.bike}, ${this.car} and a ${this.plane}`
-  );
-};
+// SmallFactory.prototype.bought = function () {
+//   console.log(
+//     `${this.name} bought ${this.bike}, ${this.car} and a ${this.plane}`
+//   );
+// };
 
-const buyJonas = new SmallFactory("Jonas", "Kawasaki", "Ferrari", "Typhoon");
-console.log(buyJonas);
-buyJonas.bought();
+// const buyJonas = new SmallFactory("Jonas", "Kawasaki", "Ferrari", "Typhoon");
+// console.log(buyJonas);
+// buyJonas.bought();
 
-const buyDhruv = new SmallFactory(
-  "Dhruv",
-  "Hayabusa",
-  "Aston Martin",
-  "Apache"
-);
-console.log(buyDhruv);
-buyDhruv.bought();
+// const buyDhruv = new SmallFactory(
+//   "Dhruv",
+//   "Hayabusa",
+//   "Aston Martin",
+//   "Apache"
+// );
+// console.log(buyDhruv);
+// buyDhruv.bought();
 
-const BigFactory = function (name, bike, car, plane, train, boat) {
-  SmallFactory.call(this, name, bike, car, plane);
-  this.train = train;
-  this.boat = boat;
-};
+// const BigFactory = function (name, bike, car, plane, train, boat) {
+//   SmallFactory.call(this, name, bike, car, plane);
+//   this.train = train;
+//   this.boat = boat;
+// };
 
-const johnBuy = new BigFactory(
-  "John",
-  "Duke",
-  "Paggani",
-  "Jumbo",
-  "American",
-  "Lamborghini"
-);
+// const johnBuy = new BigFactory(
+//   "John",
+//   "Duke",
+//   "Paggani",
+//   "Jumbo",
+//   "American",
+//   "Lamborghini"
+// );
 
-BigFactory.prototype = Object.create(SmallFactory.prototype);
+// BigFactory.prototype = Object.create(SmallFactory.prototype);
 
-console.log(johnBuy);
+// BigFactory.prototype.buys= function(){
+//   console.log('bought everything');
+// }
