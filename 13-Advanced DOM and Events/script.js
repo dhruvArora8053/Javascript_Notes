@@ -82,24 +82,19 @@ btnScrollTo.addEventListener('click', function (e) {
   });
 });
 
-document.querySelectorAll('.nav__link').forEach(el=>{
-  el.addEventListener('click', function(e){
-    e.preventDefault();
-    console.log('Link');
-  })
-})
-
 //////////////////////////////////////////////////
 //192:- Event delegation, Implementing Page Navigation:
 //Without Event Delegation:
 // document.querySelectorAll('.nav__link').forEach(el => {
 //   el.addEventListener('click', function (e) {
 //     e.preventDefault();
+//     console.log('Link');
 
 //     //implementing smooth scrolling
 //     const id = this.getAttribute('href');
 //     //href has the id of respective sections and we used getAttribute here to get relative html written(not the absolute link)
 //     console.log(id);
+
 //     document.querySelector(id).scrollIntoView({
 //       behavior: 'smooth',
 //     });
