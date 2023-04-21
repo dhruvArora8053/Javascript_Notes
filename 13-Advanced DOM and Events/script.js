@@ -40,6 +40,7 @@ btnScrollTo.addEventListener('click', function (e) {
   //Get coordinates of the element that we want to scroll to
   const s1coords = section1.getBoundingClientRect();
   console.log(s1coords);
+  console.log(e.target);
   console.log(e.target.getBoundingClientRect());
   /*
   x=left: measured from the left--> dist. between the element and the left side of the viewport
@@ -81,6 +82,13 @@ btnScrollTo.addEventListener('click', function (e) {
   });
 });
 
+document.querySelectorAll('.nav__link').forEach(el=>{
+  el.addEventListener('click', function(e){
+    e.preventDefault();
+    console.log('Link');
+  })
+})
+
 //////////////////////////////////////////////////
 //192:- Event delegation, Implementing Page Navigation:
 //Without Event Delegation:
@@ -109,11 +117,11 @@ btnScrollTo.addEventListener('click', function (e) {
 
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   //figuring where the event happend
-  console.log(e.target);
+  // console.log(e.target);
 
   //Matching Strategy
   if (e.target.classList.contains('nav__link')) {
-    console.log('LINK');
+    // console.log('LINK');
   }
 });
 
@@ -335,12 +343,13 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 //Because the event actually happnes in document root and from there it then travels down to the target element and so in this case that is the nav__link and then from there it bubbles up and bubbling up means that basically it's as if the event had also happened in all of the parent elements of nav__link and so that is the reason why this exact event in now also being handled by nav__links event listener
 
 //Now what do think happens when we click only outside here at the nav__links?
-//no color get change on the nav__links and that's because nav__link is the parent element and so from here the event only bubbles up to it's parent elements
+//no color get change on the nav__link and that's because nav__links is the parent element and so from here the event only bubbles up to it's parent elements
 
 //header
 document.querySelector('.nav').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
   // console.log('NAV', e.target, e.currentTarget);
+  // console.log(this===e.currentTarget);
 });
 //now when we clicked nav__link, with nav_links the nav color also got changed
 
@@ -353,7 +362,7 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 //So as we just saw these three event handlers that we set up above recieve events from the target elements and also from the bubbling phase so in other words the event handler functions are listening for click events that happen on the element itself and they are also listening for events that keep bubbling up from their child elements and that's why the color changes in all of the parent elements here as well.
 
 //So the two phases that we just described are phase two and phase three but now what about the capture phase, the pahse one?
-//well as we learned, events are captured when they come down from the document route all the way to the target but our event handlers are not picking up these events during the capure phase, they're only listening for events in the bubbling phase but not in the capturing phase?
+//well as we learned, events are captured when they come down from the document route all the way to the target but our event handlers are not picking up these events during the capture phase, they're only listening for events in the bubbling phase but not in the capturing phase?
 //it is because of the default behavior of the add event listener method and the reason for that is that the capturing phase is usually irrelevant for us, it's just not that useful now on the other hand, the bubbling phase can be very useful for something called event delegation. However, if we really do want to catch events during the capturing phase then we can define a third parameter in the addEventListener function
 
 // header
