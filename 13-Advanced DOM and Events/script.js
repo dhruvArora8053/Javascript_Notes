@@ -129,6 +129,12 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 });
 //We successfully implemented event delegation which is lot better and a lot more efficient than simply attaching the same event handler to multiple elements instead, we simply edit one big event handler function to the parent element of all the elements that we're interested in and then we simply determined where the click event came from
 
+/////////////////////////////////////////////////
+//194:- Building a Tabbed Component:
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
@@ -431,3 +437,6 @@ console.log(h1.parentElement.children);
   if (child !== h1) child.style.transform = 'scale(0.5)';
   //indeed all the other siblings are now 50% smaller
 });
+/////////////////////////////////////////////////
+//194:- Building a Tabbed Component:
+/////////////////////////////////////////////////
