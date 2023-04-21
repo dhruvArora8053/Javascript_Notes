@@ -135,9 +135,44 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 
+tabs.forEach(tab => tab.addEventListener('click', () => console.log('TAB')));
+//as we learned previously doing this is a bad practice because what if we had like 200 tabs then we would have 200 copies of above exact callback function and that would simply slow down the page so that's not at all desirable so let's use one more time event delegation:
+
+//Remember for event delegation we need to attach the event handler on the common parent element of all the element that we're interested in:
+tabsContainer.addEventListener('click', function (e) {
+  //here on the tab we have two elements, button and it's child span element, so basically what we want is to get the button no matter if we click on the span or on the button itself so we need a way of selecting the parent element that is always a tab
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+  //now we always get the tab, because now it finds the closest parent with the class name operations__tab which indeed the button itself so the tab
+
+  //But if we click on the tabs container we get the null and that's because null is the result of the closest method when there is no matching parent element to be found, so now we have to basically ignore any clicks that happen on that area:
+  //Guard clause
+  if (!clicked) return;
+  //so basically what we're doing here is called a guard clause so it's basically an if statement which will return early if some condition is matched so in this case when there's nothing clicked then we want to immediately finsish this function
+
+  //clearing all the tabs movement:
+  tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
+
+  //adding active to clicked tab
+  clicked.classList.add('operations__tab--active');
+
+  //Activate content area
+  //now remember that the information about which content area should be displayed is in the clicked element data attribute
+  console.log(clicked.dataset.tab);
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add('operations__content--active');
+});
+
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
