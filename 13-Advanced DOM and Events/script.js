@@ -147,7 +147,8 @@ const allSections = document.querySelectorAll('.section');
 console.log(allSections);
 
 //to select through id:
-console.log(document.getElementById('section--1'));
+console.log(document.getElementById
+('section--1'));
 
 //Get elements by tage name:
 const allButtons = document.getElementsByTagName('button');
