@@ -159,6 +159,10 @@ tabsContainer.addEventListener('click', function (e) {
   //Activate content area
   //now remember that the information about which content area should be displayed is in the clicked element data attribute
   console.log(clicked.dataset.tab);
+
+  //clearing all the tabs content:
+  tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+
   document
     .querySelector(`.operations__content--${clicked.dataset.tab}`)
     .classList.add('operations__content--active');
