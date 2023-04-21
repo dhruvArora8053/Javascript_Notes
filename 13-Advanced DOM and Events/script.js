@@ -112,12 +112,10 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   console.log(e.target);
 
   //Matching Strategy
-  if(e.target.classList.contains('nav__link')){
+  if (e.target.classList.contains('nav__link')) {
     console.log('LINK');
   }
 });
- 
-
 
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
@@ -147,8 +145,7 @@ const allSections = document.querySelectorAll('.section');
 console.log(allSections);
 
 //to select through id:
-console.log(document.getElementById
-('section--1'));
+console.log(document.getElementById('section--1'));
 
 //Get elements by tage name:
 const allButtons = document.getElementsByTagName('button');
@@ -247,13 +244,14 @@ logo.alt = 'Beautiful minimalist logo';
 console.log(logo.alt);
 
 logo.setAttribute('company', 'Bankist');
+console.log(logo.getAttribute('company'));
 
 //Another example of absolute and relative links:
 const link = document.querySelector('.nav__link--btn');
 console.log(link.href);
 console.log(link.getAttribute('href'));
 
-//Data attributs:-
+//Data attributes:-
 //let's add data-version-number attribute to nav logo:
 console.log(logo.dataset.versionNumber);
 //here we use camelcase versionNumber while in the html we used dash, so these special attributes are always stored in the dataset object. We use data attributes quite a lot when we work with the UI and especially when we need to store data in user interface
@@ -267,7 +265,7 @@ logo.classList.contains('c', 'j');
 //We can also set a class:
 //Don't use this:
 logo.className = 'jonas';
-//becasue this will overwrite all the existing classes and also it allows us to only put one class on any elment
+//becasue this will overwrite all the existing classes and also it allows us to only put one class on any element
 
 //////////////////////////////////////////////////
 //189:- Types of Events and Event Handlers:-
