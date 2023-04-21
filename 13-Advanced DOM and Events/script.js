@@ -281,7 +281,7 @@ logo.className = 'jonas';
 
 //////////////////////////////////////////////////
 //189:- Types of Events and Event Handlers:-
-const h1 = document.querySelector('h1');
+// const h1 = document.querySelector('h1');
 // h1.addEventListener('mouseenter', function (e) {
 //   alert('addEventListener: Great you are reading the heading');
 // });
@@ -382,3 +382,52 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 
 //////////////////////////////////////////////////
 //192:- Event delegation, Implementing Page Navigation:
+//////////////////////////////////////////////////
+//193:- DOM Traversing:
+//DOM traversing is basically walking through the DOM which means that we can select an element base on another element and this is very important because sometimes we need to select elements relative to a certain other element, for ex: a direct child or a direct parent element or sometimes we don't even know the structure of the dom at runtime and in all these cases we need dom traversing:
+
+const h1 = document.querySelector('h1');
+
+//Going Downwards: selecting child elements:
+
+console.log(h1.querySelectorAll('.highlight'));
+//so this here indeed selects all the elements with the highlight class that are children of the h1 element and that would work no matter how deep these child elements would be inside of the h1 element. And also if there were other highlight elements on the page so element with the highlight class they would not  get selected becuase the would not be children of the h1 element
+
+//to access direct children:
+console.log(h1.childNodes);
+//so this really gives us every single node of every single type that here exists
+
+//selecting only elements:
+console.log(h1.children);
+//and this gives us the html collection which is a live collection so it's updated and here we indeed only got the three elements that are actually inside of the h1 and remember this only works for direct children
+
+h1.firstElementChild.style.color = 'white';
+h1.lastElementChild.style.color = 'magenta';
+
+//Going Upwards: selecting parent elements:
+
+console.log(h1.parentNode);
+console.log(h1.parentElement);
+
+h1.closest('.header').style.background = 'var(--gradient-secondary)';
+//so it selected the closest header to our h1 element so the closest parent element that has the header class and then it simply applied all style to that element
+
+h1.closest('h1').style.background = 'var(--gradient-primary)';
+//now it's the h1 element itself so we can think of the closest here as basically being the opposite of querySelector so both recieve a query string as an input but querySelector finds finds children no matter how deep in the dom tree while the closest method finds parents and also no matter how far up the dom tree
+
+//Going Sideways: selecting siblings:
+
+console.log(h1.previousElementSibling);
+console.log(h1.nextElementSibling);
+
+console.log(h1.previousSibling);
+console.log(h1.nextSibling);
+
+//getting all children
+console.log(h1.parentElement.children);
+
+//ex:
+[...h1.parentElement.children].forEach(child => {
+  if (child !== h1) child.style.transform = 'scale(0.5)';
+  //indeed all the other siblings are now 50% smaller
+});
