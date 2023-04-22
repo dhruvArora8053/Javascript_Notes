@@ -95,7 +95,7 @@ console.log(...str);
 //Note:- now just keep in mind that we can still only use the spread operator when building an array or when we pass values into a function
 
 //Practical example:-
-//write a function that accepts multiple arguments and then use the spred operator to actually pass those arguments:
+//write a function that accepts multiple arguments and then use the spread operator to actually pass those arguments:
 // const ingredients = [
 //   prompt("Let's make pata! Ingredient 1?"),
 //   prompt("Let's make pata! Ingredient 2?"),
@@ -108,7 +108,7 @@ console.log(...str);
 //Since ES 2018, the spread operator actually works on objects even though objects are not iterables
 const newRestaurant = { foundedIn: 1998, ...restaurant, founder: "Guiseppe" };
 console.log(newRestaurant);
-//this will basically copy all the properties of the restaurant into this new object and then we can add anything that we want and ofcorse here order does not matter as always so this spread here doesn't have to first one
+//this will basically copy all the properties of the restaurant into this new object and then we can add anything that we want and ofcourse here order does not matter as always so this spread here doesn't have to first one
 
 //creating shallow copies of objects:
 const restaurantCopy = { ...restaurant };
