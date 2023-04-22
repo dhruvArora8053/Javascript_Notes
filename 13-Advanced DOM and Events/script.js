@@ -101,41 +101,32 @@ btnScrollTo.addEventListener('click', function (e) {
 //     //the exact string that we get from the href attribute is already the perfect selector, so we can just use this and this is a pretty common technique that we use for implementing a navigation like this so we put the id of the elements that we want to scroll to in the href attribute so that then in the javascript we can read that href and then we can select the element that we want to scroll to
 //   });
 // });
-//so this mehtod worked beautifully for smooth scrolling, now as you this works just fine but the problem is that it's not really efficient so we are adding here the exact same callback function, we are addint it once to each of these three elements. So the exact same function is now attached to these three elements and this kind of unnecessary, ofcourse it would be fine for three elements but what if we had 1000 or like 10,000 elements?
-//If were to attach an event handler to 10,000 elements like this then we would effectively be creating 10,000 copies of the same exact function and so that would cetainly impact the performance and it's really just not a clean solution in that case. And so the better solution without a doubt is to use event delegation:
+//so this mehtod worked beautifully for smooth scrolling, now as you see this works just fine but the problem is that it's not really efficient so we are adding here the exact same callback function, we are adding it once to each of these three elements. So the exact same function is now attached to these three elements and this kind of unnecessary, ofcourse it would be fine for three elements but what if we had 1000 or like 10,000 elements?
+//If we were to attach an event handler to 10,000 elements like this then we would effectively be creating 10,000 copies of the same exact function and so that would certainly impact the performance and it's really just not a clean solution in that case. And so the better solution without a doubt is to use event delegation:
 
 //So in event delegation we use the fact that events bubbles up and we do that by putting the event listener on a common parent of all the elements that we are interested in:
-//so in our above example it's nav__links container that's around all of these 3 nav__link so we will put our event handler on nav__links element and then when a user clicks one of the links then the event is generated and bubbles up, and then we can basically catch that event in this common parent element and handle it there becasue we also know where the event actually originated:
+//so in our above example it's nav__links container that's around all of these 3 nav__link so we will put our event handler on nav__links element and then when a user clicks one of the links then the event is generated and bubbles up, and then we can basically catch that event in this common parent element and handle it there because we also know where the event actually originated:
 
 //1. Add event listener to common parent element
 //2. Determine what element originated the event
 
 document.querySelector('.nav__links').addEventListener('click', function (e) {
+  //figuring where the event happend
+  // console.log(e.target);
   e.preventDefault();
-  console.log(e.target);
+
+  //Matching Strategy
   if (e.target.classList.contains('nav__link')) {
+    console.log('LINK');
+
     const id = e.target.getAttribute('href');
-    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+    // console.log(id);
+
+    document.querySelector(id).scrollIntoView({
+      behavior: 'smooth',
+    });
   }
 });
-
-// document.querySelector('.nav__links').addEventListener('click', function (e) {
-//   //figuring where the event happend
-//   // console.log(e.target);
-//   e.preventDefault();
-
-//   //Matching Strategy
-//   if (e.target.classList.contains('nav__link')) {
-//     console.log('LINK');
-
-//     const id = e.target.getAttribute('href');
-//     // console.log(id);
-
-//     document.querySelector(id).scrollIntoView({
-//       behavior: 'smooth',
-//     });
-//   }
-// });
 //We successfully implemented event delegation which is lot better and a lot more efficient than simply attaching the same event handler to multiple elements instead, we simply edit one big event handler function to the parent element of all the elements that we're interested in and then we simply determined where the click event came from
 
 /////////////////////////////////////////////////
@@ -463,7 +454,7 @@ h1.lastElementChild.style.color = 'magenta';
 console.log(h1.parentNode);
 console.log(h1.parentElement);
 
-h1.closest('.header').style.background = 'var(--gradient-secondary)';
+// h1.closest('.header').style.background = 'var(--gradient-secondary)';
 //so it selected the closest header to our h1 element so the closest parent element that has the header class and then it simply applied all style to that element
 
 h1.closest('h1').style.background = 'var(--gradient-primary)';
@@ -477,12 +468,12 @@ console.log(h1.nextElementSibling);
 console.log(h1.previousSibling);
 console.log(h1.nextSibling);
 
-//getting all children
 console.log(h1.parentElement.children);
+//selecting h1 parent element and then getting it's all children
 
 //ex:
 [...h1.parentElement.children].forEach(child => {
-  if (child !== h1) child.style.transform = 'scale(0.5)';
+  // if (child !== h1) child.style.transform = 'scale(0.5)';
   //indeed all the other siblings are now 50% smaller
 });
 /////////////////////////////////////////////////
