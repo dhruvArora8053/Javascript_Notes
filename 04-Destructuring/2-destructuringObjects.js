@@ -45,7 +45,7 @@ console.log(name, openingHours, categories);
 //this now will create three brand new variables based on this restaurant object
 
 //Why this is very useful addition to language?
-//this is an extremely useful addition to language especially when we deal with the result of an API call which basically means to get data from another web application like weather data or data about movies or something like that and this data usually comes in the form of objecs basically and then destructuring is a life saver, it allows us to write a lot less code.
+//this is an extremely useful addition to language especially when we deal with the result of an API call which basically means to get data from another web application like weather data or data about movies or something like that and this data usually comes in the form of objects basically and then destructuring is a life saver, it allows us to write a lot less code.
 
 //Different Name:
 //what if we wanted the variable names to be different from the property names?
