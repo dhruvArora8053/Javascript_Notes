@@ -110,23 +110,28 @@ btnScrollTo.addEventListener('click', function (e) {
 //1. Add event listener to common parent element
 //2. Determine what element originated the event
 
-document.querySelector('.nav__links').addEventListener('click', function (e) {
-  //figuring where the event happend
-  // console.log(e.target);
+document.querySelector('.nav__links').addEventListener('click', function(e){
   e.preventDefault();
+  
+})
 
-  //Matching Strategy
-  if (e.target.classList.contains('nav__link')) {
-    console.log('LINK');
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//   //figuring where the event happend
+//   // console.log(e.target);
+//   e.preventDefault();
 
-    const id = e.target.getAttribute('href');
-    // console.log(id);
+//   //Matching Strategy
+//   if (e.target.classList.contains('nav__link')) {
+//     console.log('LINK');
 
-    document.querySelector(id).scrollIntoView({
-      behavior: 'smooth',
-    });
-  }
-});
+//     const id = e.target.getAttribute('href');
+//     // console.log(id);
+
+//     document.querySelector(id).scrollIntoView({
+//       behavior: 'smooth',
+//     });
+//   }
+// });
 //We successfully implemented event delegation which is lot better and a lot more efficient than simply attaching the same event handler to multiple elements instead, we simply edit one big event handler function to the parent element of all the elements that we're interested in and then we simply determined where the click event came from
 
 /////////////////////////////////////////////////
