@@ -78,7 +78,7 @@ const { sat, ...weekdays } = restaurant.openingHours;
 console.log(sat, weekdays);
 
 //2. FOR FUNCTIONS:
-//example funciton for debt:
+//example function for debt:
 const add = function (...numbers) {
   //   console.log(numbers);
   let sum = 0;
@@ -97,7 +97,7 @@ add(...x);
 
 //another example:
 restaurant.orderPizza("mushroom", "onion", "olives", "spinach");
-//the first argument was stored in mainIngredient parameter and then all the remaining arguments that were passed in were simply stored into otherIngredints arrya by using rest parameter syntax
+//the first argument was stored in mainIngredient parameter and then all the remaining arguments that were passed in were simply stored into otherIngredints array by using rest parameter syntax
 
 restaurant.orderPizza("mushroom");
 //here remaining arguments will be put in an empty array because ofcourse there are none and so there is nothing to collect into the array but we still get an empty array that we can work with if we want
