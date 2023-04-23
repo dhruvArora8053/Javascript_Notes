@@ -143,3 +143,11 @@ const ryan = new Son("Ryan", "New Washington DC", "Aston Martin");
 console.log(ryan);
 ryan.housePrice("2000000");
 ryan.carPrice("1000000");
+
+console.log(jack.__proto__);
+console.log(ryan.__proto__);
+console.log(ryan.__proto__.constructor);
+ryan.__proto__.constructor = Son;
+console.log(ryan.__proto__.constructor);
+console.log(ryan.__proto__.__proto__);
+console.log(ryan.__proto__.__proto__.__proto__);

@@ -17,21 +17,16 @@
 // § Data car 1: 'Tesla' going at 120 km/h, with a charge of 23%
 // GOOD LUCK �
 
-const Car = function (brand, curSpeed) {
-  this.brand = brand;
-  this.curSpeed = curSpeed;
-};
-
 // 1. Use a constructor function to implement an Electric Car (called 'EV') as a child
 // "class" of 'Car'. Besides a make and current speed, the 'EV' also has the
 // current battery charge in % ('charge' property)
 
-const EV = function (make, speed, battery) {
-  Car.call(this, make, speed);
-  this.battery = battery;
+const Car = function (make, curSpeed) {
+  this.make = make;
+  this.curSpeed = curSpeed;
 };
 
-EV.prototype.chargeBattery = function () {};
-
-// 2. Implement a 'chargeBattery' method which takes an argument
-// 'chargeTo' and sets the battery charge to 'chargeTo'
+const EV = function (make, curSpeed, charge) {
+  Car.call(this, make, curSpeed);
+  this.charge = charge;
+};
