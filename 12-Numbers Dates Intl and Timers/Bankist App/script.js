@@ -264,32 +264,52 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
-const startLogOutTimer = function () {
+// const startLogOutTimer = function () {
+//   const tick = function () {
+//     const min = String(Math.trunc(time / 60)).padStart(2, 0);
+//     const sec = String(time % 60).padStart(2, 0);
+//     labelTimer.textContent = `${min}:${sec}`;
+
+//     if (time === 0) {
+//       containerApp.style.opacity = 0;
+//       labelWelcome.textContent = 'Login to get started';
+//       clearTimeout(timer);
+//     }
+//     --time;
+//   };
+
+//   let time = 10000;
+//   tick();
+
+//   timer = setInterval(tick, 1000);
+//   //here the problem with setInterval is it does not get called immediately, it takes time of one sec and then start  executing the callback function that's why we are seeing the wrong time for one sec.
+
+//   return timer;
+// };
+
+//Implementing Timer:
+const setTimer = function () {
+  let time = 100;
+
   const tick = function () {
-    const min = String(Math.trunc(time / 60)).padStart(2, 0);
-    const sec = String(time % 60).padStart(2, 0);
+    let min = String(Math.trunc(time / 60)).padStart(2, '0');
+    let sec = String(Math.trunc(time % 60)).padStart(2, '0');
+
     labelTimer.textContent = `${min}:${sec}`;
 
     if (time === 0) {
+      clearInterval(timer);
       containerApp.style.opacity = 0;
-      labelWelcome.textContent = 'Login to get started';
-      clearTimeout(timer);
     }
-    --time;
+
+    time--;
   };
 
-  let time = 10000;
-  tick();
-
-  timer = setInterval(tick, 1000);
-  //here the problem with setInterval is it does not get called immediately, it takes time of one sec and then start  executing the callback function that's why we are seeing the wrong time for one sec.
-
-  return timer;
+  const timer = setInterval(tick, 1000);
 };
 
 //Implementing login:
 let currentAccount, timer;
-
 //Fake Always Logged In:-
 // currentAccount = account1;
 // updateUI(currentAccount);
