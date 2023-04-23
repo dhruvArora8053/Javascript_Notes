@@ -65,3 +65,11 @@ electricCar.accelerate();
 electricCar.chargeBattery(90);
 electricCar.accelerate();
 electricCar.brake();
+
+//My example:
+EV.print = function () {
+  console.log("just printing something random");
+};
+
+
+EV.print();
