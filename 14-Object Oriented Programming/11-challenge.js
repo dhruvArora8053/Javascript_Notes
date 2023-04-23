@@ -26,7 +26,42 @@ const Car = function (make, curSpeed) {
   this.curSpeed = curSpeed;
 };
 
+Car.prototype.brake = function () {
+  this.curSpeed -= 5;
+
+  console.log(`New Speed: ${this.curSpeed} km/h`);
+};
+
 const EV = function (make, curSpeed, charge) {
   Car.call(this, make, curSpeed);
   this.charge = charge;
 };
+
+EV.prototype = Object.create(Car.prototype);
+
+// 2. Implement a 'chargeBattery' method which takes an argument
+// 'chargeTo' and sets the battery charge to 'chargeTo'
+EV.prototype.chargeBattery = function (chargeTo) {
+  this.charge = chargeTo;
+};
+
+// 3. Implement an 'accelerate' method that will increase the car's speed by 20,
+// and decrease the charge by 1%. Then log a message like this: 'Tesla going at 140
+// km/h, with a charge of 22%'
+EV.prototype.accelerate = function () {
+  this.curSpeed += 20;
+  this.charge -= 1;
+  console.log(
+    `${this.make} going at ${this.curSpeed}km/h with a charge ${this.charge}%`
+  );
+};
+
+// 4. Create an electric car object and experiment with calling 'accelerate',
+// 'brake' and 'chargeBattery' (charge to 90%). Notice what happens when
+// you 'accelerate'! Hint: Review the definiton of polymorphism �
+
+const electricCar = new EV("Tesla", 120, 23);
+electricCar.accelerate();
+electricCar.chargeBattery(90);
+electricCar.accelerate();
+electricCar.brake();
