@@ -174,11 +174,17 @@ tabsContainer.addEventListener('click', function (e) {
 //Menu Fade Animation:
 
 //Event Delegation: remember this works because the target bubbles up
-const nav= document.querySelector('.nav')
+const nav = document.querySelector('.nav');
 
-//we have already used the mouseenter event and mouseover is actually similar to mouseenter with the big difference that mouseenter does not bubble but here we need the event to actually bubble
-nav.addEventListener('mouseover')
+//we have already used the mouseenter event and mouseover is actually similar to mouseenter with the big difference that mouseenter does not bubble but here we need the event to actually bubble, their are also also kind of opposite events of mouseover and mouseenter and we use these bascially to undo what we do on the hover so the opp of mouseenter is mouseleave and opp of mouseover is mouseout
+nav.addEventListener('mouseover', function (e) {
+  if (e.target.classList.contains('nav__link')) {
+    //so you see that this time around, we're not using the closest methods and that's because their are simply no child elements that we could accidently click here in this link
+    const link = e.target;
 
+    //selecting sibling elements
+  }
+});
 
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
