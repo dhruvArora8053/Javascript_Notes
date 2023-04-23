@@ -274,7 +274,7 @@ const startLogOutTimer = function () {
       containerApp.style.opacity = 0;
       labelWelcome.textContent = 'Login to get started';
       clearTimeout(timer);
-    }
+    } 
     --time;
   };
 

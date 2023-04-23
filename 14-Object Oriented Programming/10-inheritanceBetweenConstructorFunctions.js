@@ -66,6 +66,7 @@ console.log(mike instanceof Person); //true
 //it's because we linked prototypes together if hadn't used Object.create then this should be false
 console.log(mike instanceof Object); //true
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //My Example:-
 // const SmallFactory = function (name, bike, car, plane) {
 //   this.name = name;
@@ -113,3 +114,32 @@ console.log(mike instanceof Object); //true
 // BigFactory.prototype.buys= function(){
 //   console.log('bought everything');
 // }
+
+const Father = function (name, address) {
+  this.name = name;
+  this.address = address;
+};
+
+Father.prototype.housePrice = function (price) {
+  console.log(`Your house is now worth $${price}`);
+};
+
+const jack = new Father("Jack", "Los Angeles");
+console.log(jack);
+jack.housePrice(1000000);
+
+const Son = function (name, address, car) {
+  Father.call(this, name, address);
+  this.car = car;
+};
+
+Son.prototype = Object.create(Father.prototype);
+
+Son.prototype.carPrice = function (price) {
+  console.log(`Your car is now worth $${price}`);
+};
+
+const ryan = new Son("Ryan", "New Washington DC", "Aston Martin");
+console.log(ryan);
+ryan.housePrice("2000000");
+ryan.carPrice("1000000");
