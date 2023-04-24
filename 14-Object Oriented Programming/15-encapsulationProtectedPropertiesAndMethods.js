@@ -66,6 +66,6 @@ console.log(acc1);
 //Now if we still wanted to give access to the movements array from the outside then we would have to implement a public method for that:
 //implemented getMovements() method on public interface, and now this would be the correct way to get the movements
 console.log(acc1.getMovements());
-//and so this movements everyone can still atleast access them but they cannot override them so they cannot set the movements uless ofcourse they use the underscore with the conventiion but then atleast they'll know that it's wrong to access the property 
+//and so this movements everyone can still atleast access them but they cannot override them so they cannot set the movements uless ofcourse they use the underscore with the conventiion but then atleast they'll know that it's wrong to access the property
 
 //let's protect pin property and approveLoan method with '_'
