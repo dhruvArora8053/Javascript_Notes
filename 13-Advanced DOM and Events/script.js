@@ -170,8 +170,6 @@ tabsContainer.addEventListener('click', function (e) {
     .classList.add('operations__content--active');
 });
 
-
-
 /////////////////////////////////////////////////
 //195:- Passing arguments to Event Handlers:
 //Menu Fade Animation:
@@ -478,8 +476,8 @@ console.log(h1.parentElement);
 // h1.closest('.header').style.background = 'var(--gradient-secondary)';
 //so it selected the closest header to our h1 element so the closest parent element that has the header class and then it simply applied all style to that element
 
-h1.closest('h1').style.background = 'var(--gradient-primary)';
-//now it's the h1 element itself so we can think of the closest here as basically being the opposite of querySelector so both recieve a query string as an input but querySelector finds finds children no matter how deep in the dom tree while the closest method finds parents and also no matter how far up the dom tree
+// h1.closest('h1').style.background = 'var(--gradient-primary)';
+//now it's the h1 element itself so we can think of the closest here as basically being the opposite of querySelector so both recieve a query string as an input but querySelector finds children no matter how deep in the dom tree while the closest method finds parents and also no matter how far up the dom tree
 
 //Going Sideways: selecting siblings:
 
@@ -502,3 +500,9 @@ console.log(h1.parentElement.children);
 /////////////////////////////////////////////////
 //195:- Passing arguments to Event Handlers:
 ////////////////////////////////////////////////
+const h3= document.querySelector('h3')
+console.log(h3.nextElementSibling);
+console.log(h3.previousElementSibling);
+
+const h5= document.querySelector('h5')
+console.log(h5.nextElementSibling);
