@@ -184,6 +184,15 @@ nav.addEventListener('mouseover', function (e) {
     const link = e.target;
 
     //selecting sibling elements
+    //so basically selecting all the other links and remember that we can do that by going to the parent and then selecting the children from there no in this case the parent of nav__link is nav__item and the only thing that nav__item includes is always just one link so you see each of the link is actually inside of one nav__item and so now we would have to move up manually not just once but twice and so instead of doing that we will again use the closest method
+    //so again instead of moving up manually like one or two steps we can simply search for a parent which matches a certain query and that's a bit more robust because even if we would maybe change the structrure of html here the our javascript would keep working:
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link')
+    //here we chose parent first of all links which is nav and so now from there we can search for nav__links again so these are then gonna be siblings of our initial links
+
+    //selecting logo
+    //we could select this logo element manually by it's class name but let's just suppose that there are many navigations on this page and so again to make the solution really robust it's best to simply move up to the closest parent(in this case the navigation) and then from there we simply search for an image:
+    const logo= e.target.closest('.nav').querySelector('img')
+    //and so then this will work not only on this navigation but it would work also on others 
   }
 });
 
@@ -488,7 +497,7 @@ console.log(h1.previousSibling);
 console.log(h1.nextSibling);
 
 console.log(h1.parentElement.children);
-//selecting h1 parent element and then getting it's all children
+//selecting h1's parent element and then getting it's all children
 
 //ex:
 [...h1.parentElement.children].forEach(child => {
@@ -500,9 +509,3 @@ console.log(h1.parentElement.children);
 /////////////////////////////////////////////////
 //195:- Passing arguments to Event Handlers:
 ////////////////////////////////////////////////
-const h3= document.querySelector('h3')
-console.log(h3.nextElementSibling);
-console.log(h3.previousElementSibling);
-
-const h5= document.querySelector('h5')
-console.log(h5.nextElementSibling);
