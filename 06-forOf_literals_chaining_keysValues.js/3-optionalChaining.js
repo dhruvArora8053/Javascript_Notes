@@ -74,7 +74,7 @@ if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 //it is a feature if a certain property doesn't exist then undefined is returned immediatedly and so that to avoid that kind of error that we saw earlier
 console.log(restaurant.openingHours.mon?.open); //output: undefined
 //so only if 'mon' exists then this open property will be read from there but if not then immediately undefined will be returned
-//and exists here actually means the nullish cocept that we already talked before so a property exists if it's not null and not undefined so if it's 0 or the empty string then it still exists ofcourse.
+//and exists here actually means the nullish concept that we already talked before so a property exists if it's not null and not undefined so if it's 0 or the empty string then it still exists ofcourse.
 
 console.log(restaurant.openingHours?.mon?.open);
 //and now if the restaurant.openingHours does not even exist well then the 'mon' property will not even be read and so therefore we don't get that error
