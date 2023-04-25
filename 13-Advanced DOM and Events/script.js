@@ -208,6 +208,10 @@ nav.addEventListener('mouseover', function (e) {
 console.log(document.documentElement);
 //selecting the entire document of a webpage, so just document above is not enough to select the document element because this is not the real DOM element so for ex: if we want to apply CSS styles to the entire page we always need to select document element
 
+document.querySelector('#abc').addEventListener('click', function () {
+  document.querySelector('body').style.backgroundColor = 'red';
+});
+
 //selecting head and the body
 console.log(document.head);
 console.log(document.body);
