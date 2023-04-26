@@ -60,36 +60,3 @@ console.log(martha);
 martha.calcAge();
 //and so now ideed this new calcAge method overrode the one that was already there in the prototype chain and again that's because this new calcAge method here appears first in the prototype chain. And we can also say that this calcAge method here is shadowing the parent's class calcAge method.
 
-////////////////////////////////////////////////
-//My Example:-
-class Father {
-  constructor(firstName, car) {
-    this.firstName = firstName;
-    this.car = car;
-  }
-
-  carFather() {
-    console.log(`I have only ${this.car}`);
-  }
-}
-
-const jack = new Father("Jack", "Mercedes");
-console.log(jack);
-
-class Son extends Father {
-  constructor(firstName, car, bike) {
-    super(firstName, car);
-    this.bike = bike;
-  }
-
-  carBike() {
-    console.log(`I have ${this.car} and ${this.bike}`);
-  }
-}
-
-const john = new Son("John", "BMW", "BMW");
-console.log(john);
-
-jack.carFather();
-john.carBike();
-john.carFather();
