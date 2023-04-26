@@ -254,38 +254,25 @@ tabsContainer.addEventListener('click', function (e) {
 // nav.addEventListener('mouseout', handleHover.bind(1));
 // //here in this bind function the this keyword value is set 0.5 and 1 respectively
 
+const fadeStyle = function (e) {
+  e.preventDefault();
+
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+
+    logo.style.opacity = this;
+  }
+};
+
 const nav = document.querySelector('.nav');
-nav.addEventListener('mouseover', function (e) {
-  e.preventDefault();
-
-  if (e.target.classList.contains('nav__link')) {
-    const link = e.target;
-    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-    const logo = link.closest('.nav').querySelector('img');
-
-    siblings.forEach(el => {
-      if (el !== link) el.style.opacity = 0.5;
-    });
-
-    logo.style.opacity = 0.5;
-  }
-});
-
-nav.addEventListener('mouseout', function (e) {
-  e.preventDefault();
-
-  if (e.target.classList.contains('nav__link')) {
-    const link = e.target;
-    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-    const logo = link.closest('.nav').querySelector('img');
-
-    siblings.forEach(el => {
-      if (el !== link) el.style.opacity = 1;
-    });
-
-    logo.style.opacity = 1;
-  }
-});
+nav.addEventListener('mouseover', fadeStyle.bind(0.5));
+nav.addEventListener('mouseout', fadeStyle.bind(1));
 
 ////////////////////////////////////////////////
 //196:- Implementing a Sticky Navigation: The Scroll Event
