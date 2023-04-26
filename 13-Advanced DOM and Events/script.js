@@ -256,24 +256,24 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 ////////////////////////////////////////////////
 //196:- Implementing a Sticky Navigation: The Scroll Event
-const initialCoords = section1.getBoundingClientRect();
-console.log(initialCoords);
+// const initialCoords = section1.getBoundingClientRect();
+// console.log(initialCoords);
 
-//this event will be fired off each time when we scroll on our page
-window.addEventListener('scroll', function (e) {
-  // console.log(e);
-  //as we scrolled a little bit and it already created so many events in a console so it got fired all these times(if we see on our console) so the scroll event is not really efficient and usually it should be avoided
-  // console.log(window.scrollY);
-  //and remember this is the position basically from the top of the view port to the very top of the page
+// //this event will be fired off each time when we scroll on our page
+// window.addEventListener('scroll', function (e) {
+//   // console.log(e);
+//   //as we scrolled a little bit and it already created so many events in a console so it got fired all these times(if we see on our console) so the scroll event is not really efficient and usually it should be avoided
+//   // console.log(window.scrollY);
+//   //and remember this is the position basically from the top of the view port to the very top of the page
 
-  //implementing sticky
-  if (window.scrollY > initialCoords.top) {
-    nav.classList.add('sticky');
-  } else {
-    nav.classList.remove('sticky');
-  }
-});
-//So using the scroll event for performing a certain action at a certain position of the page in really not a way to go and again that's because the scroll event here fires all the time no matter how small the change is in the scroll and so that makes for a pretty bad performance and especially on mobile
+//   //implementing sticky
+//   if (window.scrollY > initialCoords.top) {
+//     nav.classList.add('sticky');
+//   } else {
+//     nav.classList.remove('sticky');
+//   }
+// });
+// //So using the scroll event for performing a certain action at a certain position of the page in really not a way to go and again that's because the scroll event here fires all the time no matter how small the change is in the scroll and so that makes for a pretty bad performance and especially on mobile
 
 ////////////////////////////////////////////////
 //196:- Intersection Obsever API
@@ -297,10 +297,13 @@ const obsOptions = {
 
 const observer = new IntersectionObserver(obsCallback, obsOptions);
 
-//so now we have to use this observer to basically observe a ceratain target:
+//so now we have to use this observer to basically observe a certain target:
 observer.observe(section1);
 
 //So in the current example whenever the first section so our target here section1 is intersecting the viewport at 10%, so the viewport because that's the root and 10% becase that's the threshold so whenver that happens then obsCallback function will get called and that's no matter if we are scrolling up or down
+
+
+
 
 /////////////////////////////////////////////////
 //////////////////////////////////////////////////
