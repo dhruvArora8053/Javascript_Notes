@@ -275,6 +275,34 @@ window.addEventListener('scroll', function (e) {
 });
 //So using the scroll event for performing a certain action at a certain position of the page in really not a way to go and again that's because the scroll event here fires all the time no matter how small the change is in the scroll and so that makes for a pretty bad performance and especially on mobile
 
+////////////////////////////////////////////////
+//196:- Intersection Obsever API
+//This API allows our code to basically observe changes to the way that a ceratin target element intersect another element or the way it intersects the viewport:
+
+const obsCallback = function (entries, observer) {
+  entries.forEach(entry => {
+    console.log(entry);
+  });
+};
+//so this callback function here will get called each time that the observed element so our target element section1 here is intersecting the root element at the threshold that we defined
+
+const obsOptions = {
+  //this object first needs a root property and this root is the element that the target is intersecting so here section1 is the target and the root element will be the element that we want our target element to intersect:
+  root: null,
+  //so we could here now select an element or as an alternative we can write null and then we will be able to observe our target element intersecting the entire viewport
+
+  threshold: 0.1, //10%
+  //and this is basically the percentage of intersection at which the obsever callback will be called
+};
+
+const observer = new IntersectionObserver(obsCallback, obsOptions);
+
+//so now we have to use this observer to basically observe a ceratain target:
+observer.observe(section1);
+
+//So in the current example whenever the first section so our target here section1 is intersecting the viewport at 10%, so the viewport because that's the root and 10% becase that's the threshold so whenver that happens then obsCallback function will get called and that's no matter if we are scrolling up or down
+
+/////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
@@ -590,3 +618,6 @@ console.log(h1.parentElement.children);
 ////////////////////////////////////////////////
 //196:- Implementing a Sticky Navigation: The Scroll Event
 ////////////////////////////////////////////////
+//196:- Intersection Obsever API
+
+/////////////////////////////////////////////////
