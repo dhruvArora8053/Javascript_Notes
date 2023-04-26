@@ -254,6 +254,18 @@ nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
 //here in this bind function the this keyword value is set 0.5 and 1 respectively
 
+////////////////////////////////////////////////
+//196:- Implementing a Sticky Navigation: The Scroll Event
+//this event will be fired off each time when we scroll on our page  
+window.addEventListener('scroll', function(e){
+  // console.log(e);
+  //as we scrolled a little bit and it already created so many events in a console so it got fired all these times(if we see on our console) so the scroll event is not really efficient and usually it should be avoided 
+
+  // console.log(window.scrollY);
+})
+
+
+
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
@@ -433,7 +445,7 @@ const alertH1 = function (e) {
   alert('addEventListener: Great you are reading the heading');
 
   h1.removeEventListener('mouseenter', alertH1);
-  //because of this our even listener will only execute for once
+  //because of this our event listener will only execute for once
 };
 
 // h1.addEventListener('mouseenter', alertH1);
@@ -566,4 +578,6 @@ console.log(h1.parentElement.children);
 //194:- Building a Tabbed Component:
 /////////////////////////////////////////////////
 //195:- Passing arguments to Event Handlers:
+////////////////////////////////////////////////
+//196:- Implementing a Sticky Navigation: The Scroll Event
 ////////////////////////////////////////////////
