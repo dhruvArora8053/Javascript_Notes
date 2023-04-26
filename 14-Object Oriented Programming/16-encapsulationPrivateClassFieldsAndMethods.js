@@ -17,7 +17,7 @@ class Account {
   locale = navigator.language;
   //   _movements = [];
 
-  //now still the account here worked exactly the same so we have locale and movements on the acc1 object but now they are actually public fields but in our final object here that doesn't make any difference because again these public fields here are gonna be present on all the instances that we are creating through the class so they are not on the prototype so this is importand to understand:
+  //now still the account here worked exactly the same so we have locale and movements on the acc1 object but now they are actually public fields but in our final object here that doesn't make any difference because again these public fields here are gonna be present on all the instances that we are creating through the class so they are not on the prototype so this is important to understand:
   //so all the below methods after constructor method, they will always be added to the prototype but again the fields here they are on the instances
 
   //2. Private Fields(instances):
@@ -26,7 +26,10 @@ class Account {
   //and so this is a syntax that makes a field private in this new class proposal
   //so in the acc1 object we actually have #movements and so now we are finally gonna be able to see that this property is indeed protected
 
-  //now the next candidate to make private is the pin, however this time the situation is a bit different because now we are actually setting the pin based on the input value to the constructor  
+  //now the next candidate to make private is the pin, however this time the situation is a bit different because now we are actually setting the pin based on the input value to the constructor however, we cannot define a field in the constructor so the fields they really have to be out here which is outside of any method so what we have to do is to create the field out here with # but then don't set it to anything:
+
+  #pin;
+  //and so this is essentially just like creating an empty variable so in the beginning this will be set to undefined and then we can redefine this pin value inside of a constructor method:
 
   constructor(owner, currency, pin) {
     this.owner = owner;
@@ -34,10 +37,13 @@ class Account {
     //protected property
     // this._movements = [];
     // this.locale = navigator.language;
-    // this._pin = pin;
+    this.#pin = pin;
 
     console.log(`Thanks for opening an account, ${owner}`);
   }
+
+  //3. Public Methods:
+  //so all these methods here that we have been using are indeed public methods:
 
   //Public Interface
   getMovements() {
@@ -62,6 +68,9 @@ class Account {
       console.log(`Loan approved`);
     }
   }
+
+  //4. Private Methods:
+  
 }
 
 const acc1 = new Account("Jonas", "EUR", 1111);
@@ -72,4 +81,6 @@ console.log(acc1);
 //so basically javascript thinks that we're trying to implement this private class field out here and that's the reason for this error but what matters infact that we cannot access this variable outside here
 
 console.log(acc1.getMovements());
-//this method we can still use to get the movements and that was ideed the whole point of creating this method 
+//this method we can still use to get the movements and that was ideed the whole point of creating this method
+
+// console.log(acc1.#pin); //caught SyntaxError: Private field '#movements' must be declared in an enclosing class
