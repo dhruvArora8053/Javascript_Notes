@@ -175,113 +175,105 @@ tabsContainer.addEventListener('click', function (e) {
 //Menu Fade Animation:
 
 //Event Delegation: remember this works because the target bubbles up
-// const nav = document.querySelector('.nav');
+const nav = document.querySelector('.nav');
 
-// //we have already used the mouseenter event and mouseover is actually similar to mouseenter with the big difference that mouseenter does not bubble but here we need the event to actually bubble, their are also also kind of opposite events of mouseover and mouseenter and we use these bascially to undo what we do on the hover so the opp of mouseenter is mouseleave and opp of mouseover is mouseout
-// nav.addEventListener('mouseover', function (e) {
+//we have already used the mouseenter event and mouseover is actually similar to mouseenter with the big difference that mouseenter does not bubble but here we need the event to actually bubble, their are also also kind of opposite events of mouseover and mouseenter and we use these bascially to undo what we do on the hover so the opp of mouseenter is mouseleave and opp of mouseover is mouseout
+nav.addEventListener('mouseover', function (e) {
+  if (e.target.classList.contains('nav__link')) {
+    //so you see that this time around, we're not using the closest methods and that's because their are simply no child elements that we could accidently click here in this link
+    const link = e.target;
+
+    //selecting sibling elements
+    //so basically selecting all the other links and remember that we can do that by going to the parent and then selecting the children from there no in this case the parent of nav__link is nav__item and the only thing that nav__item includes is always just one link so you see each of the link is actually inside of one nav__item and so now we would have to move up manually not just once but twice and so instead of doing that we will again use the closest method
+    //so again instead of moving up manually like one or two steps we can simply search for a parent which matches a certain query and that's a bit more robust because even if we would maybe change the structrure of html here the our javascript would keep working:
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    //here we chose parent first of all links which is nav and so now from there we can search for nav__links again so these are then gonna be siblings of our initial links
+
+    //selecting logo
+    //we could select this logo element manually by it's class name but let's just suppose that there are many navigations on this page and so again to make the solution really robust it's best to simply move up to the closest parent(in this case the navigation) and then from there we simply search for an image:
+    const logo = e.target.closest('.nav').querySelector('img');
+    //and so then this will work not only on this navigation but it would work also on others
+
+    //changing opacity of siblings
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = 0.5;
+    });
+
+    //changing opacity of logo
+    logo.style.opacity = 0.5;
+  }
+});
+
+//UNDO Behavior: NOT FOLLOW DRY
+// nav.addEventListener('mouseout', function (e) {
 //   if (e.target.classList.contains('nav__link')) {
-//     //so you see that this time around, we're not using the closest methods and that's because their are simply no child elements that we could accidently click here in this link
 //     const link = e.target;
-
-//     //selecting sibling elements
-//     //so basically selecting all the other links and remember that we can do that by going to the parent and then selecting the children from there no in this case the parent of nav__link is nav__item and the only thing that nav__item includes is always just one link so you see each of the link is actually inside of one nav__item and so now we would have to move up manually not just once but twice and so instead of doing that we will again use the closest method
-//     //so again instead of moving up manually like one or two steps we can simply search for a parent which matches a certain query and that's a bit more robust because even if we would maybe change the structrure of html here the our javascript would keep working:
 //     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-//     //here we chose parent first of all links which is nav and so now from there we can search for nav__links again so these are then gonna be siblings of our initial links
-
-//     //selecting logo
-//     //we could select this logo element manually by it's class name but let's just suppose that there are many navigations on this page and so again to make the solution really robust it's best to simply move up to the closest parent(in this case the navigation) and then from there we simply search for an image:
 //     const logo = e.target.closest('.nav').querySelector('img');
-//     //and so then this will work not only on this navigation but it would work also on others
 
 //     //changing opacity of siblings
 //     siblings.forEach(el => {
-//       if (el !== link) el.style.opacity = 0.5;
+//       if (el !== link) el.style.opacity = 1;
 //     });
 
 //     //changing opacity of logo
-//     logo.style.opacity = 0.5;
+//     logo.style.opacity = 1;
 //   }
 // });
 
-// //UNDO Behavior: NOT FOLLOW DRY
-// // nav.addEventListener('mouseout', function (e) {
-// //   if (e.target.classList.contains('nav__link')) {
-// //     const link = e.target;
-// //     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-// //     const logo = e.target.closest('.nav').querySelector('img');
+//REFACTORED SOLUTION:
+// nav.addEventListener('mouseover', function (e) {
+//   handleHover(e, 0.5);
+// });
+// nav.addEventListener('mouseout', function (e) {
+//   handleHover(e, 1);
+// });
 
-// //     //changing opacity of siblings
-// //     siblings.forEach(el => {
-// //       if (el !== link) el.style.opacity = 1;
-// //     });
-
-// //     //changing opacity of logo
-// //     logo.style.opacity = 1;
-// //   }
-// // });
-
-// //REFACTORED SOLUTION:
-// // nav.addEventListener('mouseover', function (e) {
-// //   handleHover(e, 0.5);
-// // });
-// // nav.addEventListener('mouseout', function (e) {
-// //   handleHover(e, 1);
-// // });
-
-// const handleHover = function (e) {
-//   console.log(this, e.currentTarget);
-
-//   if (e.target.classList.contains('nav__link')) {
-//     const link = e.target;
-//     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-//     const logo = e.target.closest('.nav').querySelector('img');
-
-//     //changing opacity of siblings
-//     siblings.forEach(el => {
-//       if (el !== link) el.style.opacity = this;
-//     });
-
-//     //changing opacity of logo
-//     logo.style.opacity = this;
-//   }
-// };
-// //in this above function we can only ever have one real parameter and that is the event but if we want to pass additional values into the handler function then we need to use the this keyword like we just did below
-
-// //MORE REFACTORED:
-// //we can do even better by using the bind method so remember that the bind mehtod creates a copy of the function that it's called on and it will set the this keyword in this function call to whatever value we pass into bind
-// nav.addEventListener('mouseover', handleHover.bind(0.5));
-// nav.addEventListener('mouseout', handleHover.bind(1));
-// //here in this bind function the this keyword value is set 0.5 and 1 respectively
-
-const fadeStyle = function (e) {
-  e.preventDefault();
+const handleHover = function (e) {
+  // console.log(this, e.currentTarget);
 
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-    const logo = link.closest('.nav').querySelector('img');
+    const logo = e.target.closest('.nav').querySelector('img');
 
+    //changing opacity of siblings
     siblings.forEach(el => {
       if (el !== link) el.style.opacity = this;
     });
 
+    //changing opacity of logo
     logo.style.opacity = this;
   }
 };
+//in this above function we can only ever have one real parameter and that is the event but if we want to pass additional values into the handler function then we need to use the this keyword like we just did below
 
-const nav = document.querySelector('.nav');
-nav.addEventListener('mouseover', fadeStyle.bind(0.5));
-nav.addEventListener('mouseout', fadeStyle.bind(1));
+//MORE REFACTORED:
+//we can do even better by using the bind method so remember that the bind mehtod creates a copy of the function that it's called on and it will set the this keyword in this function call to whatever value we pass into bind
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+nav.addEventListener('mouseout', handleHover.bind(1));
+//here in this bind function the this keyword value is set 0.5 and 1 respectively
 
 ////////////////////////////////////////////////
 //196:- Implementing a Sticky Navigation: The Scroll Event
+const initialCoords = section1.getBoundingClientRect();
+console.log(initialCoords);
+
 //this event will be fired off each time when we scroll on our page
 window.addEventListener('scroll', function (e) {
   // console.log(e);
   //as we scrolled a little bit and it already created so many events in a console so it got fired all these times(if we see on our console) so the scroll event is not really efficient and usually it should be avoided
   // console.log(window.scrollY);
+  //and remember this is the position basically from the top of the view port to the very top of the page
+
+  //implementing sticky
+  if (window.scrollY > initialCoords.top) {
+    nav.classList.add('sticky');
+  } else {
+    nav.classList.remove('sticky');
+  }
 });
+//So using the scroll event for performing a certain action at a certain position of the page in really not a way to go and again that's because the scroll event here fires all the time no matter how small the change is in the scroll and so that makes for a pretty bad performance and especially on mobile
 
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
