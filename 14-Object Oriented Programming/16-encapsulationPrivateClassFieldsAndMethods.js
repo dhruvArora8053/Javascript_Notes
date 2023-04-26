@@ -58,19 +58,25 @@ class Account {
     this.deposit(-val);
   }
 
-  _approveLoan(val) {
-    return true;
-  }
+  // _approveLoan(val) {
+  //   return true;
+  // }
 
   requestLoan(val) {
-    if (this.approveLoan(val)) {
+    if (this.#approveLoan(val)) {
       this.deposit(val);
       console.log(`Loan approved`);
     }
   }
 
   //4. Private Methods:
-  
+  #approveLoan(val) {
+    return true;
+  }
+
+  static helper() {
+    console.log("Helper");
+  }
 }
 
 const acc1 = new Account("Jonas", "EUR", 1111);
@@ -83,4 +89,11 @@ console.log(acc1);
 console.log(acc1.getMovements());
 //this method we can still use to get the movements and that was ideed the whole point of creating this method
 
-// console.log(acc1.#pin); //caught SyntaxError: Private field '#movements' must be declared in an enclosing class
+// console.log(acc1.#pin); //caught SyntaxError: Private field '#pin' must be declared in an enclosing class
+
+// console.log(acc1.#approveLoan(100)); //caught SyntaxError: Private field '#approveLoan' must be declared in an enclosing class
+//and so google chrome right now basically sees this as a private class field and not as a method so private methods are not available
+
+//Other 4 are for static fields and methods:
+//and we have already seen public static methods:
+Account.helper();
