@@ -40,35 +40,3 @@ jay.introduce();
 jay.calcAge();
 
 //So in this version we don't even worry about constructors anymore and also not about prototype properties and not about the new operator, so it's really just object linked to other objects and it's all really simple and beautiful.
-
-const FatherProto = {
-  init(firstName, car) {
-    this.firstName = firstName;
-    this.car = car;
-  },
-
-  onlyCar() {
-    console.log(`I have only ${this.car}`);
-  },
-};
-
-const jack = Object.create(FatherProto);
-jack.init("Jack", "Mercedes");
-console.log(jack);
-
-const SonProto = Object.create(FatherProto);
-
-SonProto.init = function (firstName, car, bike) {
-  FatherProto.init.call(this, firstName, car);
-  this.bike = bike;
-};
-
-SonProto.carBike = function () {
-  console.log(`I have ${this.car} and ${this.bike}`);
-};
-
-const john = Object.create(SonProto);
-john.init("John", "BMW", "Duke");
-console.log(john);
-john.onlyCar();
-john.carBike();
