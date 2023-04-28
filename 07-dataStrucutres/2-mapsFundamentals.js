@@ -115,6 +115,3 @@ console.log(rest);
 
 //With DOM elements: dom elements also are special type of objects
 rest.set(document.querySelector("h1"), "Heading"); //result of this is going to be the object
-document.querySelector("h1").textContent = rest.get(
-  document.querySelector("h1")
-);
