@@ -74,7 +74,7 @@ console.log(jessica.fullName);
 
 //So this patter is here important to understand whenever we try to set a property that already exists, let's try another name:
 const walter = new PersonCl("Walter", 1965);
-//now we got the alert, walter is not a full name 
+//now we got the alert, walter is not a full name
 console.log(walter);
 //now it has only birthYear property
 
