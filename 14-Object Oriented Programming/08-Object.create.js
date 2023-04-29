@@ -42,3 +42,10 @@ const sarah = Object.create(PersonProto);
 //let's add properties to sarah object in a better way than above:
 sarah.init("Sarah", 1979);
 sarah.calcAge(); //58
+
+console.log(sarah);
+sarah.greet= function(){
+  console.log(`hey ${this.firstName}`);
+}
+
+sarah.greet();
