@@ -60,7 +60,7 @@ const getCountryAndNeighbour = function (country) {
   });
 };
 
-getCountryAndNeighbour('bharat');
+getCountryAndNeighbour('usa');
 //so you see here we attach the first callback function and then inside of that we have yet another one so in other words here we have nested callbacks
 //But now imagine we wanted to do more requests in sequence like the neighbour of the neighbour and like 10 times over so in that we would end up with callbacks inside of callbacks inside of callbacks like 10 times and actually for that kind of structure and for that kind of behavior we have a special name and this is the callback hell:
 //so basically callback hell is when we have a lot of nested callbacks in order to execute ansynchronous tasks in sequence and infact this happens for all asynchronous tasks which are handled by callbacks and not just ajax calls, for ex:

@@ -24,12 +24,21 @@ const renderCountry = function (data, className = '') {
 //////////////////////////////////////////////////
 //Start from here:-
 
+//Actually we already have a small chain of promises because of below json function so these below two thens called in sequence are basically already a small chain but anyway we will now take chaining to a new level and actually chain together two sequenctial ajax calls:
+//so just like before we fist get data about the country and so that's the pare that we already have here but then we also want to get the data about the neighbouring country and so again the second ajax call depends on the data from the first call and so they need to be done in sequence:
 const getCountryData = function (country) {
+  //Country 1
   fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then(response => response.json())
-    .then(data => renderCountry(data[0]));
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbour = data[0].borders?.[0];
+
+      if (!neighbour) return;
+
+      //Country 2
+      fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+    });
 };
 
 getCountryData('portugal');
-
-//Actually we already have a small chain of promises because of above json function so these above two thens called in sequence are basically already a small chain but anyway we will now take chaining to a new level:
