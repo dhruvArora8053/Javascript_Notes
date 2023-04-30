@@ -49,24 +49,16 @@ const renderCountry = function (data, className = '') {
 
 // getCountryData('portugal');
 
-//Refactored:
-// const getCountryData = function (country) {
-//   fetch(`https://restcountries.com/v3.1/name/${country}`)
-//     .then(response => response.json())
-//     .then(data => renderCountry(data[0]));
-// };
+// Refactored:
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v3.1/name/${country}`)
+    .then(response => response.json())
+    .then(data => renderCountry(data[0]));
+};
 
-// getCountryData('portugal');
+getCountryData('portugal');
 
 //Now you might be thinking, well we're still using callback here, right?
 //and that is actually true so promises do not get rid of callbacks but they do infact get rid of callback hell
 
-const getCountryData = function (country) {
-  fetch(`https://restcountries.com/v3.1/name/${country}`)
-    .then(response => response.json())
-    .then(data => {
-      renderCountry(data[0]);
-    });
-};
 
-getCountryData('portugal');
