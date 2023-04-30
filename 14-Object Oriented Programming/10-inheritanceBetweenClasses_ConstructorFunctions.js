@@ -60,6 +60,7 @@ console.log(mike.__proto__.__proto__.__proto__);
 console.dir(Student.prototype.constructor);
 //ideally this should point back to the Student but here it points back apparent to Person and so you see that javascript now thinks that the constructor of Student.prototype is Person and the reason for that is that we set the prototype property of the Student using Object.create and so this makes it so that the constructor of student.prototype is still Person so we need to fix this because sometimes it's important to rely on the constructor property, let's fix:
 Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor);
 
 console.log(mike instanceof Student); //true
 console.log(mike instanceof Person); //true

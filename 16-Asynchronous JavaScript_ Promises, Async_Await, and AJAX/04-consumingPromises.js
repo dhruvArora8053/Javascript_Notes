@@ -21,14 +21,14 @@ const renderCountry = function (data, className = '') {
   countriesContainer.style.opacity = 1;
 };
 
-//////////////////////////////////////////////////
-//Start from here:-
-// const request = new XMLHttpRequest();
-// request.open('GET', 'https://restcountries.com/v3.1/name/portugal');
-// request.send();
+// //////////////////////////////////////////////////
+// //Start from here:-
+// // const request = new XMLHttpRequest();
+// // request.open('GET', 'https://restcountries.com/v3.1/name/portugal');
+// // request.send();
 
-const request = fetch('https://restcountries.com/v3.1/name/portugal');
-console.log(request);
+// const request = fetch('https://restcountries.com/v3.1/name/portugal');
+// console.log(request);
 
 // const getCountryData = function (country) {
 //   //and as we alredy know calling the fetch function like this will then immdediately return a promise so as soon as we start the request and in the beginning this promise is ofcourse still pending because the asynchronous task of getting the data is still running in the background now ofcourse at a certain point the promise will then be settled and either in a fulfilled or in a rejected state but for now let's assume success so assume that promise will be fulfilled and that we have a value available to work with so to handle this fullfilled state we can use the then method that is available on all promises:
@@ -45,18 +45,28 @@ console.log(request);
 //       renderCountry(data[0]);
 //     });
 // };
-//first pare here is pretty straight forward which is above fetch function returning a promise and then we handled that promise using the then method but then actually to read the data from the response we need to call the json method on that response object now this json method will itself return a promise and so if we then return that promise from the first then method then all this basically becomes a new promise itself and so since the first then method is itself a promise we can then again call the then method on it and so then again we have a callback and this time we get access to the data because the resolved value of the first promise is going to be the data itself
+// //first part here is pretty straight forward which is above fetch function returning a promise and then we handled that promise using the then method but then actually to read the data from the response we need to call the json method on that response object now this json method will itself return a promise and so if we then return that promise from the first then method then all this basically becomes a new promise itself and so since the first then method is itself a promise we can then again call the then method on it and so then again we have a callback and this time we get access to the data because the resolved value of the first promise is going to be the data itself
 
 // getCountryData('portugal');
 
 //Refactored:
-const getCountryData = function (country) {
-  fetch(`https://restcountries.com/v3.1/name/${country}`)
-    .then(response => response.json())
-    .then(data => renderCountry(data[0]));
-};
+// const getCountryData = function (country) {
+//   fetch(`https://restcountries.com/v3.1/name/${country}`)
+//     .then(response => response.json())
+//     .then(data => renderCountry(data[0]));
+// };
 
-getCountryData('portugal');
+// getCountryData('portugal');
 
 //Now you might be thinking, well we're still using callback here, right?
 //and that is actually true so promises do not get rid of callbacks but they do infact get rid of callback hell
+
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v3.1/name/${country}`)
+    .then(response => response.json())
+    .then(data => {
+      renderCountry(data[0]);
+    });
+};
+
+getCountryData('portugal');
