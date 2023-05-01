@@ -35,15 +35,12 @@ const getCountryData = function (country) {
 
       if (!neighbour) return;
 
-      return;
-      fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+      return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
     })
     .then(response => response.json())
-
     .then(data => renderCountry(data[0], neighbour))
     .catch(err => {
       console.error(`${err} ⬇️⬇️⬇️`);
-
       renderError(`Something went wrong ⬇️⬇️⬇️ ${err}`);
     })
     .finally(() => {
@@ -54,3 +51,8 @@ const getCountryData = function (country) {
 btn.addEventListener('click', function () {
   getCountryData('portugal');
 });
+
+///////////
+//Start from here:-
+// getCountryData('dljfd')
+//so here we are seeing the 404 error, the problem here is during the fetch there was a 404 error which is because our API couldn't find any country whit above name but still even though there was obviously a big problem 

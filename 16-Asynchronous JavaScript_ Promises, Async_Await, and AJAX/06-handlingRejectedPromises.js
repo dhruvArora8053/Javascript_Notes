@@ -47,8 +47,7 @@ const getCountryData = function (country) {
 
       //well then we would also have to catch an error below same like we did for the above:
       //Country 2
-      return;
-      fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+      return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
     })
     .then(
       response => response.json()
