@@ -90,5 +90,5 @@ btn.addEventListener('click', function () {
 
 
 //Not let's try to simulate another error, so let's say we're trying to search for a country that simply doesn't exist and so our API is not gonna find any result for that:   
-getCountryData('dfjkls');
+// getCountryData('dfjkls');
 //well now we get this wierd error in the UI, let's handle it on the next section
