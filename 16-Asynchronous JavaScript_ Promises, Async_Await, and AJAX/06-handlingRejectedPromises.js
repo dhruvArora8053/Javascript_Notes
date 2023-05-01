@@ -54,13 +54,13 @@ const getCountryData = function (country) {
       //  ,err => alert(err)
     )
     //however this process is a little bit annoying and so infact there is a better way of basically handling all these errors globally just in one central place so instead of all of this callback function here we can handle all the errors no matter where they appear in the chain right at the end of the chain by adding a catch method:
-    .then(data => renderCountry(data[0], neighbour))
+    .then(data => renderCountry(data[0], 'neighbour'))
     .catch(err => {
       //usually simply logging the error to the console is not enough in a real application with a real user interface and so instead of just logging something to the console let's also display and error message for the use to see:
       console.error(`${err} ⬇️⬇️⬇️`);
 
       //and actually above 'err' that is generate here is a real javascript object so we can create errors in javascript with a constructor for ex just like a map or a set and any error in javascript that was created like this contains the message property so we can use that here to basically only print the message of that error and not the whole object itself
-      renderError(`Something went wrong ⬇️⬇️⬇️ ${err}`);
+      renderError(`Something went wrong ⬇️⬇️⬇️ ${err.message}. Try Again!`);
       //and indeed we get our custom error down in a console with emojis and then our owm message in the UI.
 
       //Their is one more quick method that is also available on all promises so besieds then and catch there is also the 'finally' method so let's add a finally here:
@@ -87,7 +87,6 @@ btn.addEventListener('click', function () {
 //Put the network offline then click the button:-
 //now when we clicked the button then we got these two errors in a console but second one is the most important 'we now have an uncaught promise' because we have failed to fetch and so at this point for the first time the promise that's returned from the fetch function was actually rejected and so let's now handle this rejection, go above into getCountryData() function
 
-
-//Not let's try to simulate another error, so let's say we're trying to search for a country that simply doesn't exist and so our API is not gonna find any result for that:   
+//Not let's try to simulate another error, so let's say we're trying to search for a country that simply doesn't exist and so our API is not gonna find any result for that:
 // getCountryData('dfjkls');
 //well now we get this wierd error in the UI, let's handle it on the next section
