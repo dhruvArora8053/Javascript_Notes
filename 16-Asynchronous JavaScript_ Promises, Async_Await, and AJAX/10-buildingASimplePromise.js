@@ -1,0 +1,11 @@
+'use strict';
+
+//1. Let's go back to the lottery example from the slides and basically simulate a lottery using a promise here and remeber that in that example a fulfilled promise means to win the lottery while a rejected promise means to lose, creating a new promise using the Promise constructor:
+const lotteryPromise = new Promise(function (resolve, reject) {
+  //3. now in our lottery example let's say that we actually win in 50% of the cases and lose in the other 50%
+  if (Math.random() >= 0.5) {
+    resolve('You win 💰');
+    //so in this situation we say that we win the lottery and so therefore that means a fulfilled promise and in order to set the promise as fulfilled we use the resolve function so basically calling the resolve function like this wil mark this promise as a fulfilled promise which we can also say a resolved promise and that's the reason why this method here is called resolve now into the resolve function here we pass a fulfilled value of the promise so then it can later be consumed with the then method so ofcourse we're going to handle the result of this promise just like we handled any other promise with the then method so again whatever value we pass into the resolve function here is gonna be the result of the promise that will be available in the then handler 
+  }
+});
+//2. now this means that promises are essentially just a special kind of object in javascript, now the promise constructor takes exactly one argument and that is the so-called executer function. Now as soon as the promise constructor runs it will automatically execute this executor function that we pass in and as it executes this function here it will do so by passing in two other arguments and those arguments are the resolve and reject functions. All of this will create a new promise that we're gonna store into lotteryPromise variable so it's just like for ex: the fetch function which also creates a new promise, now this executor function that we specified is the functio which will contain the asynchronous behavior that we're trying to handle with the promise so this executor function should eventually produce a result value so the value that's basically gonna be the future value of the promise so let's that right here in the executor function above:
