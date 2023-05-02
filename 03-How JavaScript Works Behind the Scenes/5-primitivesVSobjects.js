@@ -67,3 +67,19 @@ jessicaCopy2.family.push("John");
 console.log("Before Marriage:", jessica2);
 console.log("After Marriage:", jessicaCopy2);
 //now here we see both the objects now have a family of four members and the lastname ofcourse as we already saw is preserved because lastName is on the first level and object.assign above took care of copying that property however, the family object is a deeply nested object and so therefore object.assign did not really behind the scenes copy it to the new object so in essence both the objects jessica2 and jessica2Copy have a property called family which points at the same object in the memory heap and that object is ofcoure above array.
+
+/////////////////////////////////////////////////
+//My example:-
+const poorJack = {
+  jackName: "Poor Jack",
+  cars: 0,
+  bike: 0,
+  plane: 0,
+};
+
+const richJack = poorJack;
+richJack.plane = 10;
+richJack.jackName = "Rich Jack";
+
+console.log(poorJack);
+console.log(richJack);
