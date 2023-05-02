@@ -26,13 +26,6 @@ const renderError = function (message) {
   // countriesContainer.style.opacity = 1;
 };
 
-//this helper function will wrap up the: fetch, error handling and conversion to json:
-const getJSON = function (url, errorMessage = 'Something went wrong') {
-  return fetch(url).then(response => {
-    if (!response.ok) throw new Error(`${errorMessage} (${response.status})`);
-    return response.json();
-  });
-};
 //so now this function will return a promise and so this is then just like other promise that we can call here in our chain
 
 // const getCountryData = function (country) {
@@ -60,7 +53,7 @@ const getJSON = function (url, errorMessage = 'Something went wrong') {
 //     .then(data => {
 //       renderCountry(data[0]);
 //       //   const neighbour = data[0].borders?.[0];
-//       //Now let's through an error on the neightbour:
+//       //Now let's through an error on the neighbour:
 //       const neighbour = 'dfkl';
 
 //       if (!neighbour) return;
@@ -91,26 +84,31 @@ const getJSON = function (url, errorMessage = 'Something went wrong') {
 ///////////
 //Start from here:-
 // getCountryData('portugal');
-//so here we are seeing the 404 error, the problem here is during the fetch there was a 404 error which is because our API couldn't find any country with above name but still even though there was obviously a big problem with this request but the fetch function still did not reject in this case and by the many people think that in this case the promise should actually be rejected right away but again it just doesn't and so we will have to do it manually, look above in the getCountryData()
+//1. so here we are seeing the 404 error, the problem here is during the fetch there was a 404 error which is because our API couldn't find any country with above name but still even though there was obviously a big problem with this request but the fetch function still did not reject in this case many people think that in this case the promise should actually be rejected right away but again it just doesn't and so we will have to do it manually, look above in the getCountryData()
 
 ///////Refactored Solution using getJSON function:
+//this helper function will wrap up the: fetch, error handling and conversion to json:
+const getJSON = function (url, errorMessage = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(`${errorMessage} (${response.status})`);
+    return response.json();
+  });
+};
+
 const getCountryData = function (country) {
   //Country 1
-  getJSON(
-    `https://restcountries.com/v3.1/name/${country}`,
-    'Country not found '
-  )
+  getJSON(`https://restcountries.com/v3.1/name/${country}`, 'Country not found')
     .then(data => {
       renderCountry(data[0]);
 
       //   const neighbour = 'dfkl';
       const neighbour = data[0].borders?.[0];
 
-      if (!neighbour) 
-      //for now neighbour country ex: australia
-      throw new Error('No neigbour found!');
+      if (!neighbour)
+        //for now neighbour country ex: australia
+        throw new Error('No neighbour found!');
 
-      return getJSON(
+      getJSON(
         `https://restcountries.com/v3.1/alpha/${neighbour}`,
         'Country not found'
       );
