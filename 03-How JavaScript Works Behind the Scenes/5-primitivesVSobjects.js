@@ -83,3 +83,16 @@ richJack.jackName = "Rich Jack";
 
 console.log(poorJack);
 console.log(richJack);
+
+//My Example 2:-
+const gwenStuff = {
+  candies: 4,
+  chocolates: 5,
+  cakes: [3, 5, 8, 3, 7],
+};
+
+const gwenCakesGone = Object.assign({}, gwenStuff);
+gwenCakesGone.cakes.push(0);
+
+console.log(gwenStuff);
+console.log(gwenCakesGone);
