@@ -43,3 +43,14 @@ document.body.addEventListener("click", high5);
 //1. Well the first big advantage of this is that it makes it easy to split up our code into more reusable and iterconnected parts
 //2. Callback functions allow us to create abstarction: so what we did above in our code examples was to create a level of abstraction and abstraction is something really important in programming so basically what abstraction means is that we hide the detail of some code implementation because we don't really care about all that detail and this allows us to think about problems at a higher more abstract level and so that's why it is called an abstraction. So coming back to our first example, this transform function does not care at all how the string is transformed, it doesn't care about this level of detail, all that wants to do is to transform a string but it doesn't care how it should do it. So what I mean is that we could have taken 'upperFirstWord and oneWord' code and written it directly into transformer fucntion that would have worked just the same but instead we abstracted this code away into other functions so again we created a new level of abstarction and by doing this our main transformer function here is really only concerned with transforming the input string itself but no matter how that transforming itself actually works it's basically delegating the string transformation to the other lower level function which are 'upperFirstWord and oneWord' in this case.
 
+//////////////////////////////////////////////////
+//My Example:-
+const print = function (johnFunction) {
+  console.log(`His name is ${johnFunction()}`);
+};
+
+const firstName = function () {
+  return "John Wick";
+};
+
+print(firstName);
