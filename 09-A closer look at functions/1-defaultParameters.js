@@ -35,4 +35,17 @@ createBooking("Lh123", 5);
 createBooking("LH123", undefined, 1000);
 //this works because setting the parameter to undefined is the same thing as not even setting it
 
+//////////////////////////////////////////////////
+//My Example:-
+const takingTaxi = function (
+  driver = "taxidriver",
+  distance = 10,
+  price = distance * 5
+) {
+  console.log(
+    `${driver} is driving his taxi to distance upto ${distance}km and taking total money from the passenger $${price}`
+  );
+};
 
+takingTaxi("Jack", 5, 23);
+takingTaxi(undefined, undefined, undefined);

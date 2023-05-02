@@ -93,6 +93,7 @@ const gwenStuff = {
 
 const gwenCakesGone = Object.assign({}, gwenStuff);
 gwenCakesGone.cakes.push(0);
+// gwenCakesGone.cakes=[]
 
 console.log(gwenStuff);
 console.log(gwenCakesGone);
