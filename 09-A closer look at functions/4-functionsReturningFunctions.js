@@ -32,3 +32,12 @@ const pizzaSize = function (size) {
 };
 
 pizzaSize("normal")("Dominoes");
+
+//2.
+const intro = function (firstName) {
+  return function (age) {
+    console.log(`Hello my name is ${firstName} and I am ${age} years old.`);
+  };
+};
+
+intro("John")(50);
