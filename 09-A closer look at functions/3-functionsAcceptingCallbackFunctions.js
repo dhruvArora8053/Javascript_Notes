@@ -47,10 +47,11 @@ document.body.addEventListener("click", high5);
 //My Example:-
 const print = function (johnFunction) {
   console.log(`His name is ${johnFunction()}`);
+  console.log(johnFunction.name);
 };
 
-const firstName = function () {
+const completeName = function () {
   return "John Wick";
 };
 
-print(firstName);
+print(completeName);
