@@ -101,3 +101,42 @@ const orderPizzaHut = pizzaFn.bind(farShop);
 
 orderDominoes(4);
 orderPizzaHut(1, 2, 3);
+
+//My Example 2:-
+const microsoft = {
+  companyName: "Microsoft",
+  owns: "GitHub",
+  employees: 100000,
+
+  layOff(n) {
+    console.log(this.employees - n);
+  },
+};
+
+const gitHub = {
+  companyName: "GitHub",
+  owns: "alpha",
+  employees: 1000,
+};
+
+const panasonic = {
+  companyName: "Panasonic",
+  owns: "terra",
+  employees: 100,
+};
+
+gitHub.layOff = microsoft.layOff;
+microsoft.layOff(1);
+gitHub.layOff(1);
+
+const layOffOut = microsoft.layOff;
+// layOffOut(1);
+
+layOffOut.call(gitHub, 1);
+
+//bind
+const panaLayOff = layOffOut.bind(panasonic);
+panaLayOff(1);
+
+const panaLayOffBound = layOffOut.bind(panasonic, 2);
+panaLayOffBound();
