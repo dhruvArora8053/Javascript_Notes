@@ -42,3 +42,8 @@ console.log(diceRoll);
 
 //Main purpose of Array.from is to convert iterables into arrays:
 //Half part: Bankist website: taking movements from UI and calcuating the sum
+
+const newDiceRoll = Array.from({ length: 100 }, () =>
+  Math.trunc(Math.random() * 100 + 1)
+);
+console.log(newDiceRoll);
