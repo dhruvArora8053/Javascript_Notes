@@ -337,18 +337,32 @@ console.log(atleast1000s);
 
 //3. Create an object which contains the sum of the deposits and of the withdrawals:
 // We can also use reduce to return an array or object or etc.
-const { deposits, withdrawals } = accounts
+// const { deposits, withdrawals } = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce(
+//     (acc, mov) => {
+//       // mov > 0 ? (acc.deposits += mov) : (acc.withdrawals += mov);
+//       acc[mov > 0 ? 'deposits' : 'withdrawals'] += mov;
+//       return acc;
+//     },
+//     { deposits: 0, withdrawals: 0 }
+//   );
+
+// console.log(deposits, withdrawals);
+
+//3. Create an object which contains the sum of the deposits and of the withdrawals:
+const depoWithObj = accounts
   .flatMap(acc => acc.movements)
   .reduce(
     (acc, mov) => {
-      // mov > 0 ? (acc.deposits += mov) : (acc.withdrawals += mov);
-      acc[mov > 0 ? 'deposits' : 'withdrawals'] += mov;
+      mov > 0 ? (acc.deposits += mov) : (acc.withdrawals += mov);
+
       return acc;
     },
     { deposits: 0, withdrawals: 0 }
   );
 
-console.log(deposits, withdrawals);
+console.log(depoWithObj);
 
 //4. Create a simple function to convert any string to a titlecase:
 //this is a nice title -> This Is a Nice Title
