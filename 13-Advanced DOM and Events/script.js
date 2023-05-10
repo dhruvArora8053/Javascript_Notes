@@ -302,9 +302,6 @@ observer.observe(section1);
 
 //So in the current example whenever the first section so our target here section1 is intersecting the viewport at 10%, so the viewport because that's the root and 10% becase that's the threshold so whenver that happens then obsCallback function will get called and that's no matter if we are scrolling up or down
 
-
-
-
 /////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
@@ -366,7 +363,7 @@ header.prepend(message);
 //now the message is really in our dom, we just inserted this element into our html so right into our dom so prepending basically adds the element as the first child of the parent element but we can also add it as the last child:
 
 header.append(message);
-//now what we see here is that the element was actually only insert at once, that's because message element is now indeed a live element living in the dom and so therefore it cannot be at multiple palces at the same time, it's just like a person that also cannot be at two place simultaneously
+//now what we see here is that the element was actually only insert at once, that's because message element is now indeed a live element living in the dom and so therefore it cannot be at multiple places at the same time, it's just like a person that also cannot be at two place simultaneously
 
 //but now what if we actually wanted to insert multiple copies of the same element?
 //well in that case we actually would have to first copy the first element:

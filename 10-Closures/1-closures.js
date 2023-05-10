@@ -25,3 +25,12 @@ booker();
 
 console.dir(booker);
 //remember anything inside '[[]]' is not accessible
+
+//My Example:-
+const greet = function () {
+  const h = "hello world";
+
+  setTimeout(() => console.log(h), 1000);
+};
+
+greet();
