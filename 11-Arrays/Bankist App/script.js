@@ -285,7 +285,7 @@ console.log(sum);
 const chain = accounts
   .map(acc => acc.movements)
   .flat()
-  .reduce((acc, mov) => acc + mov);
+  .reduce((acc, mov) => acc + mov, 0);
 
 console.log(chain);
 
