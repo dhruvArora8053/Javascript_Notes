@@ -47,3 +47,11 @@ const maximum = movements.reduce(
   movements[0]
 );
 console.log(maximum);
+
+
+// My Example:-
+const max2 = movements.reduce(
+  (acc, mov) => (acc > mov ? acc : mov),
+  movements[1]
+);
+console.log(max2);
