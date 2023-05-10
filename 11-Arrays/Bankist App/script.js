@@ -406,28 +406,18 @@ console.log(sumObj);
 //this is a nice title -> This Is a Nice Title
 
 const convertTitleCase = function (str) {
-  const capitalize = str => str.replace(str[0], str[0].toUpperCase());
+  const upperCase = str => str.replace(str[0], str[0].toUpperCase());
 
-  const exceptions = [
-    'and',
-    'a',
-    'an',
-    'the',
-    'but',
-    'or',
-    'on',
-    'in',
-    'with',
-    'is',
-  ];
+  const exceptions = ['and', 'a', 'an', 'the', 'but', 'or', 'on', 'in', 'with'];
 
-  const con = str
-    .toLowerCase()
-    .split(' ')
-    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
-    .join(' ');
+  const titleCase = upperCase(
+    str
+      .split(' ')
+      .map(word => (exceptions.includes(word) ? word : upperCase(word)))
+      .join(' ')
+  );
 
-  console.log(capitalize(con));
+  console.log(titleCase);
 };
 
 convertTitleCase('this is a nice title');
