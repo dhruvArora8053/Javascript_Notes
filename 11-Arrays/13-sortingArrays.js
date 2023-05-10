@@ -47,4 +47,3 @@ console.log(movements);
 //if you have a mixed array string+numbers= sort method won't work
 
 //Half Part: bankist app: implementing sorting on movements
-
