@@ -55,7 +55,7 @@ console.log(account1.movementsDates[0]);
 
 //we can also pass in year, month, day, hour, minute or even second into the constructor:
 console.log(new Date(2037, 10, 19, 15, 23, 5));
-//here you might have noticed that here we have 10 but November is actually the mont 11 and so that means that the months in javascript are zero based
+//here you might have noticed that here we have 10 but November is actually the month 11 and so that means that the months in javascript are zero based
 
 //AutoCorrect:
 console.log(new Date(2037, 10, 31));
@@ -84,7 +84,7 @@ console.log(future.getSeconds()); //44
 console.log(future.toISOString());
 //this is a ISO string which follows some kind of international standard and maybe you notice that this is actually similar to the string that we used before coming from account1
 
-//we can also get the timestamp for the date: and remeber that the timestamp is the milliseconds which have passed since Janauary 1, 1970:
+//we can also get the timestamp for the date: and remember that the timestamp is the milliseconds which have passed since Janauary 1, 1970:
 console.log(future.getTime());
 //and so we can see that this huge amount has passed since that date and now we can take this number and reverse this:
 console.log(new Date(2142237224000));
