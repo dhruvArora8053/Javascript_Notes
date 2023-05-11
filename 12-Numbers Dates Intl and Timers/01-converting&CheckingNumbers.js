@@ -43,3 +43,4 @@ console.log(Number.isFinite(23 / 0)); //false
 console.log(Number.isInteger(23)); //true
 console.log(Number.isInteger(23.0)); //true, because this is also an integer, remember.
 console.log(Number.isInteger(23 / 0)); //false
+
