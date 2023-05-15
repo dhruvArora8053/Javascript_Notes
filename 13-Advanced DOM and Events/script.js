@@ -281,35 +281,58 @@ console.log(section2.getBoundingClientRect().top);
 
 ////////////////////////////////////////////////
 //196:- Intersection Obsever API
-//This API allows our code to basically observe changes to the way that a ceratin target element intersect another element or the way it intersects the viewport:
+// //This API allows our code to basically observe changes to the way that a ceratin target element intersect another element or the way it intersects the viewport:
 
-const obsCallback = function (entries, observer) {
-  entries.forEach(entry => {
-    console.log(entry);
-  });
+// const obsCallback = function (entries, observer) {
+//   entries.forEach(entry => {
+//     console.log(entry);
+//   });
+// };
+// //so this callback function here will get called each time that the observed element so our target element section1 here is intersecting the root element at the threshold that we defined
+
+// const obsOptions = {
+//   //this object first needs a root property and this root is the element that the target is intersecting so here section1 is the target and the root element will be the element that we want our target element to intersect:
+//   root: null,
+//   //so we could here now select an element or as an alternative we can write null and then we will be able to observe our target element intersecting the entire viewport
+
+//   // threshold: 0.1, //10%
+//   //and this is basically the percentage of intersection at which the obsever callback will be called
+
+//   //let's try another thresolds:
+//   threshold: [0, 0.2],
+//   //so 0% here means that bascially our callback will trigger each time that the target element moves completely out of the view and also as soon as it enters the view
+//   //and 1 would be when the 100% of the target is visible in the viewport but that would be impossible because the section1 itself is already bigger than the viewport
+// };
+
+// const observer = new IntersectionObserver(obsCallback, obsOptions);
+
+// //so now we have to use this observer to basically observe a certain target:
+// observer.observe(section1);
+
+// //So in the current example whenever the first section so our target here section1 is intersecting the viewport at 10%, so the viewport because that's the root and 10% because that's the threshold so whenver that happens then obsCallback function will get called and that's no matter if we are scrolling up or down
+
+//Implementing Sticky Navigation Using Intersection Observer API:-
+const header1 = document.querySelector('.header');
+const navHeight = document.querySelector('.nav').getBoundingClientRect().height;
+console.log(navHeight);
+
+const stickyNav = function (entries) {
+  //here the threshold is only one so we don't need to loop over the entries
+  const [entry] = entries;
+  // console.log(entry);
+
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
 };
-//so this callback function here will get called each time that the observed element so our target element section1 here is intersecting the root element at the threshold that we defined
 
-const obsOptions = {
-  //this object first needs a root property and this root is the element that the target is intersecting so here section1 is the target and the root element will be the element that we want our target element to intersect:
+const headerObsever = new IntersectionObserver(stickyNav, {
   root: null,
-  //so we could here now select an element or as an alternative we can write null and then we will be able to observe our target element intersecting the entire viewport
+  threshold: 0,
+  //so when 0% of the header is visible then we want to stick the navigation
 
-  // threshold: 0.1, //10%
-  //and this is basically the percentage of intersection at which the obsever callback will be called
-
-  //let's try another thresolds:
-  threshold: [0, 0.2],
-  //so 0% here means that bascially our callback will trigger each time that the target element moves completely out of the view and also as soon as it enters the view
-  //and 1 would be when the 100% of the target is visible in the viewport
-};
-
-const observer = new IntersectionObserver(obsCallback, obsOptions);
-
-//so now we have to use this observer to basically observe a certain target:
-observer.observe(section1);
-
-//So in the current example whenever the first section so our target here section1 is intersecting the viewport at 10%, so the viewport because that's the root and 10% because that's the threshold so whenver that happens then obsCallback function will get called and that's no matter if we are scrolling up or down
+  rootMargin: `-${navHeight}px`, //header finishes before 90px
+});
+headerObsever.observe(header1);
 
 /////////////////////////////////////////////////
 //////////////////////////////////////////////////
