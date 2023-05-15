@@ -169,7 +169,7 @@ const displayMovements = function (acc, sort = false) {
     //now we have to essentially create an HTML that looks like movement row in the DOM:
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
-    //looping over two arrays at the same time: so we called the foreach method on one of them i.e. movements and then we use the current index to also get the data fro some other array:
+    //looping over two arrays at the same time: so we called the foreach method on one of them i.e. movements and then we use the current index to also get the data from some other array:
     const date = new Date(acc.movementsDates[i]);
 
     //acc.movements[i] is gonna be a nicely formatted time string and we can use that string to create a new date object and we need that object so that then from there we can call our usual methods to get the date, month and a year so that's the reason why we need to convert these strings back into a javascript object because only then we can actually work with that data
