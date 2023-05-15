@@ -52,7 +52,7 @@ console.log(matilda, jack);
 //Now remeber from one of the previous lectures that in classical OOP, an object created from a class is called an instance, now we didn't technically create a class here because as we discussed before javascript doesn't really have classes in the sense of traditional OOP however, we did created 3 objects from a constructor function. And constructor functions have been used since the beginning of javascript to kind of simulate classes and so therefore we can still say that jonas here is an instance of a Person and the same goes for Matilda and Jack and infact there is even an operator that we can use to test for that:
 console.log(jonas instanceof Person); //true
 
-//My Example:
+//DaftPunk's Example:
 const DaftPunk = function (name, favouriteSongs) {
   this.name = name;
   this.favouriteSongs = favouriteSongs;
@@ -62,7 +62,7 @@ DaftPunk.prototype.totalSongs = function (allSongs) {
   console.log(`${this.name}'s total daftpunk's favourite songs are: ${
     this.favouriteSongs
   }
-   
+
 And the left ones are: ${allSongs - this.favouriteSongs}  `);
 };
 

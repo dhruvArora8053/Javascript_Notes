@@ -47,6 +47,43 @@ jessica.greet();
 //3. Body of a class is always exectuted in strict mode
 
 //Now you might ask if you should use constructor functions like we have been doing or instead it's better to just use classes?
-// Well, constructor functions are not like old or deprecated syntax so it's 100% fine to keep using them so one more time this is more a question of personal preference 
-//Now if you're asking if you should classes without understanding prototypal inheritance well then the reply is definitely no 
-//Now some people actually say that classes are really bad in general and that no one should ever be using them simply becase they hide the true nature of javascript but I don't actually agree with that and I think it's absolutely okay to use classes in your code as long as you understand everything that we just showed you previously 
+// Well, constructor functions are not like old or deprecated syntax so it's 100% fine to keep using them so one more time this is more a question of personal preference
+//Now if you're asking if you should classes without understanding prototypal inheritance well then the reply is definitely no
+//Now some people actually say that classes are really bad in general and that no one should ever be using them simply becase they hide the true nature of javascript but I don't actually agree with that and I think it's absolutely okay to use classes in your code as long as you understand everything that we just showed you previously
+
+//DaftPunk's Example:
+const DaftPunk = function (name, favouriteSongs) {
+  this.name = name;
+  this.favouriteSongs = favouriteSongs;
+};
+
+DaftPunk.prototype.totalSongs = function (allSongs) {
+  console.log(`${this.name}'s total daftpunk's favourite songs are: ${
+    this.favouriteSongs
+  }
+
+And the left ones are: ${allSongs - this.favouriteSongs}  `);
+};
+
+const harmonica = new DaftPunk("Harmonica", 5);
+console.log(harmonica);
+harmonica.totalSongs(100);
+
+class DaftPunkCl {
+  constructor(name, favouriteSongs) {
+    this.name = name;
+    this.favouriteSongs = favouriteSongs;
+  }
+
+  totalSongs(allSongs) {
+    console.log(`${this.name}'s total daftpunk's favourite songs are: ${
+      this.favouriteSongs
+    }
+  
+  And the left ones are: ${allSongs - this.favouriteSongs}  `);
+  }
+}
+
+const peter = new DaftPunkCl("Peter", 10);
+console.log(peter);
+peter.totalSongs(100);
