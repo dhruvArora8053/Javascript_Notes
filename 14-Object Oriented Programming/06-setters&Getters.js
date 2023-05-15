@@ -30,7 +30,9 @@ console.log(account.latest); //300
 account.latest = 50;
 console.log(account.movements);
 
-//Setter and Getters With Classes:
+//Setter and Getters With Classes:-
+//Setters and Getters can actually be very useful for data validation for ex: let's try validation with the name:
+//now we will create a setter for the fullName property which will check if this is actually a full name:
 
 class PersonCl {
   constructor(fullName, birthYear) {
@@ -51,7 +53,7 @@ class PersonCl {
   set fullName(name) {
     console.log(name);
     if (name.includes(" ")) this._fullName = name;
-    else alert(`${name} is not a full name!`);
+    // else alert(`${name} is not a full name!`);
   }
 
   //adding getter
@@ -61,7 +63,7 @@ class PersonCl {
 }
 //so in this case what's really important to understand is that we are creating a setter for a property name that does already exists so fullName is already a property that we are trying to set here but then we also have the setter and so now what's gonna happen is that each time the constructor code is executed so whenever we set the fullName on the this keyword then actually the set method here is gonna be executed and so that name that we pass in as fullName will then become setter's parameter 'name'
 
-//Now this is a very cryptic error message here but what happens here is that there is a conflict so right now both the setter function and the constructor function are trying to set the exact same property name and so that gives origin to this weird error so what we need to do instead is to create a new property name in setter and the convention for doing that is to add an underscore to the fullName so again t this is just a convention it's not a javascript feature so it's really just a different variable name to avoid the namein conflict
+//Now this is a very cryptic error message here but what happens here is that there is a conflict so right now both the setter function and the constructor function are trying to set the exact same property name and so that gives origin to this weird error so what we need to do instead is to create a new property name in setter and the convention for doing that is to add an underscore to the fullName so again  this is just a convention it's not a javascript feature so it's really just a different variable name to avoid the naming conflict
 
 //However, when we use underscore we are actually creating a new fullName variable
 const jessica = new PersonCl("Jessica Davis", 1996);
@@ -72,7 +74,7 @@ console.log(jessica);
 console.log(jessica.fullName);
 //and ofcoure the actual property that is in the jessica is still _fullName
 
-//So this patter is here important to understand whenever we try to set a property that already exists, let's try another name:
+//So this pattern is here important to understand whenever we try to set a property that already exists, let's try another name:
 const walter = new PersonCl("Walter", 1965);
 //now we got the alert, walter is not a full name
 console.log(walter);
@@ -86,5 +88,36 @@ console.log(jessica.age);
 //so you see that getter is indeed just like any other regular method that we set on the prototype, you can also this on the jessica.__proto__
 console.log(jessica.__proto__);
 
-//Setters and Getters can actually be very useful for data validation for ex: let's try validation with the name:
-//now we will create a setter for the fullName property which will check if this is actually a full name:
+//Daft Punk's Example:
+class DaftPunkCl {
+  constructor(name, favouriteSongs) {
+    this.name = name;
+    this.favouriteSongs = favouriteSongs;
+  }
+
+  totalSongs(allSongs) {
+    console.log(`${this.name}'s total daftpunk's favourite songs are: ${
+      this.favouriteSongs
+    }
+  
+  And the left ones are: ${allSongs - this.favouriteSongs}  `);
+  }
+
+  get duoName() {
+    console.log("Daft Punk");
+  }
+
+  set favouriteSongs(songs) {
+    if (songs >= 5) this.check = "Everything is all right";
+    else this.check = "Something is off";
+  }
+}
+
+const peter = new DaftPunkCl("Peter", 10);
+console.log(peter);
+peter.totalSongs(100);
+
+peter.duoName;
+
+const henry = new DaftPunkCl("Henry", 10);
+console.log(henry);
