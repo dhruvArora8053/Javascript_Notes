@@ -266,14 +266,18 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 //   // console.log(window.scrollY);
 //   //and remember this is the position basically from the top of the view port to the very top of the page
 
+//   console.log(initialCoords);
 //   //implementing sticky
-//   if (window.scrollY > initialCoords.top) {
+//   if (initialCoords.top <= 0) {
 //     nav.classList.add('sticky');
 //   } else {
 //     nav.classList.remove('sticky');
 //   }
 // });
 // //So using the scroll event for performing a certain action at a certain position of the page in really not a way to go and again that's because the scroll event here fires all the time no matter how small the change is in the scroll and so that makes for a pretty bad performance and especially on mobile
+
+const section2 = document.querySelector('#section--2');
+console.log(section2.getBoundingClientRect().top);
 
 ////////////////////////////////////////////////
 //196:- Intersection Obsever API
@@ -291,8 +295,13 @@ const obsOptions = {
   root: null,
   //so we could here now select an element or as an alternative we can write null and then we will be able to observe our target element intersecting the entire viewport
 
-  threshold: 0.1, //10%
+  // threshold: 0.1, //10%
   //and this is basically the percentage of intersection at which the obsever callback will be called
+
+  //let's try another thresolds:
+  threshold: [0, 0.2],
+  //so 0% here means that bascially our callback will trigger each time that the target element moves completely out of the view and also as soon as it enters the view
+  //and 1 would be when the 100% of the target is visible in the viewport
 };
 
 const observer = new IntersectionObserver(obsCallback, obsOptions);
@@ -300,7 +309,7 @@ const observer = new IntersectionObserver(obsCallback, obsOptions);
 //so now we have to use this observer to basically observe a certain target:
 observer.observe(section1);
 
-//So in the current example whenever the first section so our target here section1 is intersecting the viewport at 10%, so the viewport because that's the root and 10% becase that's the threshold so whenver that happens then obsCallback function will get called and that's no matter if we are scrolling up or down
+//So in the current example whenever the first section so our target here section1 is intersecting the viewport at 10%, so the viewport because that's the root and 10% because that's the threshold so whenver that happens then obsCallback function will get called and that's no matter if we are scrolling up or down
 
 /////////////////////////////////////////////////
 //////////////////////////////////////////////////
