@@ -51,24 +51,7 @@ jessica.greet();
 //Now if you're asking if you should classes without understanding prototypal inheritance well then the reply is definitely no
 //Now some people actually say that classes are really bad in general and that no one should ever be using them simply becase they hide the true nature of javascript but I don't actually agree with that and I think it's absolutely okay to use classes in your code as long as you understand everything that we just showed you previously
 
-//DaftPunk's Example:
-const DaftPunk = function (name, favouriteSongs) {
-  this.name = name;
-  this.favouriteSongs = favouriteSongs;
-};
-
-DaftPunk.prototype.totalSongs = function (allSongs) {
-  console.log(`${this.name}'s total daftpunk's favourite songs are: ${
-    this.favouriteSongs
-  }
-
-And the left ones are: ${allSongs - this.favouriteSongs}  `);
-};
-
-const harmonica = new DaftPunk("Harmonica", 5);
-console.log(harmonica);
-harmonica.totalSongs(100);
-
+//Daft Punk's Class
 class DaftPunkCl {
   constructor(name, favouriteSongs) {
     this.name = name;
@@ -79,11 +62,10 @@ class DaftPunkCl {
     console.log(`${this.name}'s total daftpunk's favourite songs are: ${
       this.favouriteSongs
     }
-  
-  And the left ones are: ${allSongs - this.favouriteSongs}  `);
+And the left ones are: ${allSongs - this.favouriteSongs}`);
   }
 }
 
-const peter = new DaftPunkCl("Peter", 10);
-console.log(peter);
-peter.totalSongs(100);
+const harmonica = new DaftPunkCl("Harmonica", 5);
+console.log(harmonica);
+harmonica.totalSongs(100);
