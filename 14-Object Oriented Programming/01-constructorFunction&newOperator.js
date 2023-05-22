@@ -35,7 +35,7 @@ const Person = function (firstName, birthYear) {
     console.log(2037 - this.birthYear);
   };
   //we should never create a method inside of a constructor function, it is because:
-  //imagine we were gonna create a hundered or thousands or even tens of thousands of person objects using this constructor function then what would happen is that each of these objects would carry around this function here so if we had a thousand objects we would essentially create a thousand copies of this function and so that would be terrible of the performance of our code but instead to solve this problem we are gonna use prototypes and prototype inheritance
+  //imagine we were gonna create a hundered or thousands or even tens of thousands of person objects using this constructor function then what would happen is that each of these objects would carry around this function here so if we had a thousand objects we would essentially create a thousand copies of this function and so that would be terrible for the performance of our code but instead to solve this problem we are gonna use prototypes and prototype inheritance
 };
 
 const jonas = new Person("Jonas", 1991);
@@ -69,3 +69,4 @@ And the left ones are: ${allSongs - this.favouriteSongs}  `);
 const harmonica = new DaftPunk("Harmonica", 5);
 console.log(harmonica);
 harmonica.totalSongs(100);
+
