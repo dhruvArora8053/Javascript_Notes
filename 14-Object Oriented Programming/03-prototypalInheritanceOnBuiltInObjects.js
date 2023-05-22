@@ -68,6 +68,12 @@ const h1 = document.querySelector("h1");
 console.dir(h1);
 console.dir((x) => x + 1);
 
+//DaftPunk's Example:
+const DaftPunk = function (name, favouriteSongs) {
+  this.name = name;
+  this.favouriteSongs = favouriteSongs;
+};
+
 DaftPunk.prototype.totalSongs = function (allSongs) {
   console.log(`${this.name}'s total daftpunk's favourite songs are: ${
     this.favouriteSongs
@@ -91,3 +97,5 @@ punk`;
 console.log(harmonica.fan);
 console.log(harmonica.hasOwnProperty("name"));
 console.log(harmonica.hasOwnProperty("fan"));
+
+console.log(DaftPunk.prototype.constructor);
