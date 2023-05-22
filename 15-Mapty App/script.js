@@ -37,9 +37,16 @@ if (navigator.geolocation) {
         console.log(mapEvent);
         const { lat, lng } = mapEvent.latlng;
  
-        L.marker(coords)
+        L.marker([lat, lng])
           .addTo(map)
-          .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+          .bindPopup(L.popup({
+            maxWidth: 250, 
+            minWidth: 100, 
+            autoClose: false, 
+            closeOnClick: false,
+            className: 'running-popup',
+          }))
+          .setPopupContent('Workout')
           .openPopup();
       });
     },
