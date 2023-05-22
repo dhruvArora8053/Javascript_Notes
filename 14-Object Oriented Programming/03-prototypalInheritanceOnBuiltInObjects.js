@@ -67,3 +67,27 @@ const h1 = document.querySelector("h1");
 //as we already know that all the DOM elements are behind the scenes are objects
 console.dir(h1);
 console.dir((x) => x + 1);
+
+DaftPunk.prototype.totalSongs = function (allSongs) {
+  console.log(`${this.name}'s total daftpunk's favourite songs are: ${
+    this.favouriteSongs
+  }
+
+And the left ones are: ${allSongs - this.favouriteSongs}  `);
+};
+
+const harmonica = new DaftPunk("Harmonica", 5);
+console.log(harmonica);
+harmonica.totalSongs(100);
+
+console.log(DaftPunk.prototype);
+console.log(harmonica.__proto__);
+console.log(harmonica.__proto__ === DaftPunk.prototype);
+console.log(DaftPunk.prototype.isPrototypeOf(harmonica));
+console.log(DaftPunk.prototype.isPrototypeOf(DaftPunk));
+
+DaftPunk.prototype.fan = `daft
+punk`;
+console.log(harmonica.fan);
+console.log(harmonica.hasOwnProperty("name"));
+console.log(harmonica.hasOwnProperty("fan"));

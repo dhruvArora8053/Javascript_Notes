@@ -16,7 +16,7 @@ const jack = new Person("Jack", 2001);
 //Well it can be summarized like this, so first each and every function in javascript automatically has a property called prototype and that includes ofcourse constructor functions, now every object that's created by a certain constructor function will get access to all the methods and properties that we define on the constructors prototype property so just to visualize in our case this would be Person dot prototype:
 // Person.prototype
 
-//so again all the objects that are created throught Person constructor function will inherit so they will get access to all the methods and properties that are defined on above prototype property, now let's add a method on Person.prototype and it is also an object:
+//so again all the objects that are created through Person constructor function will inherit so they will get access to all the methods and properties that are defined on above prototype property, now let's add a method on Person.prototype and it is also an object:
 Person.prototype.calcAge = function () {
   console.log(2036 - this.birthYear);
 };
@@ -61,3 +61,33 @@ console.log(jonas.species, matilda.species);
 //remeber .species is not jonas's or matilda's own property: so own properties are only the ones that are declared directly on the object itself so not including the inherited properties:
 console.log(jonas.hasOwnProperty("firstName")); //true
 console.log(jonas.hasOwnProperty("species")); //false
+
+//DaftPunk's Example:
+const DaftPunk = function (name, favouriteSongs) {
+  this.name = name;
+  this.favouriteSongs = favouriteSongs;
+};
+
+DaftPunk.prototype.totalSongs = function (allSongs) {
+  console.log(`${this.name}'s total daftpunk's favourite songs are: ${
+    this.favouriteSongs
+  }
+
+And the left ones are: ${allSongs - this.favouriteSongs}  `);
+};
+
+const harmonica = new DaftPunk("Harmonica", 5);
+console.log(harmonica);
+harmonica.totalSongs(100);
+
+console.log(DaftPunk.prototype);
+console.log(harmonica.__proto__);
+console.log(harmonica.__proto__ === DaftPunk.prototype);
+console.log(DaftPunk.prototype.isPrototypeOf(harmonica));
+console.log(DaftPunk.prototype.isPrototypeOf(DaftPunk));
+
+DaftPunk.prototype.fan = `daft
+punk`;
+console.log(harmonica.fan);
+console.log(harmonica.hasOwnProperty("name"));
+console.log(harmonica.hasOwnProperty("fan"));
