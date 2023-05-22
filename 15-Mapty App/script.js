@@ -11,3 +11,21 @@ const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
 
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      console.log(position);
+
+      const { latitude } = position.coords;
+      const { longitude } = position.coords;
+      console.log(latitude, longitude);
+
+      //finding current location
+      console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
+    },
+    function () {
+      alert('Could not get your position');
+    }
+  );
+}
+// this takes 2 callback function: fist position and then error handler
