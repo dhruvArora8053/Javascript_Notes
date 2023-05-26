@@ -44,8 +44,29 @@ sarah.init("Sarah", 1979);
 sarah.calcAge(); //58
 
 console.log(sarah);
-sarah.greet= function(){
+sarah.greet = function () {
   console.log(`hey ${this.firstName}`);
-}
+};
 
 sarah.greet();
+
+//Daft Punk's Object.create()
+const daftProto = {
+  totalSongs(allSongs) {
+    console.log(
+      `${this.name}'s total daftpunk's favourite songs are: ${
+        this.favouriteSongs
+      }\nand the left one's are: ${allSongs - this.favouriteSongs}`
+    );
+  },
+
+  init(name, favouriteSongs) {
+    this.name = name;
+    this.favouriteSongs = favouriteSongs;
+  },
+};
+
+const harmonica = Object.create(daftProto);
+harmonica.init("Harmonica", 5);
+console.log(harmonica);
+harmonica.totalSongs(100);
