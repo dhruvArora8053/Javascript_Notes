@@ -58,3 +58,31 @@ const jessica = new PersonCl("Jessica", 1996);
 console.log(jessica);
 
 PersonCl.hey();
+
+//Daft Punk's Class
+class DaftPunkCl {
+  constructor(name, favouriteSongs) {
+    this.name = name;
+    this.favouriteSongs = favouriteSongs;
+  }
+
+  totalSongs(allSongs) {
+    console.log(`${this.name}'s total daftpunk's favourite songs are: ${
+      this.favouriteSongs
+    }
+And the left ones are: ${allSongs - this.favouriteSongs}`);
+  }
+
+  static songTypes() {
+    console.log(
+      "We are daft punk and we have created so many unique songs from the start of our journey."
+    );
+  }
+}
+
+const harmonica = new DaftPunkCl("Harmonica", 5);
+console.log(harmonica);
+harmonica.totalSongs(100);
+
+DaftPunkCl.songTypes();
+harmonica.songTypes();
