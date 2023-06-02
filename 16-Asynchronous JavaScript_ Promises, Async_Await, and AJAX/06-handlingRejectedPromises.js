@@ -66,8 +66,8 @@ const getCountryData = function (country) {
       //Their is one more quick method that is also available on all promises so besides then and catch there is also the 'finally' method so let's add a finally here:
     })
     .finally(() => {
-      //the callback function that we defined here will always be called whatever happens with the promise so no matter if the promise is fulfilled or rejected this callback function that we defined above is gonna be called always so that's the between the other two so the then method is only called when the promise if fulfilled while err one is only called when the promise is rejected.
-      //now the finally mehtod is not always useful but sometimes it actually is so we use this method for something that always needs to happen no matter the result of the promise and one good example of that is to hide a loading spinner like the rotating circle that we see everywhere in web applications whey we load some data so these applications show a spinner when an asynchronous operations starts and then hide it once the operation completes and that happens no matter if the operation was successfull or not and so for that the finally method is perfect
+      //the callback function that we defined here will always be called whatever happens with the promise so no matter if the promise is fulfilled or rejected this callback function that we defined above is gonna be called always so that's the between the other two so the then method is only called when the promise is fulfilled while err one is only called when the promise is rejected.
+      //now the finally mehtod is not always useful but sometimes it actually is so we use this method for something that always needs to happen no matter the result of the promise and one good example of that is to hide a loading spinner like the rotating circle that we see everywhere in web applications when we load some data so these applications show a spinner when an asynchronous operations starts and then hide it once the operation completes and that happens no matter if the operation was successfull or not and so for that the finally method is perfect
       //and in our case what we always need to do is to fade-in the container, so this part always happens no matter what so no matter if we render the country in the case of success or if we render the error in case of an error no matter what we need to do that and so let's deactive that process from functions and paste it here:
       countriesContainer.style.opacity = 1;
       //just notice that this actually works because catch itself also returns a promise so that's the only why this is working s
@@ -89,5 +89,5 @@ btn.addEventListener('click', function () {
 
 //Not let's try to simulate another error, so let's say we're trying to search for a country that simply doesn't exist and so our API is not gonna find any result for that:
 // getCountryData('dfjkls');
-//well now we get this wierd error in the UI, let's handle it on the next section
+//well now we get this weird error in the UI, let's handle it on the next section
 
