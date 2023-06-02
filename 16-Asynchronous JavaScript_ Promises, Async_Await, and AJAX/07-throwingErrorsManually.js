@@ -44,8 +44,7 @@ const renderError = function (message) {
 //         throw new Error(`Country not found (${response.status})`);
 //       //so we create the new error by using the Error constructor function and then we pass in the message which is gonna be the error message then we use the throw keyword here which will immediately terminate the current function so just like return does it.
 //       //now the effect of creating and throwing an error in any of these then methods is that the promise will immediately reject so basically the promise returned by this then handler here will be a rejected promise and that rejection will then propogate all the way down to the catch handler which we already set up below,
-//       //so now the error message that we created here so that's 'country not found (404)' this is exactly the rejection that we created above by creating this new Error and so again any error that happens in any of the callback function here so in any then handler will immediately terminate that then handler and will propogate down to the catch method and then in there we handle that error so therefore that's why we then see the error displayed in the UI so that err.message is excactly the above message that we pass into the new Error and infact the same is true for any other error
-//       //so before we had above new Error, the error that we saw was different one and that's because somewhere in the render country function we are trying to read the flag from the data that we recieved but the data that we recieved did not contain the flag and so that created that previous error and then that error cause the rejection of that promise which was then one more time handled in a catch method
+//       // and infact the same is true for any other error, so before we had above new Error, the error that we saw was different one and that's because somewhere in the render country function we are trying to read the flag from the data that we recieved but the data that we recieved did not contain the flag and so that created that previous error and then that error cause the rejection of that promise which was then one more time handled in a catch method
 //       //so again any error will cause any promise to reject but here above we aree simply creating our own error to basically reject the promise on purpose so that we can then handle that error down in the chain so in below catch method
 
 //       return response.json();
@@ -81,10 +80,10 @@ const renderError = function (message) {
 //   getCountryData('portugal');
 // });
 
-///////////
-//Start from here:-
+/////////
+// Start from here:-
 // getCountryData('portugal');
-//1. so here we are seeing the 404 error, the problem here is during the fetch there was a 404 error which is because our API couldn't find any country with above name but still even though there was obviously a big problem with this request but the fetch function still did not reject in this case many people think that in this case the promise should actually be rejected right away but again it just doesn't and so we will have to do it manually, look above in the getCountryData()
+// 1. so here we are seeing the 404 error, the problem here is during the fetch there was a 404 error which is because our API couldn't find any country with above name but still even though there was obviously a big problem with this request but the fetch function still did not reject in this case many people think that in this case the promise should actually be rejected right away but again it just doesn't and so we will have to do it manually, look above in the getCountryData()
 
 ///////Refactored Solution using getJSON function:
 //this helper function will wrap up the: fetch, error handling and conversion to json:
