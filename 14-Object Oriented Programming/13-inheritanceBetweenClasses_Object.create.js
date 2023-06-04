@@ -79,3 +79,11 @@ john.init("John", 10, "Robot Rock", "Rollin and Scratchin");
 console.log(john);
 john.decentPlayed("Around the World");
 john.totalSongs(150);
+
+console.log(harmonica.__proto__);
+console.log(john.__proto__);
+console.log(john.__proto__.constructor);
+// john.__proto__.constructor = Played;
+console.log(john.__proto__.constructor);
+console.log(john.__proto__.__proto__);
+console.log(john.__proto__.__proto__.__proto__);
