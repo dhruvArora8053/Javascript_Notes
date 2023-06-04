@@ -152,3 +152,41 @@ ryan.__proto__.constructor = Son;
 console.log(ryan.__proto__.constructor);
 console.log(ryan.__proto__.__proto__);
 console.log(ryan.__proto__.__proto__.__proto__);
+
+/////////////////////////////////////////////////
+
+//DaftPunk's Example:
+const DaftPunk = function (name, favouriteSongs) {
+  this.name = name;
+  this.favouriteSongs = favouriteSongs;
+};
+
+DaftPunk.prototype.totalSongs = function (allSongs) {
+  console.log(`${this.name}'s total daftpunk's favourite songs are: ${
+    this.favouriteSongs
+  }
+
+And the left ones are: ${allSongs - this.favouriteSongs}  `);
+};
+
+const Played = function (name, favouriteSongs, mostPlayed, leastPlayed) {
+  DaftPunk.call(this, name, favouriteSongs);
+  this.mostPlayed = mostPlayed;
+  this.leastPlayed = leastPlayed;
+};
+
+Played.prototype = Object.create(DaftPunk.prototype);
+
+Played.prototype.decentPlayed = function (song) {
+  console.log(`I played ${song} decently`);
+};
+
+const harmonica = new DaftPunk("Harmonica", 5);
+
+console.log(harmonica);
+harmonica.totalSongs(100);
+
+const john = new Played("John", 10, "Robot Rock", "Rollin & Scratchin");
+console.log(john);
+john.decentPlayed("Telivision rules the nation");
+john.totalSongs(150);
