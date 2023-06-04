@@ -40,3 +40,42 @@ jay.introduce();
 jay.calcAge();
 
 //So in this version we don't even worry about constructors anymore and also not about prototype properties and not about the new operator, so it's really just object linked to other objects and it's all really simple and beautiful.
+
+//Daft Punk's Example:-
+const DaftpunkProto = {
+  init(name, favouriteSongs) {
+    this.name = name;
+    this.favouriteSongs = favouriteSongs;
+  },
+
+  totalSongs(allSongs) {
+    console.log(`${this.name}'s total daftpunk's favourite songs are: ${
+      this.favouriteSongs
+    }
+  
+  And the left ones are: ${allSongs - this.favouriteSongs}  `);
+  },
+};
+
+const harmonica = Object.create(DaftpunkProto);
+harmonica.init("Harmonica", 5);
+console.log(harmonica);
+harmonica.totalSongs(100);
+
+const PlayedProto = Object.create(DaftpunkProto);
+
+PlayedProto.init = function (name, favouriteSongs, mostPlayed, leastPlayed) {
+  DaftpunkProto.init.call(this, name, favouriteSongs);
+  this.mostPlayed = mostPlayed;
+  this.leastPlayed = leastPlayed;
+};
+
+PlayedProto.decentPlayed = function (song) {
+  console.log(`I played ${song} decently`);
+};
+
+const john = Object.create(PlayedProto);
+john.init("John", 10, "Robot Rock", "Rollin and Scratchin");
+console.log(john);
+john.decentPlayed("Around the World");
+john.totalSongs(150);
