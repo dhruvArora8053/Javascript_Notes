@@ -105,3 +105,7 @@ console.log(john.__proto__.constructor);
 console.log(john.__proto__.constructor);
 console.log(john.__proto__.__proto__);
 console.log(john.__proto__.__proto__.__proto__);
+
+class Random extends DaftPunk {}
+const random = new Random("Manas", 10);
+console.log(random);
