@@ -16,7 +16,7 @@ const Student = function (firstName, birthYear, course) {
   //   this.birthYear = birthYear;
   //   this.course = course;
 
-  //here, there is one thing that we can and should improve so right now above code is basically a simple copy of the Person function constructor that we want to be the parent class and as you know havind duplicate code is never a good idea because:
+  //here, there is one thing that we can and should improve so right now above code is basically a simple copy of the Person function constructor that we want to be the parent class and as you know having duplicate code is never a good idea because:
   //1. it violates DRY principle
   //2. imagine that the implementation of person here changes in the future then that change will not be reflected in the student so instead of having this duplicate code here let's simply call the person function:
 
@@ -25,7 +25,7 @@ const Student = function (firstName, birthYear, course) {
   //so the problem here is that we are now actually calling this Person constructor function as a regular function call so we are not using the 'new' operator to call this Person function constructor and so therefore this function call here is simply a regular function call and remember that in a regular function call the this keyword is set to undefined and so therefore that's why we get this error here that it cannot set firstName to undefined
   //so let's use the call method to call this function:
   Person.call(this, firstName, birthYear);
-  //in this case we want the this keyword inside Person function to simply be the this keyword inside this function here. Because as you know the this keyword is gonna be in the beggining the empty object that is being created by the new operator for mike and so it is on that new object where we want to set the firstName and the birthYear property
+  //in this case we want the this keyword inside Person function to simply be the this keyword inside this function here. Because as you know the this keyword is gonna be in the beginning the empty object that is being created by the new operator for mike and so it is on that new object where we want to set the firstName and the birthYear property
 
   this.course = course;
 };

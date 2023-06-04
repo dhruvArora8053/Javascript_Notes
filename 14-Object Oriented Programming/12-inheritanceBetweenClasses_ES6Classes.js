@@ -60,3 +60,48 @@ console.log(martha);
 martha.calcAge();
 //and so now ideed this new calcAge method overrode the one that was already there in the prototype chain and again that's because this new calcAge method here appears first in the prototype chain. And we can also say that this calcAge method here is shadowing the parent's class calcAge method.
 
+//DaftPunk's Example:
+class DaftPunk {
+  constructor(name, favouriteSongs) {
+    this.name = name;
+    this.favouriteSongs = favouriteSongs;
+  }
+
+  totalSongs(allSongs) {
+    console.log(`${this.name}'s total daftpunk's favourite songs are: ${
+      this.favouriteSongs
+    }
+  
+  And the left ones are: ${allSongs - this.favouriteSongs}  `);
+  }
+}
+
+class Played extends DaftPunk {
+  constructor(name, favouriteSongs, mostPlayed, leastPlayed) {
+    super(name, favouriteSongs);
+    this.mostPlayed = mostPlayed;
+    this.leastPlayed = leastPlayed;
+  }
+
+  decentPlayed(song) {
+    console.log(`I played ${song} decently`);
+  }
+}
+
+const harmonica = new DaftPunk("Harmonica", 5);
+
+console.log(harmonica);
+harmonica.totalSongs(100);
+
+const john = new Played("John", 10, "Robot Rock", "Rollin & Scratchin");
+console.log(john);
+john.decentPlayed("Telivision rules the nation");
+john.totalSongs(150);
+
+console.log(harmonica.__proto__);
+console.log(john.__proto__);
+console.log(john.__proto__.constructor);
+// john.__proto__.constructor = Played;
+console.log(john.__proto__.constructor);
+console.log(john.__proto__.__proto__);
+console.log(john.__proto__.__proto__.__proto__);
