@@ -67,92 +67,6 @@ console.log(mike instanceof Person); //true
 //it's because we linked prototypes together if hadn't used Object.create then this should be false
 console.log(mike instanceof Object); //true
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//My Example:-
-// const SmallFactory = function (name, bike, car, plane) {
-//   this.name = name;
-//   this.bike = bike;
-//   this.car = car;
-//   this.plane = plane;
-// };
-
-// SmallFactory.prototype.bought = function () {
-//   console.log(
-//     `${this.name} bought ${this.bike}, ${this.car} and a ${this.plane}`
-//   );
-// };
-
-// const buyJonas = new SmallFactory("Jonas", "Kawasaki", "Ferrari", "Typhoon");
-// console.log(buyJonas);
-// buyJonas.bought();
-
-// const buyDhruv = new SmallFactory(
-//   "Dhruv",
-//   "Hayabusa",
-//   "Aston Martin",
-//   "Apache"
-// );
-// console.log(buyDhruv);
-// buyDhruv.bought();
-
-// const BigFactory = function (name, bike, car, plane, train, boat) {
-//   SmallFactory.call(this, name, bike, car, plane);
-//   this.train = train;
-//   this.boat = boat;
-// };
-
-// const johnBuy = new BigFactory(
-//   "John",
-//   "Duke",
-//   "Paggani",
-//   "Jumbo",
-//   "American",
-//   "Lamborghini"
-// );
-
-// BigFactory.prototype = Object.create(SmallFactory.prototype);
-
-// BigFactory.prototype.buys= function(){
-//   console.log('bought everything');
-// }
-
-const Father = function (name, address) {
-  this.name = name;
-  this.address = address;
-};
-
-Father.prototype.housePrice = function (price) {
-  console.log(`Your house is now worth $${price}`);
-};
-
-const jack = new Father("Jack", "Los Angeles");
-console.log(jack);
-jack.housePrice(1000000);
-
-const Son = function (name, address, car) {
-  Father.call(this, name, address);
-  this.car = car;
-};
-
-Son.prototype = Object.create(Father.prototype);
-
-Son.prototype.carPrice = function (price) {
-  console.log(`Your car is now worth $${price}`);
-};
-
-const ryan = new Son("Ryan", "New Washington DC", "Aston Martin");
-console.log(ryan);
-ryan.housePrice("2000000");
-ryan.carPrice("1000000");
-
-console.log(jack.__proto__);
-console.log(ryan.__proto__);
-console.log(ryan.__proto__.constructor);
-ryan.__proto__.constructor = Son;
-console.log(ryan.__proto__.constructor);
-console.log(ryan.__proto__.__proto__);
-console.log(ryan.__proto__.__proto__.__proto__);
-
 /////////////////////////////////////////////////
 
 //DaftPunk's Example:
@@ -190,3 +104,11 @@ const john = new Played("John", 10, "Robot Rock", "Rollin & Scratchin");
 console.log(john);
 john.decentPlayed("Telivision rules the nation");
 john.totalSongs(150);
+
+console.log(harmonica.__proto__);
+console.log(john.__proto__);
+console.log(john.__proto__.constructor);
+john.__proto__.constructor = Played;
+console.log(john.__proto__.constructor);
+console.log(john.__proto__.__proto__);
+console.log(john.__proto__.__proto__.__proto__);
