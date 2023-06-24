@@ -10,3 +10,4 @@ Promise.resolve('Resolved promise 2').then(res => {
 });
 console.log('Test End');
 //and so this is actual proof that these 0 seconds in setTimeout are not a guarantee so this means that you cannot really do high precision things using javascript timers
+
