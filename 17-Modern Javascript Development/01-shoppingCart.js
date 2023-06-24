@@ -30,3 +30,10 @@ export default function (product, quantity) {
     console.log(`${quantity} ${product} added to cart`);
   };
 
+//Blocking Code:
+// console.log('Start fetching users');
+
+// await fetch("https://jsonplaceholder.typicode.com/users");
+
+// console.log('Finish Fetching');
+//now the script.js actually has to wait for the code in shoppingCart.js to finish, this top-level await that we have here is infact blocking the execution not only in this module but alos in the module that is importing it 
