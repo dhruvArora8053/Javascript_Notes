@@ -5,6 +5,7 @@
 //2. Function scope
 //3. Block scope
 
+
 //const and let follows block scope
 //var do not follow block scope, it only follows functional scope
 
