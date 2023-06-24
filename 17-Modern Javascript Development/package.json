@@ -1,0 +1,16 @@
+{
+  "name": "17-modern-javascript-development",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-importing&ExportingES6Modules.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "lodash-es": "^4.17.21"
+  }
+}
+  
