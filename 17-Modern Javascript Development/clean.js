@@ -23,8 +23,9 @@ const spendingLimits = Object.freeze({
 // spendingLimits.jay = 200; //error
 
 // const limit = spendingLimits[user] ? spendingLimits[user] : 0;
-const getLimit = (user) => spendingLimits?.[user] ?? 0;
+const getLimit = (limits, user) => limits?.[user] ?? 0;
 
+//Pure function
 const addExpense = function (
   state,
   limits,
@@ -40,21 +41,38 @@ const addExpense = function (
   //   return [...state, { value: -value, description, user: cleanUser }]; //copying the object(array)
   // }
 
-  return value <= getLimit(cleanUser)
+  return value <= getLimit(limits, cleanUser)
     ? [...state, { value: -value, description, user: cleanUser }]
     : state;
+  //so now this function here does no longer produce side effects, it is now officially a pure function
 };
-const newBudget1 = addExpense(budget, spendingLimits, 10000, "Pizza 🍕");
+const newBudget1 = addExpense(budget, spendingLimits, 10, "Pizza 🍕");
 console.log(newBudget1);
 
-addExpense(budget, spendingLimits, 100, "Going to movies 🍿", "Matilda");
-addExpense(budget, spendingLimits, 200, "Stuff", "Jay");
+const newBudget2 = addExpense(
+  newBudget1,
+  spendingLimits,
+  100,
+  "Going to movies 🍿",
+  "Matilda"
+);
+console.log(newBudget2);
 
-const checkExpenses = function () {
-  for (const entry of budget)
-    if (entry.value < -getLimit(entry.user)) entry.flag = "limit";
-};
-checkExpenses();
+const newBudget3 = addExpense(newBudget2, spendingLimits, 200, "Stuff", "Jay");
+console.log(newBudget3);
+
+const checkExpenses = (state, limits) =>
+  // for (const entry of budget)
+  //   if (entry.value < -getLimit(limits, entry.user)) entry.flag = "limit";
+
+  state.map((entry) =>
+    entry.value < -getLimit(limits, entry.user)
+      ? { ...entry, flag: "limit" }
+      : entry
+  );
+
+const finalBudget = checkExpenses(newBudget3, spendingLimits);
+console.log(finalBudget);
 
 const logBigExpenses = function (bigLimit) {
   let output = "";
