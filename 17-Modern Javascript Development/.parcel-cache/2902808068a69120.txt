@@ -1,4 +1,4 @@
-5206
+5210
 149D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_baseToString.js133321197000372116 0
 162D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\css-tree\lib\lexer\generic-an-plus-b.js133321205832895117 0
 131D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\domutils133321205821245461 1
@@ -41,6 +41,9 @@
 154D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\.bin\update-browserslist-db.cmd133321206024257524 0
 131D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\posthtml133321205827769314 1
 156D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\mdn-data\css\syntaxes.schema.json133321205823807745 0
+114D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\dist133321228632581926 1
+149D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_arrayShuffle.js133321196999134702 0
+149D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\utility-types\package.json133321205818469905 0
 137D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\domelementtype133321205816569566 1
 144D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\node-gyp-build\bin.js133321205816904697 0
 153D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\domutils\lib\manipulation.d.ts133321205822812613 0
@@ -74,7 +77,7 @@
 158D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\caniuse-lite\data\features\webvr.js133321205881464646 0
 150D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\regenerator-runtime\path.js133321205810542970 0
 131D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\04-commonJSModules.js133321184543304395 0
-133D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\05-introductionToNPM.js133321210627090327 0
+133D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\05-introductionToNPM.js133321226737489746 0
 164D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\src\_non_iterable_spread.mjs133321205876926835 0
 140D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\keys.js133321197006562052 0
 150D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\dom-serializer\lib\index.js133321205814824364 0
@@ -94,7 +97,7 @@
 145D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\css-tree\lib\generator133321205857469819 1
 140D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\has-flag\index.js133321205810828126 0
 159D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\utility-types\dist\mapped-types.d.ts133321205823757738 0
-122D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\package.json133321211019314216 0
+122D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\package.json133321228445273285 0
 168D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\src\_class_private_field_get.mjs133321205876271664 0
 139D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\stable\stable.js133321205813933478 0
 158D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\caniuse-lite\data\features\woff2.js133321205881544694 0
@@ -144,15 +147,6 @@
 155D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\htmlparser2\lib\FeedHandler.d.ts133321205819245088 0
 147D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_createCtor.js133321197000913970 0
 133D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\domhandler133321205815124393 1
-132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\is-number133321205813743464 1
-170D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\src\_class_private_method_init.mjs133321205876371696 0
-148D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@lezer\lr\dist\parse.d.ts133321205847776197 0
-149D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lightningcss\node\ast.d.ts133321205848741411 0
-157D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\lib\_object_spread.js133321205871910845 0
-155D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\transformer-json\LICENSE133321205862770710 0
-141D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\svgo\lib\parser.js133321205826088915 0
-172D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\runtime-js\src\helpers\node\css-loader.js133321205880279414 0
-148D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\type-fest\ts41\index.d.ts133321205821195463 0
 149D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\_\_instanceof133321205874561318 1
 151D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\workers\lib\child.js133321205853200650 0
 152D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\source-map\lib\source-node.js133321205818875061 0
@@ -324,6 +318,15 @@
 153D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\sortedLastIndexOf.js133321197008160624 0
 147D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_baseFilter.js133321196999460046 0
 130D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\is-glob133321205813903486 1
+132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\is-number133321205813743464 1
+170D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\src\_class_private_method_init.mjs133321205876371696 0
+148D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@lezer\lr\dist\parse.d.ts133321205847776197 0
+149D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lightningcss\node\ast.d.ts133321205848741411 0
+157D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\lib\_object_spread.js133321205871910845 0
+155D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\transformer-json\LICENSE133321205862770710 0
+141D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\svgo\lib\parser.js133321205826088915 0
+172D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\runtime-js\src\helpers\node\css-loader.js133321205880279414 0
+148D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\type-fest\ts41\index.d.ts133321205821195463 0
 132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\js-tokens133321205814213511 1
 152D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\css-tree\lib\walker\create.js133321205824933803 0
 178D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\_\_class_apply_descriptor_get\package.json133321205873731242 0
@@ -587,8 +590,6 @@
 142D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\picomatch\README.md133321205817154743 0
 144D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\utility-types\LICENSE133321205814914369 0
 168D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\caniuse-lite\data\features\canvas-blending.js133321205851110305 0
-149D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_arrayShuffle.js133321196999134702 0
-149D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\utility-types\package.json133321205818469905 0
 141D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\is-extglob\LICENSE133321205810848138 0
 159D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\svgo\plugins\removeElementsByAttr.js133321205829064540 0
 146D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\utility-types\README.md133321205821315465 0
@@ -1709,9 +1710,6 @@
 159D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\msgpackr\dist\unpack-no-eval.cjs.map133321205856879784 0
 154D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_insertWrapDetails.js133321197001674123 0
 142D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\micromatch\index.js133321205810542970 0
-150D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\wrapperReverse.js133321197009385901 0
-147D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\css-tree\dist\csstree.js133321205826618947 0
-161D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\htmlnano\docs\docs\010-introduction.md133321205852305533 0
 179D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\esm\_class_static_private_field_spec_get.js133321205870473948 0
 172D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\runtime-js\lib\helpers\bundle-manifest.js133321205880159403 0
 147D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_baseSortBy.js133321197000272124 0
@@ -2132,6 +2130,9 @@
 156D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\_\index\package.json133321205875901635 0
 149D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\wrapperLodash.js133321197009375912 0
 161D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\caniuse-lite\data\features\auxclick.js133321205828824487 0
+150D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\wrapperReverse.js133321197009385901 0
+147D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\css-tree\dist\csstree.js133321205826618947 0
+161D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\htmlnano\docs\docs\010-introduction.md133321205852305533 0
 165D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@babel\helper-validator-identifier\LICENSE133321205810022945 0
 139D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\xor.js133321197009425905 0
 141D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\xorBy.js133321197009445907 0
@@ -2259,8 +2260,8 @@
 176D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\utils\test\input\sourcemap\source-root.js.map133321205934294706 0
 148D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_baseOrderBy.js133321196999996963 0
 145D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_basePick.js133321197000006963 0
-147D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_basePickBy.js133321197000026967 0
 157D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\dom-serializer\lib\foreignNames.js133321205813953474 0
+147D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_basePickBy.js133321197000026967 0
 153D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_basePropertyDeep.js133321197000046980 0
 148D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\lodash-es\_basePullAll.js133321197000066970 0
 173D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\workers\test\integration\workerfarm\ipc.js133321205857379815 0
@@ -4098,7 +4099,6 @@
 133D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\base-x\src133321205847550992 1
 153D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\watcher\src\binding.cc133321205841879766 0
 142D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\base-x\src\index.js133321205846595807 0
-179D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\watcher\prebuilds\linux-x64\node.napi.glibc.node133321205858064988 0
 143D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\argparse\argparse.js133321205814003476 0
 158D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\lib\_inherits_loose.js133321205871245672 0
 178D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\cjs\_class_check_private_static_access.cjs133321205846790946 0
@@ -4425,6 +4425,7 @@
 175D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\cjs\_class_private_field_loose_base.cjs133321205848701365 0
 151D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\watcher\src\Event.hh133321205850205219 0
 174D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\cjs\_class_private_field_loose_key.cjs133321205848771410 0
+125D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\dist\index.html133321228630886139 0
 168D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\cjs\_class_private_field_set.cjs133321205848891398 0
 169D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\cjs\_class_private_method_get.cjs133321205849061397 0
 180D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@swc\helpers\cjs\_class_static_private_field_spec_get.cjs133321205850245202 0
@@ -4536,6 +4537,7 @@
 185D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\node-resolver-core\parcel-resolver.win32-x64-msvc.node133321205870533985 0
 158D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\watcher\prebuilds\linux-x64133321205860165240 1
 179D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\watcher\prebuilds\win32-x64\node.napi.glibc.node133321205860135228 0
+179D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\watcher\prebuilds\linux-x64\node.napi.glibc.node133321205858064988 0
 178D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\watcher\prebuilds\linux-x64\node.napi.musl.node133321205861805579 0
 180D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\watcher\prebuilds\darwin-x64\node.napi.glibc.node133321205855159389 0
 149D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\@parcel\utils\.eslintrc.js133321205887894332 0
@@ -5205,3 +5207,5 @@
 138D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\.bin\semver.ps1133321206024257524 0
 132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\.bin\svgo133321206024257524 0
 150D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\node_modules\.bin\update-browserslist-db133321206024267511 0
+132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\dist\index.be043f19.js133321228632531918 0
+136D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\17-Modern Javascript Development\dist\index.be043f19.js.map133321228632581926 0

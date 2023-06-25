@@ -4,7 +4,8 @@
   "description": "",
   "main": "01-importing&ExportingES6Modules.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "author": "",
   "license": "ISC",
@@ -16,4 +17,3 @@
     "parcel": "^2.9.2"
   }
 }
-

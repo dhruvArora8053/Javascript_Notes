@@ -1,6 +1,9 @@
 // a devDependency is simply like a tool that we need to build our application but it's not a dependency that we actually include in our code so it's simply a tool so that's why it's called devDependency becuase we can use it to develop our project
+//devDependency: --save-dev
+//globalDependency: -g (live server)
 
-import cloneDeep from "./node_modules/lodash-es/cloneDeep.js";
+// import cloneDeep from "./node_modules/lodash-es/cloneDeep.js";
+import cloneDeep from "lodash-es";
 
 //copying object:
 const state = {
@@ -88,4 +91,7 @@ console.log(cart);
 if (module.hot) {
   module.hot.accept();
 }
-//by doing this page will not reload like in bankist application which was very annoying but it would simply change the state of the app for testing purposes 
+//by doing this page will not reload like in bankist application which was very annoying but it would simply change the state of the app for testing purposes
+
+
+
