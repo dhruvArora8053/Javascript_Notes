@@ -16,7 +16,7 @@
 116D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\forkify-flowchart-part-1.png132886469200000000 0
 137D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\htmlparser2\lib\FeedHandler.d.ts.map133321804559302559 0
 148D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc\helpers\esm\_class_private_field_update.js133321804564945984 0
-92D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist133321806086151889 1
+92D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist133321812479920881 1
 125D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\node-addon-api\nothing.c133321804556576885 0
 132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\caniuse-lite\data\regions\SR.js133321804572967957 0
 120D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\picocolors\types.ts133321804558892525 0
@@ -43,8 +43,8 @@
 98D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\index.html132886469200000000 0
 127D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\htmlnano\docs\netlify.toml133321804563680756 0
 109D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\chokidar133321806055342389 1
-100D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules133321806069885723 1
-105D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\package-lock.json133321806070650966 0
+100D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules133321807566279305 1
+105D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\package-lock.json133321807566864406 0
 131D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\nth-check\lib\compile.d.ts.map133321804559592593 0
 163D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\htmlnano\docs\versioned_docs\version-1.1.1\010-introduction.md133321804563115572 0
 132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\caniuse-lite\data\regions\BI.js133321804563505610 0
@@ -53,13 +53,13 @@
 159D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc\helpers\_\_tagged_template_literal_loose\package.json133321804568249805 0
 120D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\has-flag\index.d.ts133321804556982046 0
 128D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\events\src\types.js133321804649163734 0
-118D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@msgpackr-extract133321806069885723 1
+118D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@msgpackr-extract133321807566289304 1
 123D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\css-tree\lib\tokenizer133321804564785965 1
 132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\utils\test\input\config133321804663503402 1
 109D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\src\sass\_upload.scss132886469200000000 0
 96D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\src\sass133321798624031020 1
 142D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\reporter-dev-server\src\Server.js133321804605106567 0
-115D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\18-Forkify.3464ddca.js133321806086011361 0
+115D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\18-Forkify.3464ddca.js133321812417040561 0
 107D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@lezer133321804549653222 1
 113D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\htmlnano\lib133321804559897712 1
 110D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc\core133321804561513005 1
@@ -140,7 +140,7 @@
 116D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\js-yaml\LICENSE133321804556712013 0
 107D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@babel133321804549653222 1
 118D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\boolbase\index.js133321804557232053 0
-108D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\src\js\controller.js133321799151587832 0
+108D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\src\js\controller.js133321812479725681 0
 120D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\css-tree\lib\syntax133321804563880794 1
 107D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\src\img\favicon.png132886469200000000 0
 146D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc\helpers\_\_class_private_field_loose_key133321804567246253 1
@@ -174,11 +174,11 @@
 141D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\diagnostic\test\markdown.test.js133321804621329362 0
 123D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\resolve-from\readme.md133321804557532082 0
 112D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\ansi-styles133321804557757258 1
-119D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\.package-lock.json133321806071021024 0
+119D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\.package-lock.json133321807567144403 0
 119D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\lru-cache\index.js133321804556992035 0
 146D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\caniuse-lite\data\features\async-functions.js133321804562280329 0
 128D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\domutils\lib\traversal.d.ts133321804561322906 0
-106D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@lmdb133321806069885723 1
+106D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@lmdb133321807566289304 1
 138D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\svgo\plugins\moveGroupAttrsToElems.js133321804562160326 0
 142D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\caniuse-lite\data\features\canvas-text.js133321804564190786 0
 132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\caniuse-lite\data\regions\NR.js133321804571565503 0
@@ -204,7 +204,7 @@
 130D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\utility-types\dist\index.d.ts133321804560447739 0
 137D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\caniuse-lite\data\features\jpegxl.js133321804569505022 0
 126D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\utility-types\SECURITY.md133321804560137716 0
-105D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc133321806069885723 1
+105D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc133321807566279305 1
 110D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@trysound133321804549653222 1
 132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\ordered-binary\rollup.config.js133321804558137273 0
 132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\caniuse-lite\data\regions\AR.js133321804561750295 0
@@ -702,7 +702,7 @@
 119D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\is-number\index.js133321804556972029 0
 141D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc\helpers\lib\_non_iterable_spread.js133321804565941042 0
 130D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\optimizer-css\LICENSE133321804588631705 0
-103D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\index.html133321806086141873 0
+103D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\index.html133321812417040561 0
 131D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\nth-check\lib\esm\parse.js.map133321804560597753 0
 152D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\transformer-js\parcel-swc.darwin-arm64.node133321804782745171 0
 127D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\utility-types\CHANGELOG.md133321804559957706 0
@@ -2030,7 +2030,7 @@
 139D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\css-tree\lib\syntax\node\Combinator.js133321804560457760 0
 148D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\lmdb.h133321804564450812 0
 152D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mdb_copy.c133321804562190342 0
-110D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\logo.726d37a8.png133321806085901362 0
+110D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\logo.726d37a8.png133321812416800570 0
 122D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\glob-parent\README.md133321806055162387 0
 149D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\runtime-js\src\helpers\node\js-loader.js133321804580909585 0
 152D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mdb_drop.1133321804560822882 0
@@ -3799,7 +3799,7 @@
 125D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc\helpers\lib\_set.js133321804566191060 0
 159D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\package-manager\test\fixtures\has-foo\node_modules133321804617436013 1
 138D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc\helpers\lib\_set_prototype_of.js133321804566151074 0
-111D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\icons.21bad73c.svg133321806085821348 0
+111D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\icons.21bad73c.svg133321812417430281 0
 147D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc\helpers\lib\_skip_first_generator_next.js133321804566211060 0
 134D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc\helpers\cjs\_ts_metadata.cjs133321804563970775 0
 143D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@swc\helpers\lib\_sliced_to_array_loose.js133321804566241092 0
@@ -3957,7 +3957,7 @@
 163D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\package-manager\test\fixtures\has-foo\node_modules\foo133321804622447128 1
 121D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\packager-raw133321804577543258 1
 115D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\plugin133321804562010320 1
-114D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\index.62406edb.js.map133321806086061368 0
+114D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\index.62406edb.js.map133321812479910864 0
 124D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\reporter-tracer133321804599698233 1
 125D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\resolver-default133321804583453942 1
 128D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\@parcel\runtime-browser-hmr133321804581575535 1
@@ -4635,8 +4635,8 @@
 116D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\.bin\semver.ps1133321805211542342 0
 114D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\.bin\svgo.cmd133321805211542342 0
 132D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\node_modules\.bin\update-browserslist-db.ps1133321805211552323 0
-119D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\18-Forkify.3464ddca.js.map133321806086061368 0
-113D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\favicon.8b2f57bf.png133321806085651341 0
-110D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\index.62406edb.js133321806086011361 0
-111D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\index.f7626f62.css133321806085691371 0
-115D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\index.f7626f62.css.map133321806085751367 0
+119D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\18-Forkify.3464ddca.js.map133321812417080562 0
+113D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\favicon.8b2f57bf.png133321812417040561 0
+110D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\index.62406edb.js133321812479900866 0
+111D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\index.f7626f62.css133321812417040561 0
+115D:\The Complete JavaScript Course 2022 From Zero to Expert!\Javascript Notes\18-Forkify\dist\index.f7626f62.css.map133321812417080562 0
