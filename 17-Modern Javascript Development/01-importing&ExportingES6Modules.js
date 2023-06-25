@@ -34,7 +34,7 @@ console.log("Importing Module");
 
 // add("pizza", 2);
 // console.log(price);
-//so the prffered style is actually to just use one default export per module and then import that here like we did
+//so the preffered style is actually to just use one default export per module and then import that here like we did
 
 //again we should not do this
 import add, { cart } from "./01-shoppingCart.js";
