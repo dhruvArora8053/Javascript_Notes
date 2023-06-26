@@ -97,7 +97,6 @@ const showRecipe = async function () {
             <use href="${icons}#icon-plus-circle"></use>
           </svg>
         </button>
-      
       </div>
     </div>
 
