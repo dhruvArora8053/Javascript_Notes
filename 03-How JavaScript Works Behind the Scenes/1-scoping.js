@@ -5,7 +5,6 @@
 //2. Function scope
 //3. Block scope
 
-
 //const and let follows block scope
 //var do not follow block scope, it only follows functional scope
 
@@ -67,4 +66,3 @@ const firstName1 = "Jonas"; //global variable
 calcAge1(1991);
 // console.log(age); //error: age is not defined
 // printAge(); //error: printAge is not defined, because this function is declared inside of the other function so it is not in a global scope.
-
