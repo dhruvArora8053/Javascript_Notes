@@ -1,4 +1,5 @@
 "use strict";
+
 //Scoping:-
 //hierarchy of scoping
 //1. Global scope
