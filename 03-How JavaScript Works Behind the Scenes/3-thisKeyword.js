@@ -14,10 +14,10 @@ calcAge(1991);
 //this keyword inside of a arrow function:
 const calcAgeArrow = (birthYear) => {
   console.log(2037 - birthYear);
-  console.log(this); //output: undefined
+  console.log(this); //output: window
   //inside a arrow function call this keyword will be window object
   //so why is that in regular this is undefined but in arrow window object?
-  //well it is because the arrow function does not gets its own this keyword so instead the arrow function simply uses the lexical this keyword which means that it uses the this keyword of it's parent fucntion or of it's parent scope and in this case here the parent of arrow function is a global scope so that's why this keyword here is a window object but if you talk about regular function it gets it's own this keyword which has the value of undefined.
+  //well it is because the arrow function does not get its own this keyword so instead the arrow function simply uses the lexical this keyword which means that it uses the this keyword of it's parent fucntion or of it's parent scope and in this case here the parent of arrow function is a global scope so that's why this keyword here is a window object but if you talk about regular function it gets it's own this keyword which has the value of undefined.
 };
 calcAgeArrow(1980);
 
