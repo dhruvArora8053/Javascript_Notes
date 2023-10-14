@@ -8,7 +8,7 @@ const countriesContainer = document.querySelector('.countries');
 
 //traditional way:
 const request = new XMLHttpRequest();
-//this is a old sochool way of doing AJAX in javascript but we still showing it for 2 reasons:
+//this is a old school way of doing AJAX in javascript but we still showing it for 2 reasons:
 //1. xml http request exists because you might need it in the future
 //2. we want to show you how ajax calls used to be handled with events and callback functions
 

@@ -27,7 +27,7 @@ console.log(Person.prototype);
 jonas.calcAge();
 //so here we did able to use calcAge method on the jonas object even though it is not really on the object itself so if check jonas here:
 console.log(jonas);
-//you see that it contains ofcourse the birthYear and the firstName butt it does not contain calcAge method but still we have access to it because of prototypal inheritance now let's check for matilda and jack:
+//you see that it contains ofcourse the birthYear and the firstName but it does not contain calcAge method but still we have access to it because of prototypal inheritance now let's check for matilda and jack:
 matilda.calcAge();
 jack.calcAge();
 

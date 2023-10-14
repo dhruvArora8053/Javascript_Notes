@@ -10,7 +10,7 @@ const pizzaTimer = setTimeout(
   2000,
   ...ingredients
 );
-//we do not call this function ourselves we simply pass in the funciton as an argument to setTimeout and it is then setTimeout function who will call the callback function in the future
+//we do not call this function ourselves we simply pass in the function as an argument to setTimeout and it is then setTimeout function who will call the callback function in the future
 //passing arguments inside of a callback function is not possible without a function name so after milliseconds we can provide those arguments to our callback function
 
 console.log("Waiting...");

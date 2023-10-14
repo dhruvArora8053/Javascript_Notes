@@ -126,6 +126,6 @@ console.log(rest5);
 console.log(rest6);
 //in this case the result is even better now than what we had before with short circuiting becuse with this above code we actually had the owner set to undefined which was not really what we wanted now it is simply not here so basically what logical AND operator does is to assign a value to a variable if it is currently truthy so in the case of rest5.owner it was falsy because it didn't exist and so then nothing happened so the object stayed exactly the same but then with the rest6.owner was indeed truthy so it was 'Giovanni' before so it was replaced now with the other string 'anonymous'.
 
-//so if you ever need to assing a value to a variable that is already defined so that has a value that is currently truthy then you can use this AND assignment operator.
+//so if you ever need to assining a value to a variable that is already defined so that has a value that is currently truthy then you can use this AND assignment operator.
 
 //and if you ever need to assing a value to a variable that is not already defined so that has a no value that is currently falsy then you can use OR assignment operator.
