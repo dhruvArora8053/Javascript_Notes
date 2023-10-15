@@ -329,6 +329,11 @@ const atleast1000 = accounts
 
 console.log(atleast1000);
 
+const atleast1000r = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => (mov >= 1000 ? acc + 1 : acc), 0);
+  console.log(atleast1000r);
+
 //same thing using reduce
 const atleast1000s = accounts
   .flatMap(acc => acc.movements)
