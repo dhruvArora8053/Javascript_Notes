@@ -329,11 +329,6 @@ const atleast1000 = accounts
 
 console.log(atleast1000);
 
-const atleast1000r = accounts
-  .flatMap(acc => acc.movements)
-  .reduce((acc, mov) => (mov >= 1000 ? acc + 1 : acc), 0);
-  console.log(atleast1000r);
-
 //same thing using reduce
 const atleast1000s = accounts
   .flatMap(acc => acc.movements)
@@ -356,18 +351,16 @@ console.log(atleast1000s);
 // console.log(deposits, withdrawals);
 
 //3. Create an object which contains the sum of the deposits and of the withdrawals:
-const depoWithObj = accounts
+const depWithObj = accounts
   .flatMap(acc => acc.movements)
   .reduce(
     (acc, mov) => {
       mov > 0 ? (acc.deposits += mov) : (acc.withdrawals += mov);
-
       return acc;
     },
     { deposits: 0, withdrawals: 0 }
   );
-
-console.log(depoWithObj);
+console.log(depWithObj);
 
 //4. Create a simple function to convert any string to a titlecase:
 //this is a nice title -> This Is a Nice Title
@@ -410,19 +403,34 @@ console.log(sumObj);
 //4. Create a simple function to convert any string to a titlecase:
 //this is a nice title -> This Is a Nice Title
 
-const convertTitleCase = function (str) {
-  const upperCase = str => str.replace(str[0], str[0].toUpperCase());
+// const convertTitleCase = function (str) {
+//   const upperCase = str => str.replace(str[0], str[0].toUpperCase());
 
+//   const exceptions = ['and', 'a', 'an', 'the', 'but', 'or', 'on', 'in', 'with'];
+
+//   const titleCase = upperCase(
+//     str
+//       .split(' ')
+//       .map(word => (exceptions.includes(word) ? word : upperCase(word)))
+//       .join(' ')
+//   );
+
+//   console.log(titleCase);
+// };
+
+const convertTitleCase = function (str) {
   const exceptions = ['and', 'a', 'an', 'the', 'but', 'or', 'on', 'in', 'with'];
 
-  const titleCase = upperCase(
-    str
-      .split(' ')
-      .map(word => (exceptions.includes(word) ? word : upperCase(word)))
-      .join(' ')
-  );
+  const titleCase = str
+    .split(' ')
+    .map(word =>
+      exceptions.includes(word)
+        ? word
+        : word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase()
+    )
+    .join(' ');
 
-  console.log(titleCase);
+  console.log(titleCase[0].toUpperCase() + titleCase.slice(1));
 };
 
 convertTitleCase('this is a nice title');
