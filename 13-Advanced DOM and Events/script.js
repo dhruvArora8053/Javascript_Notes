@@ -277,7 +277,7 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 // //So using the scroll event for performing a certain action at a certain position of the page in really not a way to go and again that's because the scroll event here fires all the time no matter how small the change is in the scroll and so that makes for a pretty bad performance and especially on mobile
 
 const section2 = document.querySelector('#section--2');
-console.log(section2.getBoundingClientRect().top);
+// console.log(section2.getBoundingClientRect().top);
 
 ////////////////////////////////////////////////
 //196:- Intersection Obsever API
@@ -314,7 +314,7 @@ console.log(section2.getBoundingClientRect().top);
 //Implementing Sticky Navigation Using Intersection Observer API:-
 const header1 = document.querySelector('.header');
 const navHeight = document.querySelector('.nav').getBoundingClientRect().height;
-console.log(navHeight);
+// console.log(navHeight);
 
 const stickyNav = function (entries) {
   //here the threshold is only one so we don't need to loop over the entries
@@ -336,8 +336,55 @@ headerObsever.observe(header1);
 
 //////////////////////////////////////////////////
 //198:- Revealing Elements On Scroll:-
+const allSections = document.querySelectorAll('.section');
 
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  // console.log(entry);
 
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove('section--hidden');
+  observer.unobserve(entry.target);
+};
+
+const sectionObeserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSections.forEach(function (section) {
+  sectionObeserver.observe(section);
+  section.classList.add('section--hidden');
+});
+
+//////////////////////////////////////////////
+// 190:- Lazy Loading Images:
+const imgTargets = document.querySelectorAll('img[data-src]');
+
+const loadImg = function (entries, observer) {
+  const [entry] = entries;
+  // console.log(entry);
+
+  if (!entry.isIntersecting) return;
+
+  // Replace src with data-src
+  entry.target.src = entry.target.dataset.src;
+
+  entry.target.addEventListener('load', function () {
+    entry.target.classList.remove('lazy-img');
+  });
+
+  observer.unobserve(entry.target);
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+  rootMargin: '200px',
+  // so this is just the same as we did previously here with the navigation, so to make the navigation load a little bit before the threshold was actually reached and here we are doing the same so exactly 200 pixels before any of the images is loaded, it should alread start loading
+});
+
+imgTargets.forEach(img => imgObserver.observe(img));
 /////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
@@ -358,30 +405,30 @@ headerObsever.observe(header1);
 //186:- Selecting, Creating and Deleting elements:
 
 //Selecting Elements:-
-console.log(document.documentElement);
+// console.log(document.documentElement);
 //selecting the entire document of a webpage, so just document above is not enough to select the document element because this is not the real DOM element so for ex: if we want to apply CSS styles to the entire page we always need to select document element
 
 //selecting head and the body
-console.log(document.head);
-console.log(document.body);
+// console.log(document.head);
+// console.log(document.body);
 //for these special elements we don't even need to write any selector otherwise we can also use querySelecotr:
-console.log(document.querySelector('.header'));
+// console.log(document.querySelector('.header'));
 //and this will return the first element that matches the above selector
 
 //to select multiple elements:
-const allSections = document.querySelectorAll('.section');
-console.log(allSections);
+// const allSections = document.querySelectorAll('.section');
+// console.log(allSections);
 
 //to select through id:
-console.log(document.getElementById('section--1'));
+// console.log(document.getElementById('section--1'));
 
 //Get elements by tage name:
 const allButtons = document.getElementsByTagName('button');
-console.log(allButtons);
+// console.log(allButtons);
 //this method actually returns an html collection so that's different from a node list because an html collection is actually so-called live collection and that means that if the DOM changes then this collection is also immediately updated automatically so for ex: if we delete one button element from then that element would also get removed from the allButtons but the same does not happen with the nodelist, it doesn't get updated
 
 //Get elements by class name:
-console.log(document.getElementsByClassName('btn'));
+// console.log(document.getElementsByClassName('btn'));
 //this one also returns the html collection
 
 //Creating and Inserting Elements:-
@@ -435,20 +482,20 @@ message.style.backgroundColor = '#37383d';
 message.style.width = '120%';
 //these styles are actually set as inline styles, so styles set here directly in the dom
 
-console.log(message.style.height);
+// console.log(message.style.height);
 //empty script in console
-console.log(message.style.backgroundColor);
+// console.log(message.style.backgroundColor);
 //it only works for inline styles that we set ourselves also using the style property
 
 //we can still get styles if we really need it:
-console.log(getComputedStyle(message).color);
-console.log(getComputedStyle(message).height);
+// console.log(getComputedStyle(message).color);
+// console.log(getComputedStyle(message).height);
 //this will give you the style even if we haven't declared it in the CSS
 
 //let's say we wanted to increase the height of the message banner by 40 pixels:
 message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
-console.log(message.style.height);
+// console.log(message.style.height);
 
 //Manipulating root CSS styles:
 document.documentElement.style.setProperty('--color-primary', 'orangered');
@@ -456,32 +503,32 @@ document.documentElement.style.setProperty('--color-primary', 'orangered');
 
 //Attributes:-
 const logo = document.querySelector('.nav__logo');
-console.log(logo.alt);
-console.log(logo.src);
+// console.log(logo.alt);
+// console.log(logo.src);
 //here in the console the URL is different than the src in the html, because the src in the console is an absolute URL while in the html it is just a relative URL, relative to the folder in which index.html file is located and if we want to get the html URL than we will be needing to use getAttribute
-console.log(logo.getAttribute('src'));
-console.log(logo.className);
+// console.log(logo.getAttribute('src'));
+// console.log(logo.className);
 //so this works because on images they are supposed to have the alt, and the src attributes on them and so we specify them on the html then javascirpt will atutomatically create these properties on the object but if we add some other property that is not a standard then javascript will not automatically create a property on the object
 //so let's add on the nav image for ex: designer property set it to 'Jonas':
-console.log(logo.designer);
-//now here we get undefined and again that is because this is not a standard property that is expected to be on images but there is another way of reading this value from the dom
-console.log(logo.getAttribute('designer'));
+// console.log(logo.designer);
+// now here we get undefined and again that is because this is not a standard property that is expected to be on images but there is another way of reading this value from the dom
+// console.log(logo.getAttribute('designer'));
 
 //Now just as we can read these values for these attributes, we can also set them:
 logo.alt = 'Beautiful minimalist logo';
-console.log(logo.alt);
+// console.log(logo.alt);
 
 logo.setAttribute('company', 'Bankist');
-console.log(logo.getAttribute('company'));
+// console.log(logo.getAttribute('company'));
 
 //Another example of absolute and relative links:
 const link = document.querySelector('.nav__link--btn');
-console.log(link.href);
-console.log(link.getAttribute('href'));
+// console.log(link.href);
+// console.log(link.getAttribute('href'));
 
 //Data attributes:-
 //let's add data-version-number attribute to nav logo:
-console.log(logo.dataset.versionNumber);
+// console.log(logo.dataset.versionNumber);
 //here we use camelcase versionNumber while in the html we used dash, so these special attributes are always stored in the dataset object. We use data attributes quite a lot when we work with the UI and especially when we need to store data in user interface
 
 //Classes:-
@@ -606,15 +653,15 @@ const h1 = document.querySelector('h1');
 
 //Going Downwards: selecting child elements:
 
-console.log(h1.querySelectorAll('.highlight'));
+// console.log(h1.querySelectorAll('.highlight'));
 //so this here indeed selects all the elements with the highlight class that are children of the h1 element and that would work no matter how deep these child elements would be inside of the h1 element. And also if there were other highlight elements on the page so element with the highlight class they would not  get selected becuase the would not be children of the h1 element
 
 //to access direct children:
-console.log(h1.childNodes);
+// console.log(h1.childNodes);
 //so this really gives us every single node of every single type that here exists
 
 //selecting only elements:
-console.log(h1.children);
+// console.log(h1.children);
 //and this gives us the html collection which is a live collection so it's updated and here we indeed only got the three elements that are actually inside of the h1 and remember this only works for direct children
 
 h1.firstElementChild.style.color = 'white';
@@ -622,8 +669,8 @@ h1.lastElementChild.style.color = 'magenta';
 
 //Going Upwards: selecting parent elements:
 
-console.log(h1.parentNode);
-console.log(h1.parentElement);
+// console.log(h1.parentNode);
+// console.log(h1.parentElement);
 
 // h1.closest('.header').style.background = 'var(--gradient-secondary)';
 //so it selected the closest header to our h1 element so the closest parent element that has the header class and then it simply applied all style to that element
@@ -633,13 +680,13 @@ console.log(h1.parentElement);
 
 //Going Sideways: selecting siblings:
 
-console.log(h1.previousElementSibling);
-console.log(h1.nextElementSibling);
+// console.log(h1.previousElementSibling);
+// console.log(h1.nextElementSibling);
 
-console.log(h1.previousSibling);
-console.log(h1.nextSibling);
+// console.log(h1.previousSibling);
+// console.log(h1.nextSibling);
 
-console.log(h1.parentElement.children);
+// console.log(h1.parentElement.children);
 //selecting h1's parent element and then getting it's all children
 
 //ex:
