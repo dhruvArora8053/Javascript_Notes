@@ -354,11 +354,11 @@ const sectionObeserver = new IntersectionObserver(revealSection, {
 
 allSections.forEach(function (section) {
   sectionObeserver.observe(section);
-  section.classList.add('section--hidden');
+  // section.classList.add('section--hidden');
 });
 
 //////////////////////////////////////////////
-// 190:- Lazy Loading Images:
+// 199:- Lazy Loading Images:
 const imgTargets = document.querySelectorAll('img[data-src]');
 
 const loadImg = function (entries, observer) {
@@ -385,6 +385,17 @@ const imgObserver = new IntersectionObserver(loadImg, {
 });
 
 imgTargets.forEach(img => imgObserver.observe(img));
+
+/////////////////////////////////////////////////
+//200. Building a slider component:-
+const slides = document.querySelectorAll('.slide');
+
+const slider = document.querySelector('.slider');
+slider.style.transform = 'scale(0.5)';
+slider.style.overflow = 'visible';
+
+slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
+
 /////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
@@ -571,7 +582,7 @@ const alertH1 = function (e) {
 // h1.addEventListener('mouseenter', alertH1);
 // //another
 // setTimeout(() => {
-//   h1.removeEventListener('mouseenter', alertH1);
+//   h1.removeEventList ener('mouseenter', alertH1);
 // }, 3000);
 
 //Third way of listening events on the html itself: should not be used
@@ -705,3 +716,25 @@ h1.lastElementChild.style.color = 'magenta';
 //////////////////////////////////////////////////
 //198:- Revealing Elements On Scroll:-
 /////////////////////////////////////////////////
+// 199, 200, 201
+//////////////////////////////////////////////////
+//202:- Lifecycle DOM Events:-
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('HTML parsed and DOM tree built!', e);
+});
+// so when we have script tag at the end of the HTML then we do not need to listen for the DOM content loaded event, because the script tag is the one which imports javascript into the html 
+
+// Now if you're coming to vanilla javascript from jquery then you're probably used to wrap all your code into a document ready function which in jquery looks something like this:
+// document.ready
+// so this is equivalent to the dom content loaded in vanilla javascript but no such thing is necessary in regular javascript
+
+window.addEventListener('load', function (e) {
+  console.log('Page fully loaded', e);
+});
+// the loadevent if fired by the window as soon as not only the html is parsed but also all the images and external resources like css files are loaded so bascially when the complete page has finished loading is when this event event gets fired 
+
+// window.addEventListener('beforeunload', function (e) {
+//   e.preventDefault();
+//   console.log(e);
+//   e.returnValue = '';
+// });
