@@ -639,7 +639,7 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 
 //So as we just saw these three event handlers that we set up above recieve events from the target elements and also from the bubbling phase so in other words the event handler functions are listening for click events that happen on the element itself and they are also listening for events that keep bubbling up from their child elements and that's why the color changes in all of the parent elements here as well.
 
-//So the two phases that we just described are phase two and phase three but now what about the capture phase, the pahse one?
+//So the two phases that we just described are phase two and phase three but now what about the capture phase, the phase one?
 //well as we learned, events are captured when they come down from the document route all the way to the target but our event handlers are not picking up these events during the capture phase, they're only listening for events in the bubbling phase but not in the capturing phase?
 //it is because of the default behavior of the add event listener method and the reason for that is that the capturing phase is usually irrelevant for us, it's just not that useful now on the other hand, the bubbling phase can be very useful for something called event delegation. However, if we really do want to catch events during the capturing phase then we can define a third parameter in the addEventListener function
 
