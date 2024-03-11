@@ -66,3 +66,5 @@ console.log(guestCorrect); //output: 0
 //not include: 0 or ''
 
 //so basically for the nullish coalescing operator it is as if the zero and the empty string were not falsy values and were instead truthy values as well.
+
+
